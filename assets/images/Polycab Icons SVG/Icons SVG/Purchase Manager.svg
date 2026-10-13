@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="Group_24930" data-name="Group 24930" transform="translate(-199 -850)">
+    <rect id="Rectangle_17042" data-name="Rectangle 17042" width="64" height="64" transform="translate(199 850)" fill="none"/>
+    <g id="receipt_1_" data-name="receipt (1)" transform="translate(204 850)">
+      <path id="Path_32261" data-name="Path 32261" d="M37.666,0H16.333A13.349,13.349,0,0,0,3,13.333v48a2.667,2.667,0,0,0,4.171,2.2L12.787,59.7,18.4,63.533a2.667,2.667,0,0,0,3.013,0l5.6-3.837,5.6,3.837a2.667,2.667,0,0,0,3.016,0l5.6-3.835,5.6,3.832A2.667,2.667,0,0,0,51,61.333v-48A13.349,13.349,0,0,0,37.666,0Zm8,56.266-2.933-2.005a2.667,2.667,0,0,0-3.019,0l-5.6,3.837-5.6-3.837a2.667,2.667,0,0,0-3.016,0L19.9,58.1l-5.6-3.837a2.667,2.667,0,0,0-3.011,0L8.333,56.266V13.333a8,8,0,0,1,8-8H37.666a8,8,0,0,1,8,8Z" fill="#7d7d7d"/>
+      <rect id="Rectangle_7160" data-name="Rectangle 7160" width="27.428" height="4.571" rx="1" transform="translate(12.143 22.857)" fill="#7d7d7d"/>
+      <rect id="Rectangle_7161" data-name="Rectangle 7161" width="22.857" height="4.571" rx="1" transform="translate(12.143 32)" fill="#7d7d7d"/>
+    </g>
+  </g>
+</svg>

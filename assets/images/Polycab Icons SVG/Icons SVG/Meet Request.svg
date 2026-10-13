@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="Group_24921" data-name="Group 24921" transform="translate(-479 -778)">
+    <rect id="Rectangle_17030" data-name="Rectangle 17030" width="64" height="64" transform="translate(479 778)" fill="none"/>
+    <path id="calendar-exclamation_1_" data-name="calendar-exclamation (1)" d="M42.667,26.667a2.667,2.667,0,0,1,0-5.333H64V18.667A13.348,13.348,0,0,0,50.667,5.333H48V2.667a2.667,2.667,0,1,0-5.333,0V5.333H21.333V2.667a2.667,2.667,0,0,0-5.333,0V5.333H13.333A13.348,13.348,0,0,0,0,18.667v2.667H21.333a2.667,2.667,0,0,1,0,5.333H0v24A13.348,13.348,0,0,0,13.333,64H50.667A13.348,13.348,0,0,0,64,50.667v-24ZM32,56a2.667,2.667,0,1,1,2.667-2.667A2.668,2.668,0,0,1,32,56Zm2.667-13.333a2.667,2.667,0,1,1-5.333,0V24a2.667,2.667,0,1,1,5.333,0Z" transform="translate(479 778)" fill="#848484"/>
+  </g>
+</svg>

@@ -1,0 +1,459 @@
+[09-May-2025 13:10:40 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot access self:: when no class scope is active in /home/tradecvd/public_html/cronjob/test-email.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/tradecvd/public_html/cronjob/test-email.php on line 15
+[09-May-2025 13:11:10 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot access self:: when no class scope is active in /home/tradecvd/public_html/cronjob/test-email.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/tradecvd/public_html/cronjob/test-email.php on line 15
+[09-May-2025 13:11:11 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot access self:: when no class scope is active in /home/tradecvd/public_html/cronjob/test-email.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/tradecvd/public_html/cronjob/test-email.php on line 15
+[09-May-2025 13:11:11 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot access self:: when no class scope is active in /home/tradecvd/public_html/cronjob/test-email.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/tradecvd/public_html/cronjob/test-email.php on line 15
+[09-May-2025 13:11:11 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot access self:: when no class scope is active in /home/tradecvd/public_html/cronjob/test-email.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/tradecvd/public_html/cronjob/test-email.php on line 15
+[09-May-2025 13:11:25 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Cannot access self:: when no class scope is active in /home/tradecvd/public_html/cronjob/test-email.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/tradecvd/public_html/cronjob/test-email.php on line 15
+[28-May-2025 07:00:02 UTC] PHP Deprecated:  Optional parameter $method declared before required parameter $header is implicitly treated as a required parameter in /home/tradecvd/public_html/config/IISMethods.php on line 304
+[01-Apr-2026 04:30:07 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Wed, 1 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[01-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Wed, 1 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[02-Apr-2026 04:30:10 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 2 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[02-Apr-2026 12:30:07 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 2 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[03-Apr-2026 04:30:08 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 3 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[03-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 3 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[04-Apr-2026 04:30:12 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 4 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[04-Apr-2026 12:30:04 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 4 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[05-Apr-2026 04:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sun, 5 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[05-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sun, 5 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[06-Apr-2026 04:30:04 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Mon, 6 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[06-Apr-2026 12:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Mon, 6 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[07-Apr-2026 04:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Tue, 7 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[07-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Tue, 7 Ap...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('sunny.patel@gma...', 'Hi Sunnuy Patel...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[15-Apr-2026 04:30:09 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Wed, 15 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[15-Apr-2026 12:30:08 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Wed, 15 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[16-Apr-2026 04:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 16 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[16-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 16 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[17-Apr-2026 04:30:10 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 17 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[17-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 17 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[18-Apr-2026 04:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 18 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[18-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 18 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[19-Apr-2026 04:30:09 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sun, 19 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[19-Apr-2026 12:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sun, 19 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[20-Apr-2026 04:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Mon, 20 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[20-Apr-2026 12:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Mon, 20 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[21-Apr-2026 04:30:07 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Tue, 21 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[21-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Tue, 21 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amitbhanushali@...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amitbhanushali@...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[22-Apr-2026 04:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Wed, 22 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit12@gmail.co...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit12@gmail.co...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[22-Apr-2026 12:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Wed, 22 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit12@gmail.co...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit12@gmail.co...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[23-Apr-2026 04:30:07 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 23 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit12@gmail.co...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit12@gmail.co...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[23-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 23 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit12@gmail.co...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit12@gmail.co...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[24-Apr-2026 04:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 24 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit12@gmail.co...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit12@gmail.co...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[24-Apr-2026 12:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 24 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit12@gmail.co...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit12@gmail.co...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[25-Apr-2026 04:30:09 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 25 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit.nanda777@g...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit.nanda777@g...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[25-Apr-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 25 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('amit.nanda777@g...', 'Hi Amit, Your P...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('amit.nanda777@g...', 'Hi Amit, Your P...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[27-Aug-2026 04:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 27 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('mit@gmail.com', 'Hi Mit, Your Pa...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('mit@gmail.com', 'Hi Mit, Your Pa...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[27-Aug-2026 12:30:07 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Thu, 27 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('mit@gmail.com', 'Hi Mit, Your Pa...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('mit@gmail.com', 'Hi Mit, Your Pa...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[28-Aug-2026 04:30:06 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 28 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('mit@gmail.com', 'Hi Mit, Your Pa...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('mit@gmail.com', 'Hi Mit, Your Pa...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[28-Aug-2026 12:30:08 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Fri, 28 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('mit@gmail.com', 'Hi Mit, Your Pa...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('mit@gmail.com', 'Hi Mit, Your Pa...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[29-Aug-2026 04:30:10 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 29 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('mit@gmail.com', 'Hi Mit, Your Pa...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('mit@gmail.com', 'Hi Mit, Your Pa...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[29-Aug-2026 12:30:05 Asia/Kolkata] PHP Fatal error:  Uncaught phpmailerException: SMTP Error: Could not authenticate. in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php:1714
+Stack trace:
+#0 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1557): PHPMailer->smtpConnect(Array)
+#1 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1340): PHPMailer->smtpSend('Date: Sat, 29 A...', 'This is a multi...')
+#2 /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php(1215): PHPMailer->postSend()
+#3 /home/tradecvd/public_html/config/DB.php(1494): PHPMailer->send()
+#4 /home/tradecvd/public_html/config/DB.php(1819): DB->sendemail('mit@gmail.com', 'Hi Mit, Your Pa...', '<!DOCTYPE html>...', '', '', '', '', '')
+#5 /home/tradecvd/public_html/cronjob/packageexpirymail.php(94): DB->getemailbody('mit@gmail.com', 'Hi Mit, Your Pa...', '<tr><td colspan...', '', '', '', '', '')
+#6 {main}
+  thrown in /home/tradecvd/public_html/config/phpmailer/class.phpmailer.php on line 1714
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: client_reference_id
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: payment_intent
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: payment_status
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: amount_total
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: client_reference_id
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: payment_intent
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: payment_status
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\PaymentIntent instance: amount_total
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\Charge instance: client_reference_id
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\Charge instance: payment_status
+[08-Oct-2026 00:46:47 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\Charge instance: amount_total
+[08-Oct-2026 00:46:49 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\Charge instance: client_reference_id
+[08-Oct-2026 00:46:49 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\Charge instance: payment_status
+[08-Oct-2026 00:46:49 Asia/Kolkata] Stripe Notice: Undefined property of Stripe\Charge instance: amount_total

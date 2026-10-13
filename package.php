@@ -1,0 +1,290 @@
+<?php require_once 'config/init.php';
+require_once 'config/apiconfig.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tag Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Trade CVD" />
+    <meta name="author" content="Trade CVD" />
+    <meta name="robots" content="Trade CVD" />
+    <meta name="description" content="Trade CVD" />
+    <meta property="og:title" content="Trade CVD" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="Trade CVD" />
+    <meta property="og:image" content="" />
+    <link rel="icon" type="image/x-icon" href="" />
+    <!-- Meta Tag End -->
+
+    <!--title-->
+    <title>Trade CVD</title>
+
+    <!-- CSS Start -->
+    <?php include('css.php'); ?>
+
+    <!-- CSS End -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+</head>
+
+<body class="membershipplan">
+    <div class="page-wrapper">
+        <!-- Header Start -->
+        <?php include('header.php'); ?>
+        <!-- Header End -->
+        <div class="main page-title mainbg-img" id="web-content" style="background-image: url(<?php echo $config->getimageurl() ?>images/payment-mode-bg.jpg);">
+            <section class="package-list-sec section-space">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-5 text-center">
+                            <div class="package-list-title">
+                                <h1 class="sec-title text-black title-shaddow">Package List</h1>
+                            </div>
+                            <div class="package-list-desc">
+                                <p class="sec-desc text-gray">Whether you're a jeweler, dealer or manufacturer, Trade CVD has a membership plan to suit your needs.<br /> Choose the plan that's right for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="plans-for-registration">
+                            <div class="plans-block appear visible-element">
+                                <header class="plans-headline text-center">
+                                    <nav class="tabset animated animated-slide-bottom delay-05">
+                                        <ul class="nav nav-pills toggle-btns-js cost-button">
+                                            <li id="years-price">
+                                                <a href="javascript:void(0);" data-category="Membership" data-type="1" class="show-icon-save typechange active" data-label="Billed annually selector">Billed Annually </a>
+
+                                            </li>
+                                            <li id="month-price"><a href="javascript:void(0);" data-type="2" class="hide-icon-save typechange" data-category="Membership" data-label="Billed monthly selector">Billed Monthly</a></li>
+                                            <img class="save20-ico annually" src="#" alt="" style="display: block;">
+                                            <img class="save20-ico month" src="#" alt="" style="display: none;">
+                                        </ul>
+                                    </nav>
+                                </header>
+                                <div class="plans-box" id="PackageDataList">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="savani-hr hr-sec section-space pt-0">
+                <div class="container-xl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row justify-content-center">
+                                <div class="col-5">
+                                    <hr />
+                                </div>
+                                <div class="col-1 col-hr">
+                                    <div class="hr-img">
+                                        <img src="<?php echo $config->getimageurl() ?>images/homepage/diamonds.svg" alt="diamonds" title="diamonds">
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="paymentmode-sec section-space pt-0">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-10 text-center mb-5">
+                            <div class="paymentmode-title">
+                                <h3 class="sec-title text-black">Payment Mode</h3>
+                            </div>
+                            <div class="paymentmode-desc">
+                                <p class="sec-desc text-blue">All prices are in USD. Plans can be canceled at any time in accordance with our terms and conditions. <br /> Accepting Visa, Master Card, American Express, and Discover</p>
+                            </div>
+                        </div>
+                        <div class="col-10 m-auto text-center">
+                            <div class="paymentmode-slider owl-carousel owl-theme">
+                                <div class="item">
+                                    <figure class="paymentmode-imgs">
+                                        <img src="<?php echo $config->getimageurl() ?>images/chooseplan/visa.svg" alt="Visa" title="Visa">
+                                    </figure>
+                                </div>
+                                <div class="item">
+                                    <figure class="paymentmode-imgs">
+                                        <img src="<?php echo $config->getimageurl() ?>images/chooseplan/discover-logo.svg" alt="Discover" title="Discover">
+                                    </figure>
+                                </div>
+                                <div class="item">
+                                    <figure class="paymentmode-imgs">
+                                        <img src="<?php echo $config->getimageurl() ?>images/chooseplan/mastercard.svg" alt="Mastercard" title="Mastercard">
+                                    </figure>
+                                </div>
+                                <div class="item">
+                                    <figure class="paymentmode-imgs">
+                                        <img src="<?php echo $config->getimageurl() ?>images/chooseplan/american-express.svg" alt="American Express" title="American Express">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Footer Start -->
+        <?php include('footer.php'); ?>
+        <!-- Footer End -->
+
+        <!-- JS Start -->
+        <?php include('js.php'); ?>
+        <!-- JS End -->
+    </div>
+    <script>
+        $(document).ready(function() {
+            listpackagedetail(1);
+            // $(".box-plan .plan-heading").matchHeight();
+            // $(".box-plan .plans-text").matchHeight();
+            // $('.plans-headline .nav-pills li a, .second-solutions .nav-pills li a').click(function() {
+            //     if ($(this).parent().attr('id') == 'years-price') {
+            //         $('.price.years').removeClass('hidden');
+            //         $('.price.month').addClass('hidden');
+            //         $('.button-save').removeClass('hidden');
+            //         $('.label-year').addClass('hidden');
+            //         $('.solution-second .plan-box').removeClass('month');
+            //         $(".plans-list .plan-box").matchHeight();
+            //         $('.plans-for-registration .box-plan').addClass('month');
+            //         $(".plans-list .box-plan .middle-part").matchHeight();
+            //     } else {
+            //         $('.price.month').removeClass('hidden');
+            //         $('.price.years').addClass('hidden');
+            //         $('.button-save').addClass('hidden');
+            //         $('.label-year').removeClass('hidden');
+            //         $('.solution-second .plan-box').addClass('month');
+            //         $(".plans-list .plan-box").matchHeight();
+            //         $('.plans-for-registration .box-plan').addClass('month');
+            //         $(".plans-list .box-plan .middle-part").matchHeight();
+            //     }
+            // });
+            // $(window).on("scroll touchmove", function() {
+            //     var bannerHeight = 0;
+            //     if ($('.banner-block').length > 0) {
+            //         if (!$(".banner-block").hasClass("hidden")) {
+            //             bannerHeight = $('.banner-block').height();
+            //         }
+            //     }
+            //     $('#header').toggleClass('scrolled', $(document).scrollTop() > bannerHeight);
+            // });
+            // if ($('.image-section').length == 0 && $('.benefits-section').length > 0) {
+            //     $('.benefits-section .container').css("padding-top", "0");
+            // }
+            // $('[data-scroll]').click(function() {
+            //     var next = $(this).closest('section').next().attr("id");
+            //     $(this).attr("href", "#" + next);
+            //     $('html, body').animate({
+            //         scrollTop: ($($.attr(this, 'href')).offset().top - 82)
+            //     }, 500);
+            //     return false;
+            // });
+            // if ($('#SnapABug_Button').length > 0) {
+            //     $('#SnapABug_Button').attr("data-category", "Homepage");
+            //     $('#SnapABug_Button').attr("data-label", "Chat");
+            // }
+            // $('[data-category]').each(function() {
+            //     var price = "";
+            //     $(this).on("click", function() {
+            //         var label = $(this).data("label");
+            //         if ($(this).hasClass("apply-button")) {
+            //             price = $(this).closest(".plan-box").find(".price").not('.hidden').data("price");
+            //             label = $(this).data("label") + ", " + price;
+            //         }
+            //         dataLayer.push({
+            //             'event': 'GAEvent',
+            //             'eventCategory': $(this).data("category"),
+            //             'eventAction': 'Click',
+            //             'eventLabel': label,
+            //             'eventValue': undefined
+            //         });
+            //     });
+            // });
+            // var period = getUrlVars()["period"];
+            // if (period == "Monthly" && $("#month-price").length > 0) {
+            //     $("#month-price a").each(function() {
+            //         $(this).trigger("click");
+            //     });
+            // } else if ($("#years-price").length > 0) {
+            //     $("#years-price a").each(function() {
+            //         $(this).trigger("click");
+            //     });
+            // }
+        });
+
+        function getUrlVars() {
+            var vars = [],
+                hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        $('.typechange').on('click', function() {
+            if ($(this).attr('data-type') == 1) {
+                $('.plans-box .years').removeClass('hidden');
+                $('.plans-box .month').addClass('hidden');
+                $('.show-icon-save').addClass('active');
+                $('.hide-icon-save').removeClass('active');
+            } else if ($(this).attr('data-type') == 2) {
+                $('.plans-box .years').addClass('hidden');
+                $('.plans-box .month').removeClass('hidden');
+                $('.show-icon-save').removeClass('active');
+                $('.hide-icon-save').addClass('active');
+                
+            }
+            listpackagedetail($(this).attr('data-type'));
+            changetypewisedata();
+        });
+
+
+        function listpackagedetail(typeid) {
+            var pagename = getpagename();
+            var headersdata = {
+                Accept: 'application/json',
+                platform: 4,
+                userpagename: pagename,
+                useraction: 'editright',
+                masterlisting: false,
+                responsetype: 'HTML'
+            };
+            formdata = new FormData();
+            formdata.append("action", "listpackagedetail");
+            formdata.append("typeid", typeid);
+            ajaxrequest("POST", '<?php echo $config->getEndpointurl(); ?>' + pagename, formdata, headersdata, Onsuccesslistpackagedetail, OnErrorlistpackagedetail);
+
+            function Onsuccesslistpackagedetail(data) {
+                var JsonData = JSON.stringify(data);
+                var resultdata = jQuery.parseJSON(JsonData);
+                var htmldata = '';
+                if (resultdata.status == 0) {
+                    Notiflix.Notify.Failure(resultdata.message);
+                } else if (resultdata.status == 1) {
+
+                    $('#PackageDataList').html(resultdata.data);
+                }
+            }
+
+            function OnErrorlistpackagedetail(content) {
+                // ajaxrequest("POST","'<?php echo $config->getPage404url(); ?>'",'','',OnsuccessRender,OnErrorRender);
+            }
+        }
+
+        
+    </script>
+</body>
+
+</html>

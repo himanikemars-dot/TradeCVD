@@ -1,0 +1,5 @@
+Discount Type *,Code  *,Coupon Amount *,Company *,Store *,User *,Expiry Date *,Minimum Spend,Maximum Spend,Usage Limit Per Coupon,Usage Limit Per User,Select Group,Select Sub Group,Select Item,Status *,Platform *
+inr,ABC16,150,GREEN OVEN,, ,21-03-2023,0,0,0,0,,,,1,POS
+inr,ABC17,150,GREEN OVEN,Local ALTHAN, ,21-03-2023,0,0,0,0,,,,1,POS
+Percentage,ABC18,10,GREEN OVEN,, ,21-02-2023,0,0,0,0,,,,1,WEB
+inr,ABC19,150,GREEN OVEN,, ,21-03-2023,0,0,0,0,,,,1,POS

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="Group_30228" data-name="Group 30228" transform="translate(1939 -5077)">
+    <g id="puzzle_1_" data-name="puzzle (1)" transform="translate(-1939 5077)">
+      <path id="Path_1845" data-name="Path 1845" d="M21.879,203a6.152,6.152,0,0,0-5.73-7.031A6.141,6.141,0,0,0,9.891,203H0v24.727A5.266,5.266,0,0,0,5.273,233H31.758V203Z" transform="translate(0 -173)" fill="#fd4e26"/>
+      <path id="Path_1846" data-name="Path 1846" d="M203.042,256v8.025a6.1,6.1,0,0,0-7.026,6.25,6.167,6.167,0,0,0,7.026,5.745V286h24.727a5.273,5.273,0,0,0,5.273-5.273V256Z" transform="translate(-173.042 -226)" fill="#08469c"/>
+      <path id="Path_1847" data-name="Path 1847" d="M272.758,30.005V5.278A5.273,5.273,0,0,0,267.484.005H241v30h9.783a6.074,6.074,0,1,0,12,0Z" transform="translate(-212.758 -0.004)" fill="#159ce4"/>
+      <path id="Path_1848" data-name="Path 1848" d="M37.031,14.391A6.146,6.146,0,0,1,30,20.121V30H21.879a6.152,6.152,0,0,0-5.73-7.031A6.141,6.141,0,0,0,9.891,30H0V5.273A5.266,5.266,0,0,1,5.273,0H30V8.133A6.119,6.119,0,0,1,37.031,14.391Z" fill="#f9bc35"/>
+    </g>
+    <rect id="Rectangle_8537" data-name="Rectangle 8537" width="60" height="60" transform="translate(-1939 5077)" fill="none"/>
+  </g>
+</svg>

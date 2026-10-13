@@ -1,0 +1,2 @@
+Group * ,Sub Group *,Item Name *,Short Name,HSN Code *,Weight (Grams),Floor No,Rank No,Barcode,MFG Item,Is Saleable,Purchase Unit *,Stock Unit *,Stock Conversion,Sale / MFG Unit *,Sale Conversion,Purchase GST Tax *,Purchase Rate *,Sale GST Tax *,MRP/Retail Rate *,Cess,Minimum Stock Qty,Description,Company,Assign Branch,Closing Stock Required,Best Befour,Sub Item,Stock Unit,Dependency,Department,Qty,Purchase Rate,Sale Rate
+BREAD,Artistic,Pizz Bread,PB,852369,500,123,123,12365,0,0,Pkt,Pkt,1,Pkt,1,5,100,5,100,100,100,Item Description,,,,,,,,,,,

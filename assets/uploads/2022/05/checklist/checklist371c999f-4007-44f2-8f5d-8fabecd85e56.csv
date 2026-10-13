@@ -1,0 +1,4 @@
+Discount Type *,Code  *,Coupon Amount *,Company *,Store *,User *,Commission,Expiry Date *,Minimum Spend,Maximum Spend,Usage Limit Per Coupon,Usage Limit Per User,Select Group,Select Sub Group,Select Item,Status *,Platform *
+BREAD,Artistic,Pizz Bread,PB,852369,500,123,123,12365,0,0,Pkt,Pkt,1,Pkt,1,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

@@ -1,0 +1,518 @@
+:root {
+    --green: #669934;
+    --blue: #3597cc;
+    --light-green: #e5eddd;
+}
+
+.shapeDiv .filter-container {
+    height: 80px;
+}
+
+.listdiamondDataDiv {
+    /* background-color: #FFF; */
+    padding: 10px;
+}
+
+.adminbtndark {
+    background: var(--green);
+    border: 1px solid var(--green);
+}
+
+.listdiamondparcelDataDiv {
+    background-color: #FFF;
+    padding: 10px;
+}
+
+.listmydiamondDataDiv {
+    background-color: #FFF;
+    padding: 10px;
+}
+
+.uploaddiamondtabs,
+.uploadjewellerytabs {
+    justify-content: center;
+    margin: 0px 0;
+    display: flex;
+    justify-content: center !important;
+    border-radius: 6px !important;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    height: 46px;
+    z-index: 1;
+    background-color: #fff !important;
+    font-size: 14px;
+    border-radius: 30px !important;
+    border: 1px solid #dedede;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+}
+
+.uploadjewellerytabs {
+    width: 100;
+    max-width: 40%;
+}
+
+.uploaddiamondtabs li,
+.uploadjewellerytabs li {
+    display: flex;
+    margin: auto;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    text-decoration: none;
+    margin: auto;
+    height: 100%;
+    padding-right: 0;
+    color: #666;
+    border-right: 1px solid #eee;
+}
+
+
+/* .uploaddiamondtabs li::after
+{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 63px;
+    top: auto;
+    right: 1px;
+    background-color: #fff;
+    border-top-right-radius: 3px;
+    /* transform: scale(0.707) rotate(45deg); 
+    box-shadow: 1px -1px #dedede;
+    z-index: 1;
+    bottom: -13px;
+} */
+
+.uploaddiamondtabs li b,
+.uploadjewellerytabs li b {
+    position: absolute;
+    left: 17px;
+    border: 1px solid #dedede;
+    padding: 1px 7px;
+    top: 12px;
+    border-radius: 100%;
+    font-size: 12px;
+}
+
+.uploaddiamondtabs li.active,
+.uploadjewellerytabs li.active {
+    background-color: var(--green);
+    color: #FFFFFF;
+}
+
+.uploaddiamondtabs li.active a:hover,
+.uploadjewellerytabs li.active a:hover {
+    background-color: var(--green);
+    color: #FFFFFF;
+}
+
+.uploaddiamondtabs li a:hover,
+.uploadjewellerytabs li a:hover {
+    color: #000000;
+}
+
+.uploaddiamondtabs li.disabled,
+.uploaddiamondtabs li a.disabled,
+.uploadjewellerytabs li.disabled,
+.uploadjewellerytabs li a.disabled {
+    cursor: not-allowed;
+}
+
+.uploaddiamondtabs .nav-tabs .nav-item.show .nav-link,
+.uploaddiamondtabs .nav-tabs .nav-link.active,
+.uploadjewellerytabs .nav-tabs .nav-item.show .nav-link,
+.uploadjewellerytabs .nav-tabs .nav-link.active {
+    color: #fff !important;
+    background-color: #3597cc !important;
+}
+
+.main-DiamondUploadFormDiv .select2-container .select2-selection--single,
+.main-JewelleryUploadFormDiv .select2-container .select2-selection--single {
+    height: 40px !important;
+}
+
+.main-DiamondUploadFormDiv .select2-container--default .select2-selection--single .select2-selection__arrow,
+.main-JewelleryUploadFormDiv .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 7px !important;
+}
+
+
+/* .main-DiamondUploadFormDiv  .select2-container,.main-JewelleryUploadFormDiv  .select2-container
+{
+    border: 1px solid #3696b7 !important;
+} */
+
+.main-DiamondUploadFormDiv .select2-container--default .select2-selection--multiple,
+.main-JewelleryUploadFormDiv .select2-container--default .select2-selection--multiple {
+    background: #FFFFFF !important;
+}
+
+.uploaddiamondtabs li.disabled,
+.uploaddiamondtabs li a.disabled,
+.uploadjewellerytabs li.disabled,
+.uploadjewellerytabs li a.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.ui-datepicker-calendar thead,
+tbody tr {
+    min-width: auto !important;
+}
+
+.new-chat-title {
+    background-color: #6699346b;
+    padding: 5px 15px;
+    width: auto;
+    border-radius: 30px;
+    color: #4e2f2f;
+    font-size: initial;
+    font-family: 'Poppins';
+    border: none;
+    /* position: absolute; */
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+
+.chat-body-date {
+    position: relative;
+}
+
+
+/* .chat .chating-body .chating-left.chatleftbse{
+    margin-bottom: 15px;
+} */
+
+/*.listjewelleryDataDiv {*/
+/*    min-height: 1068px;*/
+/*    max-height: 1068px;*/
+/*    overflow-y: scroll;*/
+/*    overflow-x: hidden;*/
+/*}*/
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.clsaddtomyfavorite {
+    color: var(--green);
+    font-size: 15px;
+    padding-top: 1px;
+}
+
+.jewellerypriceDiv form {
+    padding-top: 10px;
+}
+
+.jewellerypriceDiv form input {
+    background: none;
+    border: none;
+    font-size: 12px;
+    float: right;
+    text-align: right;
+    line-height: 31px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .jewellerypriceDiv form input {
+        width: 65px;
+    }
+}
+
+.jewellerypriceDiv form button {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #1a1a18;
+    border: 0;
+    border-radius: 30px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.jewellerypriceDiv form button:hover {
+    background: #353535;
+}
+
+.samplelinkimg {
+    border: 1px solid #eee;
+    border-radius: 20px;
+}
+
+.mt-15 {
+    margin-top: 15px !important;
+}
+
+.bx-5 {
+    box-shadow: 1px 1px 5px #cdcdcd !important;
+}
+
+.acr-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3597cc80 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 99999;
+    /* -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s; */
+}
+
+.acr-preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.acr-preloader img {
+    width: 100px;
+    height: 100px;
+}
+
+.buypagemodset .select2-container .select2-selection--single {
+    height: 42px !important;
+}
+
+.buypagemodset .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 8px !important;
+}
+
+.unamesetp label {
+    /* max-width: fit-content !important; */
+}
+
+
+/* Preloader */
+
+.ctn-preloader {
+    align-items: center;
+    cursor: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+}
+
+.ctn-preloader .animation-preloader {
+    position: absolute;
+    z-index: 100;
+}
+
+
+/* Spinner cargando */
+
+.ctn-preloader .animation-preloader .spinner {
+    animation: spinner 1s infinite linear;
+    border-radius: 50%;
+    border: 3px solid rgb(53 149 182 / 28%);
+    border-top-color: #3597cc;
+    /* No se identa por orden alfabetico para que no lo sobre-escriba */
+    height: 4em;
+    margin: 0 auto 3.5em auto;
+    width: 4em;
+}
+
+
+/* Texto cargando */
+
+.ctn-preloader .animation-preloader .txt-loading {
+    font: bold 1em 'Montserrat', sans-serif;
+    text-align: center;
+    user-select: none;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
+    animation: letters-loading 4s infinite;
+    color: #3597cc;
+    content: attr(data-text-preloader);
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: rotateY(-90deg);
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading {
+    color: rgb(53 149 182 / 28%);
+    position: relative;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
+    animation-delay: 0.2s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
+    animation-delay: 0.4s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
+    animation-delay: 0.6s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
+    animation-delay: 0.8s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
+    animation-delay: 1s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
+    animation-delay: 1.2s;
+}
+
+.ctn-preloader .loader-section {
+    background-color: #ffffff;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: calc(50% + 1px);
+}
+
+.ctn-preloader .loader-section.section-left {
+    left: 0;
+}
+
+.ctn-preloader .loader-section.section-right {
+    right: 0;
+}
+
+
+/* Efecto de fade en la animación de cargando */
+
+.loaded .animation-preloader {
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+
+/* Efecto de cortina */
+
+.loaded .loader-section.section-left {
+    transform: translateX(-101%);
+    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+
+.loaded .loader-section.section-right {
+    transform: translateX(101%);
+    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+
+
+/* Animación del preloader */
+
+@keyframes spinner {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+/* Animación de las letras cargando del preloader */
+
+@keyframes letters-loading {
+    0%,
+    75%,
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+    25%,
+    50% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
+
+/* Tamaño de portatil hacia atras (portatil, tablet, celular) */
+
+@media screen and (max-width: 767px) {
+    /* Preloader */
+    /* Spinner cargando */
+    .ctn-preloader .animation-preloader .spinner {
+        height: 8em;
+        width: 8em;
+    }
+    /* Texto cargando */
+    .ctn-preloader .animation-preloader .txt-loading {
+        font: bold 3.5em 'Montserrat', sans-serif;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* Prelaoder */
+    /* Spinner cargando */
+    .ctn-preloader .animation-preloader .spinner {
+        height: 7em;
+        width: 7em;
+    }
+    /* Texto cargando */
+    .ctn-preloader .animation-preloader .txt-loading {
+        font: bold 2em 'Montserrat', sans-serif;
+    }
+}
+
+.DiamondSearchDataDiv .select2-container .select2-selection--single {
+    height: 45px !important;
+}
+
+.DiamondSearchDataDiv .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 9px !important;
+}
+
+.homecountDiv a {
+    color: var(--green);
+}
+
+.homecountDiv:hover a {
+    color: var(--green);
+}
+
+.homecountDiv a i {
+    transition: all 0.3s ease-in-out;
+}
+
+.homecountDiv .counter-box:hover a i {
+    padding-left: 10px;
+    transition: all 0.3s ease-in-out;
+}

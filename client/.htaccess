@@ -1,0 +1,37 @@
+RewriteEngine on
+#RewriteRule ^$ index.php/ [L]
+#RewriteRule ^blog/([^/]+)/?$ blogdetails.php  [NC,L]
+# RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ home.php/$1
+
+
+# Home
+RewriteRule ^index?$ index.php
+RewriteRule ^home?$ index.php
+
+
+
+RewriteRule ^diamond?$ diamond.php
+RewriteRule ^diamond1?$ diamond_29_11_2022.php
+RewriteRule ^diamond/([^/]+)/?$ diamond.php?id=$1&%{QUERY_STRING}  [NC,L]
+RewriteRule ^diamond1/([^/]+)/?$ diamond_29_11_2022.php?id=$1&%{QUERY_STRING}  [NC,L]
+
+RewriteRule ^buyrequest?$ buyrequest.php
+RewriteRule ^upgradeplan?$ upgradeplan.php
+
+RewriteRule ^jewellery?$ jewellery.php
+RewriteRule ^jewellery/([^/]+)/?$ jewellery.php?id=$1&%{QUERY_STRING}  [NC,L]
+
+RewriteRule ^chat?$ chat.php
+
+RewriteRule ^home?$ home.php
+
+RewriteRule ^support?$ support.php
+
+RewriteRule ^profile?$ profile.php
+
+RewriteRule ^jewellery_design_copy?$ jewellery_design_copy.php
+
+RewriteRule ^plan?$ plan.php
+
+
+

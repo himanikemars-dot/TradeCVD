@@ -1,0 +1,62 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 28 Sep 2022 09:11:22 at http://xvelopers.com/demos/html/paper-panel/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+Trade CVDTrade CVD
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://xvelopers.com/demos/html/paper-panel/index.html -O1 "C:\SAVANI GEMS\Theme-theme\savani gems" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+
+
+Information, Warnings and Errors reported for this mirror:
+
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+
+	such as username/password authentication for websites mirrored in this project
+
+	do not share these files/folders if you want these information to remain private
+
+
+
+09:15:36	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-100.woff (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:36	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-100.svg (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:36	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-100italic.svg (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:37	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-300.woff (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:38	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-300italic.woff2 (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:40	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-300italic.svg (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:41	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-regular.ttf (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:42	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-regular.svg (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:42	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-italic.ttf (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:44	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-500.woff (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:47	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-500italic.woff2 (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:47	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-700.woff2 (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:48	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-700italic.eot? (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:50	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/fonts/roboto/roboto-v16-latin-900italic.woff2 (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:50	Error: 	"Not Found" (404) at link xvelopers.com/demos/html/paper-panel/assets/img/controls.png (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:50	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/img/icon/icon-not.png (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:15:51	Error: 	"Not Found" (404) at link xvelopers.com/demos/html/paper-panel/compose.html (from xvelopers.com/demos/html/paper-panel/panel7-inbox.html)
+
+09:16:28	Error: 	"Not Found" (404) at link xvelopers.com/demos/html/paper-panel/invoice-print.html (from xvelopers.com/demos/html/paper-panel/panel-page-invoice.html)
+
+09:16:28	Warning: 	Retry after error -4 (No data (connection closed)) at link xvelopers.com/demos/html/paper-panel/assets/img/icon/icon-not.png (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+09:16:29	Error: 	"No data (connection closed)" (-4) after 2 retries at link xvelopers.com/demos/html/paper-panel/assets/img/icon/icon-not.png (from xvelopers.com/demos/html/paper-panel/assets/css/app.css)
+
+
+
+HTTrack Website Copier/3.49-2 mirror complete in 5 minutes 7 seconds : 238 links scanned, 217 files written (16922514 bytes overall) [7759644 bytes received at 25275 bytes/sec], 13527030 bytes transferred using HTTP compression in 152 files, ratio 31%, 9.1 requests per connection
+
+(4 errors, 16 warnings, 0 messages)
+

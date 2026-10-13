@@ -1,0 +1,2 @@
+State *,City *,Region  *,Location  *,No Of Event *,Start Date * (YYYY-mm-dd),End Date * (YYYY-mm-dd),Budget *,BUM Name
+Gujarat,"Surat,ahmedabad",North,Surat,5,01-10-2022,31-10-2022,500000,test

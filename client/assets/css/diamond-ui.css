@@ -1,0 +1,706 @@
+/* =========================================================================
+   diamond-ui.css  —  Diamond Search page only
+   Scope: body.diamond-page  (client/diamond.php ma add karelu)
+   Aa file client/css.php ma SAUTHI CHHELLE load thavi joiye.
+   Jewellery page par aa CSS bilkul lagu nathi padtu.
+   ========================================================================= */
+
+/* ---------- 0. Theme tokens (project na j color) ---------- */
+.diamond-page {
+    --dm-green:        #669934;
+    --dm-green-soft:   #e5eddd;
+    --dm-line:         rgba(149, 155, 163, 0.2);
+    --dm-box-bg:       rgba(234, 236, 239, 0.5);
+    --dm-box-line:     #e4e4e4;
+    --dm-label-w:      190px;   /* dabi baju na label ni width */
+    --dm-chip-min:     86px;    /* ek option box ni minimum width */
+    --dm-row-h:        66px;    /* collapsed row ni height (+More kaam kare e mate) */
+}
+
+/* =========================================================================
+   1. PAGE SHELL  —  jewellery jevo safed, spacious look
+   ========================================================================= */
+.diamond-page .container-fluid.relative.animatedParent {
+    margin-top: 15px;
+}
+
+.diamond-page .tab-content#v-pills-tabContent {
+    background: #ffffff;
+}
+
+.diamond-page .row.row-eq-height > [class*="col-"] > .card {
+    border: 0;
+    background: #ffffff;
+    box-shadow: 0px 10px 15px -3px rgba(116, 174, 236, 0.10);
+    border-radius: 6px;
+    overflow: visible;
+}
+
+/* Jewellery safed background vaapre chhe, diamond gray — same karo */
+.diamond-page .card.bg-light-gray {
+    background: #ffffff;
+}
+
+.diamond-page .card-body.chat-widget.diamond-search-page {
+    overflow: visible;
+    height: auto;
+}
+
+/* =========================================================================
+   2. SEARCH / PARCEL TABS  —  full width par 50% na hoy
+   ========================================================================= */
+.diamond-page .diamond-search-page > nav > .nav.nav-tabs {
+    border-bottom: 1px solid #e9ecef;
+    background: #ffffff;
+    padding: 0 4px;
+    gap: 4px;
+}
+
+.diamond-page .diamond-search-page .nav button.nav-link {
+    width: auto;
+    min-width: 170px;
+    flex: 0 0 auto;
+    border: 1px solid #e9ecef !important;
+    border-bottom: 0 !important;
+    border-radius: 5px 5px 0 0;
+    background: var(--dm-green-soft);
+    color: #35393d;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 11px 18px;
+}
+
+.diamond-page .diamond-search-page .nav button.nav-link.active {
+    background: var(--dm-green);
+    color: #ffffff;
+}
+
+/* =========================================================================
+   3. SEARCH / RESET BUTTON BAR  —  upar jamni baju, compact
+   ========================================================================= */
+.diamond-page #DiamondSearchData,
+.diamond-page #DiamondParcelSearchData {
+    position: relative;
+}
+
+.diamond-page .filter-box .topsearchbtn.set-po,
+.diamond-page .filter-box .topsearchbtn.headset-po.set-po {
+    position: static;          /* absolute nathi joiye — overlap thay chhe */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    background: transparent;
+    padding: 12px 14px !important;
+    border: 0;
+    border-bottom: 1px solid var(--dm-line);
+    border-radius: 0;
+}
+
+.diamond-page .filter-box .topsearchbtn .btn,
+.diamond-page .filter-box .topsearchbtn input[type="reset"] {
+    width: auto;
+    min-width: 118px;
+    height: 38px;
+    padding: 0 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 36px;
+    margin: 0;
+}
+
+.diamond-page .filter-box .topsearchbtn #btnsearchdiamond {
+    background: var(--dm-green) !important;
+    border: 1px solid var(--dm-green) !important;
+    color: #ffffff !important;
+}
+
+.diamond-page .filter-box .topsearchbtn #btnsearchdiamond[disabled] {
+    opacity: .55;
+}
+
+.diamond-page .filter-box .topsearchbtn .headresetbtn,
+.diamond-page .filter-box .topsearchbtn #btnresetsearch {
+    background: var(--dm-green-soft) !important;
+    border: 1px solid var(--dm-box-line) !important;
+    color: #35393d !important;
+    margin-left: 0;
+}
+
+/* =========================================================================
+   4. ACCORDION HEADER  (Basic / Advance / Treatment …)
+   ========================================================================= */
+.diamond-page .filter-box .card.collapse-card {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+}
+
+.diamond-page .filter-box .card.collapse-card > .card-link.card-header {
+    display: block;
+    background: var(--dm-green-soft);
+    color: #2f2f2f;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    padding: 13px 20px;
+    border: 0;
+    border-bottom: 1px solid var(--dm-line);
+    text-decoration: none;
+    position: relative;
+}
+
+.diamond-page .filter-box .card.collapse-card > .card-link.card-header::after {
+    content: "\25BE";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--dm-green);
+}
+
+.diamond-page .filter-box .card.collapse-card > .card-link.card-header.collapsed::after {
+    content: "\25B8";
+}
+
+.diamond-page .filter-box.filter-diamond-box .form-group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    margin: 0;
+    position: relative;
+    border: 0;
+    border-bottom: 1px solid var(--dm-line);
+    background: #ffffff;
+}
+
+.diamond-page .filter-box.filter-diamond-box .form-group:last-child {
+    border-bottom: 0;
+}
+
+/* --- dabi baju no label --- */
+.diamond-page .filter-box.filter-diamond-box .name-filter {
+    flex: 0 0 var(--dm-label-w);
+    width: var(--dm-label-w);
+    max-width: var(--dm-label-w);      /* ⭐ BUG 2 FIX */
+    min-width: var(--dm-label-w);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    color: #35393d;
+    line-height: 1.35;
+    padding: 18px 14px 18px 20px;
+    border: 0;
+    border-right: 1px solid var(--dm-line);
+    background: #fafbfa;
+}
+
+/* --- jamni baju options --- */
+.diamond-page .filter-box.filter-diamond-box .row-filter {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;                       /* ⭐ flex overflow atkave chhe */
+    max-width: 100%;
+    display: block;
+    position: relative;
+    padding: 14px 78px 14px 16px;       /* jamni baju +More mate jagya */
+    border: 0;
+    background: #ffffff;
+}
+
+/* je row ma +More button j nathi tya extra padding na joiye */
+.diamond-page .filter-box.filter-diamond-box .row-filter.multiply-group-filter,
+.diamond-page .filter-box.filter-diamond-box .form-group.multiply-group-filter .row-filter {
+    padding-right: 16px;
+}
+
+/* =========================================================================
+   6. ⭐ OPTION CHIP GRID  —  BUG 3 no fix
+   Fixed px max-width + repeat(4,1fr) ne fluid auto-fill thi replace
+   ========================================================================= */
+.diamond-page .filter-box .filter-container,
+.diamond-page .filter-box .filter-containernew,
+.diamond-page .filter-box .color-filter {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--dm-chip-min), 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;                    /* ⭐ 89% / 94% / 158px badha override */
+    height: auto;
+    max-height: var(--dm-row-h);        /* collapsed = 1 row */
+    overflow: hidden;
+    flex: none;
+}
+
+/* "+ More" dabavo → aakhu khule */
+.diamond-page .filter-box .filter-container.show-more-container,
+.diamond-page .filter-box .filter-containernew.show-more-container,
+.diamond-page .filter-box .color-filter.show-more-container {
+    max-height: none;
+}
+
+/* jya +More button j nathi (d-none) tya collapse na karvu */
+.diamond-page .filter-box .row-filter:not(:has(.show-more-filters:not(.d-none))) .filter-container {
+    max-height: none;
+}
+
+/* single chip */
+.diamond-page .filter-box .filter,
+.diamond-page .filter-box .filter.custom-checkbox,
+.diamond-page .filter-box .filter.width_lable,
+.diamond-page .filter-box .filter.dimond-claritywi,
+.diamond-page .filter-box .filter.set-filternewdata {
+    width: auto;
+    min-width: 0;
+    max-width: 100%;                    /* ⭐ 144/125/107/75px override */
+    flex: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* chip nu label (je box dekhay chhe) */
+.diamond-page .filter-box .custom-control-label,
+.diamond-page .filter-box .custom-control-label.twolinedata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 46px;
+    height: auto;
+    margin: 0;
+    padding: 8px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;                   /* line-height:45px hato — box bahu ucho thato */
+    color: #35393d;
+    background: var(--dm-box-bg);
+    border: 1px solid var(--dm-box-line);
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: normal;
+    word-break: keep-all;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+.diamond-page .filter-box .custom-control-label:hover {
+    border-color: var(--dm-green);
+    background: #f2f7ec;
+}
+
+/* selected state — project na existing rule sathe match */
+.diamond-page .filter-box .dashboard-control.custom-control-input:checked ~ .custom-control-label {
+    background: var(--dm-green);
+    border-color: var(--dm-green);
+    color: #ffffff;
+}
+
+/* checkbox chhupavvu (label j clickable box chhe) */
+.diamond-page .filter-box .filter.custom-checkbox > input[type="checkbox"].custom-control-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+/* shape jeva icon-wala chip */
+.diamond-page .filter-box .custom-control-label.with-img {
+    flex-direction: column;
+    gap: 4px;
+    min-height: 76px;
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.diamond-page .filter-box .custom-control-label.with-img .img-wrap img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* =========================================================================
+   7. "+ More" / "- Less" BUTTON
+   ========================================================================= */
+.diamond-page .filter-box .show-more-filters,
+.diamond-page .filter-box .btn.show-more-filters {
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 58px;
+    height: 46px;
+    min-width: 58px;
+    margin: 0;
+    padding: 4px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid var(--dm-box-line);
+    border-radius: 5px;
+    color: var(--dm-green);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+    z-index: 5;
+    box-shadow: none;
+}
+
+.diamond-page .filter-box .show-more-filters .text,
+.diamond-page .filter-box .show-more-filters .text.opened {
+    display: none;
+}
+
+.diamond-page .filter-box .show-more-filters .arrow-btn1,
+.diamond-page .filter-box .show-more-filters .arrow-btn {
+    display: block;
+    white-space: nowrap;
+}
+
+.diamond-page .filter-box .show-more-filters.d-none {
+    display: none !important;
+}
+
+/* =========================================================================
+   8. SIZE ROW  (From / To input + range chip)
+   ========================================================================= */
+.diamond-page .row-filter.diamond-size-line {
+    border-right: 0;
+}
+
+.diamond-page .diamond-size-line .sizesetall.set-sizepaddingdata {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 14px;
+    width: 100%;
+    max-width: 460px;
+    padding: 0 0 14px 0;
+    margin: 0;
+}
+
+.diamond-page .diamond-size-line .sizesetall.set-sizepaddingdata > div,
+.diamond-page .diamond-size-line .cut-group {
+    flex: 1 1 170px;
+    min-width: 150px;
+    margin: 0;
+}
+
+.diamond-page .diamond-size-line .cut-group label {
+    display: block;
+    margin: 0 0 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: none;
+}
+
+.diamond-page .diamond-size-line .cut-group input.inputval,
+.diamond-page .filter-box .cut-group input.fromusd,
+.diamond-page .filter-box .cut-group input.inputval {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 13px;
+    color: #35393d;
+    background: #ffffff;
+    border: 1px solid var(--dm-box-line);   /* underline nahi, proper box */
+    border-radius: 5px;
+    outline: none;
+    box-shadow: none;
+}
+
+.diamond-page .filter-box .cut-group input:focus {
+    border-color: var(--dm-green);
+    box-shadow: 0 0 0 2px rgba(102, 153, 52, .12);
+}
+
+/* size chip grid */
+.diamond-page .diamond-size-second.set-searchbar {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+}
+
+.diamond-page .set-searchbar .sizesearset {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border-right: 0;
+    position: relative;
+}
+
+.diamond-page .filter-box .diamond-size-second .filter-container.set-sizefilter {
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    max-width: 100%;
+}
+
+.diamond-page .filter-box .diamond-size-second .custom-control-label.twolinedata {
+    width: 100%;
+}
+
+.diamond-page .diamond-size-second .show-more-filters.size-filterset {
+    top: 0;
+}
+
+/* =========================================================================
+   9. CLARITY / COLOR / LAB / FLUORESCENCE  —  density adjust
+   ========================================================================= */
+.diamond-page .filter-box .diamong-clarity-row .filter-container,
+.diamond-page .filter-box .clarity-box .filter-container {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+}
+
+.diamond-page .filter-box .diamond-grading-report .filter-container.lab-datane {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.diamond-page .filter-box .diamond-serach-thard .color-filter,
+.diamond-page .filter-box .filter-newcolo .color-filter {
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+}
+
+.diamond-page .filter-box .diamond-intensity-row .filter-container,
+.diamond-page .filter-box .flu-group .filter-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    max-height: none;
+}
+
+/* Fancy | White toggle */
+.diamond-page .filter-box .clscolortype .clscolortag {
+    font-size: 14px;
+    font-weight: 600;
+    color: #9aa0a6;
+    text-decoration: none;
+}
+
+.diamond-page .filter-box .clscolortype .clscolortag.active {
+    color: var(--dm-green);
+}
+
+/* =========================================================================
+   10. SELECT2 / DROPDOWN  —  jewellery jevo look
+   ========================================================================= */
+.diamond-page .filter-box .select2-container .select2-selection--single,
+.diamond-page .filter-box select.form-control {
+    height: 38px;
+    border: 1px solid var(--dm-box-line);
+    border-radius: 5px;
+    background: #ffffff;
+    font-size: 13px;
+}
+
+.diamond-page .filter-box .select2-container {
+    width: 100% !important;
+    max-width: 220px;
+}
+
+/* =========================================================================
+   11. RESULT SCREEN ni left filter rail  —  jewellery .sidenav jevi
+   (search kari didha pachhi dekhay chhe: diamond.php:226 #wrapper .filternew)
+   ========================================================================= */
+.diamond-page #wrapper .filternew.sidebar-wrapper {
+    width: 275px;
+    background: #ffffff;
+    box-shadow: 0px 10px 15px -3px rgba(116, 174, 236, 0.10);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dm-green) #ffffff;
+}
+
+.diamond-page #wrapper .filternew .fixbuyp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px;
+    border-bottom: 2px solid #f4f4f4;
+    background: #ffffff;
+}
+
+.diamond-page #wrapper .filternew .fixbuyp h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.diamond-page #wrapper .filternew #btnapplydiamondfilter {
+    background: var(--dm-green) !important;
+    color: #fff !important;
+    border-radius: 5px;
+    height: 34px;
+    padding: 0 16px;
+}
+
+.diamond-page .sidebar-nav.setfilese > li {
+    padding: 10px 0;
+    border-top: 2px solid #f4f4f4;
+    margin: 12px 0 !important;
+}
+
+/* result header bar */
+.diamond-page .searchheaddet .searchhead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.diamond-page .searchheaddet .searchbtnset {
+    height: 38px;
+    border: 1px solid var(--dm-box-line);
+    border-radius: 5px;
+    background: #ffffff;
+    font-size: 13px;
+    padding: 0 12px;
+}
+
+/* =========================================================================
+   12. RESPONSIVE
+   ========================================================================= */
+
+/* --- 1600px thi nichhe: label thodo naano --- */
+@media (max-width: 1600px) {
+    .diamond-page { --dm-label-w: 170px; --dm-chip-min: 80px; }
+}
+
+/* --- Laptop 1399px --- */
+@media (max-width: 1399px) {
+    .diamond-page { --dm-label-w: 155px; --dm-chip-min: 76px; }
+
+    .diamond-page .filter-box.filter-diamond-box .name-filter { font-size: 14px; padding: 16px 12px; }
+    .diamond-page .filter-box.filter-diamond-box .row-filter  { padding: 12px 72px 12px 12px; }
+    .diamond-page .diamond-search-page .nav button.nav-link   { min-width: 140px; }
+}
+
+/* --- Tablet landscape 1199px --- */
+@media (max-width: 1199px) {
+    .diamond-page { --dm-label-w: 140px; --dm-chip-min: 72px; --dm-row-h: 60px; }
+
+    .diamond-page .filter-box .custom-control-label { min-height: 42px; font-size: 11px; }
+    .diamond-page .filter-box .diamond-size-second .filter-container.set-sizefilter {
+        grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    }
+}
+
+/* --- ⭐ Tablet / Mobile 991px: label uper, options niche (stack) --- */
+@media (max-width: 991px) {
+    .diamond-page .filter-box.filter-diamond-box .form-group {
+        display: block;
+    }
+
+    .diamond-page .filter-box.filter-diamond-box .name-filter {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 12px 15px;
+        border-right: 0;
+        border-bottom: 1px solid var(--dm-line);
+        background: #f6f8f4;
+        font-size: 14px;
+    }
+
+    .diamond-page .filter-box.filter-diamond-box .row-filter {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 15px 56px;      /* niche +More mate jagya */
+    }
+
+    /* +More ne niche full-width strip banavo */
+    .diamond-page .filter-box .show-more-filters,
+    .diamond-page .filter-box .btn.show-more-filters {
+        top: auto;
+        bottom: 10px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+        min-width: 0;
+        height: 36px;
+    }
+
+    .diamond-page .filter-box .filter-container,
+    .diamond-page .filter-box .filter-containernew,
+    .diamond-page .filter-box .color-filter {
+        grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+        max-height: 58px;
+    }
+
+    .diamond-page .filter-box .topsearchbtn.set-po,
+    .diamond-page .filter-box .topsearchbtn.headset-po.set-po {
+        padding: 10px 12px !important;
+    }
+
+    .diamond-page .diamond-search-page .nav button.nav-link {
+        min-width: 0;
+        flex: 1 1 50%;
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+
+    .diamond-page #wrapper .filternew.sidebar-wrapper { width: 260px; }
+}
+
+/* --- Mobile 767px --- */
+@media (max-width: 767px) {
+    .diamond-page .filter-box .filter-container,
+    .diamond-page .filter-box .filter-containernew,
+    .diamond-page .filter-box .color-filter {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 8px;
+    }
+
+    .diamond-page .filter-box .diamond-size-second .filter-container.set-sizefilter {
+        grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+    }
+
+    .diamond-page .diamond-size-line .sizesetall.set-sizepaddingdata {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .diamond-page .diamond-size-line .sizesetall.set-sizepaddingdata > div,
+    .diamond-page .diamond-size-line .cut-group { flex: 1 1 100%; min-width: 0; }
+
+    .diamond-page .filter-box .custom-control-label { min-height: 40px; font-size: 11px; padding: 6px 4px; }
+
+    .diamond-page .filter-box .card.collapse-card > .card-link.card-header { font-size: 14px; padding: 11px 15px; }
+}
+
+/* --- Small mobile 575px --- */
+@media (max-width: 575px) {
+    .diamond-page .filter-box .filter-container,
+    .diamond-page .filter-box .filter-containernew,
+    .diamond-page .filter-box .color-filter {
+        grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+        gap: 7px;
+    }
+
+    .diamond-page .filter-box .topsearchbtn.set-po,
+    .diamond-page .filter-box .topsearchbtn.headset-po.set-po {
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    .diamond-page .filter-box .topsearchbtn .btn,
+    .diamond-page .filter-box .topsearchbtn input[type="reset"] {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .diamond-page .filter-box .select2-container { max-width: 100%; }
+}

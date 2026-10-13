@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="Ellipse_277">
+      <feOffset dx="0.1" dy="0.1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.161" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_30274" data-name="Group 30274" transform="translate(5134 -10984)">
+    <g data-type="innerShadowGroup">
+      <circle id="Ellipse_277-2" data-name="Ellipse 277" cx="32" cy="32" r="32" transform="translate(-5134 10984)" fill="#fff"/>
+      <g transform="matrix(1, 0, 0, 1, -5134, 10984)" filter="url(#Ellipse_277)">
+        <circle id="Ellipse_277-3" data-name="Ellipse 277" cx="32" cy="32" r="32" fill="#fff"/>
+      </g>
+    </g>
+    <rect id="Rectangle_8577" data-name="Rectangle 8577" width="64" height="64" transform="translate(-5134 10984)" fill="none"/>
+  </g>
+</svg>

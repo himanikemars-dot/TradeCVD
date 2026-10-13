@@ -1,0 +1,753 @@
+
+
+@media (min-width: 768px){
+
+.form-inline .form-control {
+
+   display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    min-height: auto;
+    height: auto;
+    padding: 4px 10px;
+    font-size: 14px;
+}
+
+.form-inline .form-control::placeholder {
+    font-size: 12px;
+}
+
+}
+
+@media (min-width: 992px) {
+
+    .order-lg-2 {
+
+        -ms-flex-order: 2;
+
+        order: 2;
+
+    }
+
+    .mobile_footer {
+
+        display: none !important;
+
+    }
+
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+
+
+    .brand-details .wow.fadeInUp:nth-child(6n + 1) {
+
+        animation-delay: 0ms;
+
+    }
+
+    .brand-details .wow.fadeInUp:nth-child(6n + 2) {
+
+        animation-delay: 100ms;
+
+    }
+
+    .brand-details .wow.fadeInUp:nth-child(6n + 3) {
+
+        animation-delay: 200ms;
+
+    }
+
+    .brand-details .wow.fadeInUp:nth-child(6n + 4) {
+
+        animation-delay: 300ms;
+
+    }
+
+    .brand-details .wow.fadeInUp:nth-child(6n + 5) {
+
+        animation-delay: 400ms;
+
+    }
+
+    .brand-details .wow.fadeInUp:nth-child(6n + 6) {
+
+        animation-delay: 500ms;
+
+    }
+
+    .register-account-sticky {
+
+        min-height: calc(100vh);
+
+        position: sticky;
+
+        top: 0;
+
+        display: flex;
+
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+.modal-xl {
+
+    max-width: 1140px;
+
+}
+
+}
+
+
+
+@media (min-width: 1400px) {
+
+    .container,
+
+    .container-md,
+
+    .container-sm,
+
+    .container-xl {
+
+        max-width: 1300px;
+
+    }
+
+    .header-navigation__nav nav>ul>li {
+
+        margin-right: 28px;
+
+    }
+
+    .container-xl {
+
+        max-width: 1700px;
+
+    }
+
+    .col-xxl-1 {
+
+        flex: 0 0 auto;
+
+        width: 8.33333333%;
+
+    }
+
+    .col-xxl-2 {
+
+        flex: 0 0 auto;
+
+        width: 16.66666667%;
+
+    }
+
+    .col-xxl-3 {
+
+        flex: 0 0 auto;
+
+        width: 25%;
+
+    }
+
+    .col-xxl-4 {
+
+        flex: 0 0 auto;
+
+        width: 33.33333333%;
+
+    }
+
+    .col-xxl-5 {
+
+        flex: 0 0 auto;
+
+        width: 41.66666667%;
+
+    }
+
+    .col-xxl-6 {
+
+        flex: 0 0 auto;
+
+        width: 50%;
+
+    }
+
+}
+
+/* @media (min-width: 1306px){
+
+    .header-navigation__nav .dropdown-menu {
+
+        display: block !important;
+
+}
+
+
+
+} */
+
+
+
+@media screen and (max-width: 1199px) {
+
+    .header-area__desktop--default .header-info-single-item {
+
+        padding-right: 20px;
+
+        padding-left: 20px;
+
+    }
+
+    .banner-content .banner-title {
+
+        font-size: 45px;
+
+    }
+
+    .header-area.header-sticky.is-sticky .header-info-area {
+
+        display: block;
+
+    }
+
+    .letsconnect-list li {
+
+        font-size: 16px;
+
+        padding: 0 0 0 35px;
+
+    }
+
+    .letsconnect-list li .icon {
+
+        font-size: 25px;
+
+        width: 25px;
+
+        height: 25px;
+
+        line-height: 25px;
+
+    }
+
+    .header-navigation__nav nav>ul>li {
+
+        margin-right: 25px;
+
+    }
+
+    .header-navigation__nav nav>ul>li>a {
+
+        font-size: 14px;
+
+    }
+
+    .section-space {
+
+        padding-top: 40px;
+
+        padding-bottom: 40px;
+
+    }
+
+    .sec-info {
+
+        margin-bottom: 30px;
+
+    }
+
+    .frequently-askque-list ul {
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    }
+
+    .wrapper{
+
+        padding: 65px 14px 12px;
+
+    }
+
+    .customers-desc  {
+
+        margin-top: 6px !important;
+
+    }
+
+    .ht-btn--transparent.btn-white {
+
+        padding: 10px 17px;
+
+    }
+
+    .footer-widget.subscribe-btn a {
+
+        font-size: 11px;
+
+        line-height: 25px;
+
+    }
+
+    .home-page .logo p {
+
+        line-height: 31px;
+
+    }
+
+    .footer-logo {
+
+        margin-bottom: 27px;
+
+    }
+
+}
+
+@media only screen and (min-width: 1240px){
+
+.animated.animated-slide-left.visible-element, .visible-element .animated.animated-slide-left, .animated.animated-slide-top.visible-element, .visible-element .animated.animated-slide-top, .animated.animated-slide-bottom.visible-element, .visible-element .animated.animated-slide-bottom, .animated.animated-slide-right.visible-element, .visible-element .animated.animated-slide-right {
+
+    -webkit-transform: none;
+
+    -ms-transform: none;
+
+    -o-transform: none;
+
+    transform: none;
+
+}
+
+.animated.animated-slide-bottom {
+
+    -webkit-transform: translateY(25px);
+
+    -ms-transform: translateY(25px);
+
+    -o-transform: translateY(25px);
+
+    transform: translateY(25px);
+
+}
+
+.animated.visible-element, .visible-element .animated {
+
+    opacity: 1;
+
+}
+
+}
+
+
+
+@media screen and (max-width: 991px) {
+
+    .single-industry-grid-two__image {
+
+        width: 100%;
+
+        min-height: inherit !important;
+
+        padding: 0 0 50% 0;
+
+    }
+
+    .header-area__desktop--default{
+
+        display: none !important;
+
+    }
+
+    .page-title {
+
+        padding: 0px 0px 0px;
+
+    }
+
+    .middle-part .price {
+
+        font-size: 19px;
+
+    }
+
+    .label-save span {
+
+        font-size: 15px;
+
+        font-weight: 500;
+
+    }
+
+    .wrapper-title {
+
+        font-size: 16px;
+
+    }
+
+    .plans-text .sec-desc {
+
+        font-size: 14px;
+
+    }
+
+    .plans-text {
+
+        height: 112px;
+
+    }
+
+    .palnpenal-multi .middle-part .plans-text {
+
+        height: auto !important;
+
+    }
+
+    .frequently-askque-list ul {
+
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    .our-services-section .our-services-bg::before {
+
+        top: 0;
+
+        right: 0%;
+
+        bottom: 0;
+
+        left: -50vw;
+
+        margin: auto;
+
+        width: 200vw;
+
+    }
+
+    .our-services-info {
+
+        padding: 0;
+
+    }
+
+    .card-letsconnect .card-body {
+
+        padding: 40px;
+
+    }
+
+    .banner-content .banner-title {
+
+        font-size: 36px;
+
+    }
+
+    .testimoniols-section blockquote {
+
+        margin: 0 auto 15px auto;
+
+    }
+
+    blockquote img.top-right,
+
+    blockquote img.bottom-left {
+
+        max-width: 40px;
+
+        opacity: 0.7;
+
+    }
+
+    blockquote img.top-right {
+
+        top: -10px;
+
+        left: 0;
+
+    }
+
+    blockquote img.bottom-left {
+
+        bottom: -10px;
+
+        right: 0px;
+
+    }
+
+    .header-info-area {
+
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+
+    }
+
+    
+
+    .inquiry-contact-info {
+
+        display: none;
+
+    }
+
+    .inquiry-html {
+
+        padding: 40px;
+
+    }
+
+    .modal-dialog {
+
+        margin-bottom: 70px;
+
+    }
+
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+    footer.main-footer {
+
+        padding-bottom: 50px;
+
+    }
+
+    .mobile-link {
+
+        display: block;
+
+    }
+
+    .plans-text {
+
+        height: 80px;
+
+    }
+
+    .banner-content .banner-title {
+
+        font-size: 28px;
+
+    }
+
+    .copyright-section {
+
+        padding: 0px 0px 25px 0px;
+
+    }
+
+    .card-letsconnect .sec-title h2 {
+
+        font-size: 28px;
+
+    }
+
+    .testimoniols-section .testimiols-image {
+
+        width: 100px;
+
+        height: 100px;
+
+        border: 3px solid #eaeaea;
+
+    }
+
+    .section-space {
+
+        padding-top: 30px;
+
+        padding-bottom: 30px;
+
+    }
+
+    .plans-for-registration .plans-list {
+
+         box-shadow: none; 
+
+    }
+
+    .plans-for-registration .box-plan {
+
+        margin-bottom: 20px;
+
+    }
+
+    .sec-info {
+
+        margin-bottom: 10px;
+
+    }   
+
+    .inquiry-html {
+
+        padding: 15px;
+
+    }
+
+    .jewelrysuits-info-slider .item {
+
+        padding: 0px 0;
+
+    }
+
+    .frequently-askque-list ul {
+
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+
+    }
+
+    .plans-text .sec-desc {
+
+        font-size: 12px;
+
+    }
+
+    .plans-text {
+
+        height: 93px;
+
+    }
+
+    .middle-part .price {
+
+        line-height: 20px;
+
+    }
+
+   
+
+}
+
+
+
+@media only screen and (max-width: 567px) {
+
+    .checkout-container .card-letsconnect {
+
+        padding: 20px;
+
+    }
+
+    .mobile-menu-overlay {
+
+        padding-bottom: 70px;
+
+    }
+
+    .banner-content .banner-title {
+
+        font-size: 20px;
+
+        font-weight: 600;
+
+    }
+
+    .section-space {
+
+        padding-top: 40px;
+
+        padding-bottom: 40px;
+
+    }
+
+    .logo a img {
+
+        max-width: 150px;
+
+    }
+
+    .product-details-info ul li>b {
+
+        min-width: inherit;
+
+    }
+
+    .product-details-info ul li>b:after {
+
+        position: relative;
+
+    }
+
+    .product-details-info ul li {
+
+        -ms-flex-wrap: wrap;
+
+        flex-wrap: wrap;
+
+    }
+
+    .ht-btn--dark {
+
+        padding-right: 20px;
+
+        padding-left: 20px;
+
+    }
+
+    .comments-area .comment {
+
+        padding: 10px;
+
+    }
+
+    .comments-area .comment-box .author-thumb {
+
+        position: relative;
+
+        left: 0;
+
+        top: 0;
+
+        margin: 0 0 10px;
+
+    }
+
+    .wrapper-title {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+
+@media screen and (max-width: 450px) {
+
+    .col-exs-12 {
+
+        flex: 0 0 auto;
+
+        width: 100%;
+
+    }
+
+    
+
+    .card-letsconnect .card-body {
+
+        padding: 20px;
+
+    }
+
+    .testimoniols-btn {
+
+        font-size: 12px;
+
+    }
+
+    .card-letsconnect .sec-title h2 {
+
+        font-size: 24px;
+
+    }
+
+}
