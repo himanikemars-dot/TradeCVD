@@ -1012,7 +1012,9 @@ else
 
                         // }
 
-                        listchatperson(2,1);
+                        if (!window.__pendingOpenChat) {
+                            listchatperson(2,1);
+                        }
 
 
 
@@ -1499,12 +1501,29 @@ else
                             formdata.append("nextpage", nextpage);
 
                             formdata.append("filter", filter);
+                            if (window.__pendingOpenChat && window.__pendingOpenChat.chattype == type) {
+                                formdata.append("groupid", window.__pendingOpenChat.groupid);
+                                formdata.append("productid", window.__pendingOpenChat.productid);
+                                formdata.append("producttype", window.__pendingOpenChat.producttype);
+                            }
 
                             ajaxrequest("POST",'<?php echo $config->getEndpointurl(); ?>chat',formdata,headersdata,Onsuccesslistchatperson,OnErrorlistchatperson);
 
                             function Onsuccesslistchatperson(content)
 
                             {
+
+                                var emptyblock='';
+
+                                emptyblock+='<div class="start-chat-area">';
+
+                                emptyblock+='    <span class=" far fa-comment-alt mb-1 start-chat-icon icon-message-square"></span>';
+
+                                emptyblock+='    <h4 class="py-50 px-1 sidebar-toggle start-chat-text">Start Conversation</h4>';
+
+                                emptyblock+='</div>';
+
+                                $('#listchatmessage').html(emptyblock);
 
                                 var JsonData = JSON.stringify(content);
 
@@ -1529,6 +1548,21 @@ else
                                     {
 
                                         $('.listchatperson').html('');
+                                        if (window.__pendingOpenChat && window.__pendingOpenChat.chattype == type) {
+                                            var p = window.__pendingOpenChat;
+                                            if (!p.didFallback) {
+                                                p.didFallback = true;
+                                                p.chattype = type == 1 ? 2 : 1;
+                                                if (p.chattype == 1) {
+                                                    $('#Chat-Tab #BuyChatTab').click();
+                                                } else {
+                                                    $('#Chat-Tab #SellChatTab').click();
+                                                }
+                                            } else {
+                                                Notiflix.Notify.Failure('The approved chat could not be found. Please refresh and try again.');
+                                                window.__pendingOpenChat = null;
+                                            }
+                                        }
 
                                     }
 
@@ -1655,16 +1689,40 @@ else
                                         $('.listchatperson').html(htmldata);
                                         if (window.__pendingOpenChat && window.__pendingOpenChat.chattype == type) {
                                             var p = window.__pendingOpenChat;
-                                            var $row = $('#chatlist li.personchatdetail[data-groupid="' + p.groupid + '"][data-jewelleryid="' + p.productid + '"]');
+                                            var productSelector = p.producttype == 1 ? 'data-diamondid' : 'data-jewelleryid';
+                                            var $row = $('#chatlist li.personchatdetail[data-groupid="' + p.groupid + '"][' + productSelector + '="' + p.productid + '"]');
                                             if (!$row.length) {
-                                                $row = $('#chatlist li.personchatdetail[data-groupid="' + p.groupid + '"]').first();
+                                                $row = $('#chatlist li.personchatdetail').filter(function () {
+                                                    return $(this).attr('data-groupid') == p.groupid
+                                                        && $(this).attr('data-personid') == p.personid;
+                                                }).first();
+                                            }
+                                            if (!$row.length) {
+                                                $row = $('#chatlist li.personchatdetail').filter(function () {
+                                                    return $(this).attr('data-groupid') == p.groupid;
+                                                }).first();
                                             }
                                             if ($row.length) {
+                                                $row.attr('data-diamondid', p.producttype == 1 ? p.productid : '');
+                                                $row.attr('data-buyrequestid', '');
+                                                $row.attr('data-jewelleryid', p.producttype == 2 ? p.productid : '');
+                                                $row.removeData('diamondid').removeData('buyrequestid').removeData('jewelleryid');
                                                 $row.trigger('click');
                                                 $row.addClass('active');
                                                 $row[0].scrollIntoView({ block: 'center' });
+                                                window.__pendingOpenChat = null;
+                                            } else if (!p.didFallback) {
+                                                p.didFallback = true;
+                                                p.chattype = type == 1 ? 2 : 1;
+                                                if (p.chattype == 1) {
+                                                    $('#Chat-Tab #BuyChatTab').click();
+                                                } else {
+                                                    $('#Chat-Tab #SellChatTab').click();
+                                                }
+                                            } else {
+                                                Notiflix.Notify.Failure('The approved chat could not be found. Please refresh and try again.');
+                                                window.__pendingOpenChat = null;
                                             }
-                                            window.__pendingOpenChat = null;
                                         }
 
 
@@ -1718,24 +1776,6 @@ else
                                     }
 
                                 }    
-
-                                // if(isshow!=1)
-
-                                // {
-
-                                    var emptyblock='';
-
-                                    emptyblock+='<div class="start-chat-area">';
-
-                                    emptyblock+='    <span class=" far fa-comment-alt mb-1 start-chat-icon icon-message-square"></span>';
-
-                                    emptyblock+='    <h4 class="py-50 px-1 sidebar-toggle start-chat-text">Start Conversation</h4>';
-
-                                    emptyblock+='</div>';
-
-                                    $('#listchatmessage').html(emptyblock);
-
-                                // }
 
                                 
 
@@ -2501,6 +2541,7 @@ else
                                 hideloader();
 
                                 var htmldata='';
+                                var chatMessageCount = resultdata.chatmsg ? resultdata.chatmsg.length : 0;
 
                                 if (resultdata.IsPackageExpire == 1) {
 
@@ -3032,7 +3073,7 @@ else
 
 
 
-                                        if(page==1 && resultdata.datasize > 0)
+                                        if(page==1 && chatMessageCount > 0)
 
                                         {  
 
@@ -3054,7 +3095,7 @@ else
 
                                         }
 
-                                        else if(resultdata.datasize > 0)
+                                        else if(chatMessageCount > 0)
 
                                         {
 
@@ -3448,10 +3489,11 @@ else
                         var openGroupId   = <?php echo json_encode((string)$IISMethods->sanitize($_REQUEST['groupid'])); ?>;
                         var openPersonId  = <?php echo json_encode((string)$IISMethods->sanitize($_REQUEST['personid'])); ?>;
                         var openProductId = <?php echo json_encode((string)$IISMethods->sanitize($_REQUEST['productid'])); ?>;
+                        var openProductType = <?php echo isset($_REQUEST['producttype']) ? (int)$_REQUEST['producttype'] : 2; ?>;
                         var openChatType  = <?php echo (int)$_REQUEST['chattype']; ?> || 1;
 
                         if (openGroupId && openPersonId) {
-                            window.__pendingOpenChat = { groupid: openGroupId, personid: openPersonId, productid: openProductId, chattype: openChatType };
+                            window.__pendingOpenChat = { groupid: openGroupId, personid: openPersonId, productid: openProductId, producttype: openProductType, chattype: openChatType };
                             setTimeout(function () {
                                 // chattype 1 = "Sell" label (#BuyChatTab → listchatperson(1,1))
                                 // chattype 2 = "Buy"  label (#SellChatTab → listchatperson(2,1))   — labels swapped છે (line 146-153)
@@ -3492,12 +3534,3 @@ else
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-

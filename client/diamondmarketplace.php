@@ -295,7 +295,7 @@
         </div>
 
         <!-- product grid -->
-      <!--  <div class="grid-products grid--view-items prd-grid productsetje" id="dmGridData" data-nextpage="0"></div> -->
+       <div class="grid-products grid--view-items prd-grid productsetje" id="dmGridData" data-nextpage="0"></div>
 
         <!-- pagination -->
         <div class="sticky-sec-sec">

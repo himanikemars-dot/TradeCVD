@@ -6,6 +6,7 @@ class listproductrequest {
     public $buyername;
     public $sellerid;
     public $sellername;
+    public $producttype;
     public $productid;
     public $productname;
     public $productimage;

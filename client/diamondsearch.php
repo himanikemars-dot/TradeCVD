@@ -1,3 +1,32 @@
+<style>
+    .mediaurl {
+    position: relative;
+    display: inline-block;
+}
+
+.mediaurl .copy-image-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: none;
+    padding: 8px 10px;
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mediaurl:hover .copy-image-btn {
+    display: block;
+}
+
+.mediaurl .copy-image-btn:hover {
+    background: #007bff;
+    color: #fff;
+}
+</style>
 <script>
     /* START LIST ALL DIAMOND DATA */
 
@@ -118,25 +147,24 @@
                             htmldata += '<td class="tbl-highlight-td">' + diamonddata.country + '</td>';
                         }
                         htmldata += '<td class="tbl-highlight-td">';
-                       
-                            if (diamonddata.shape.length > 7) {
-                                htmldata += diamonddata.shape.substring(0, 7) + '...';
-                            } else {
-                                htmldata += diamonddata.shape;
-                            }
-                        
+
+                        if (diamonddata.shape.length > 7) {
+                            htmldata += diamonddata.shape.substring(0, 7) + '...';
+                        } else {
+                            htmldata += diamonddata.shape;
+                        }
+
                         htmldata += '</td>';
                         htmldata += '<td class="tbl-highlight-td">' + parseFloat(diamonddata.size).toFixed(2) + '</td>';
                         htmldata += '<td class="tbl-highlight-td">';
-                        if(diamonddata.withfancycolor==1)
-                        {
-                            var fancydetail=diamonddata.fancyintensity+','+diamonddata.overtone+','+diamonddata.fancycolor1+','+diamonddata.fancycolor2;
+                        if (diamonddata.withfancycolor == 1) {
+                            var fancydetail = diamonddata.fancyintensity + ',' + diamonddata.overtone + ',' + diamonddata.fancycolor1 + ',' + diamonddata.fancycolor2;
                             if (fancydetail.length > 7) {
                                 htmldata += fancydetail.substring(0, 7) + '...';
                             } else {
                                 htmldata += fancydetail;
                             }
-                        }else{
+                        } else {
                             if (diamonddata.color.length > 7) {
                                 htmldata += diamonddata.color.substring(0, 6) + '...';
                             } else {
@@ -262,7 +290,7 @@
                         htmldata += '<ul>';
                         htmldata += '<li><b>Shape</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.shape + '</span></li>';
                         htmldata += '<li><b>Size</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.size + '</span></li>';
-                        
+
                         htmldata += '<li><b>Color</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.color + '</span></li>';
                         htmldata += '<li><b>Clarity</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.clarity + '</span></li>';
                         htmldata += '<li><b>Cut</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.cut + '</span></li>';
@@ -281,8 +309,7 @@
                         htmldata += '<li><b>Table (%)</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.tableper + '% </span></li>';
                         htmldata += '<li><b>Measurement</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.length + '-' + diamonddata.width + '-' + diamonddata.depth + '</span></li>';
                         htmldata += '<li><b class="max-100">Vendor’s matching Pair stock No. </b>: <span class="metalpurity1">&nbsp; ' + diamonddata.stocknumber + '</span></li>';
-                        if(diamonddata.withfancycolor==1)
-                        {
+                        if (diamonddata.withfancycolor == 1) {
                             htmldata += '<li><b>Fancy Intensity</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.fancyintensity + '</span></li>';
                             htmldata += '<li><b>Fancy Overtone</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.overtone + '</span></li>';
                             htmldata += '<li><b>Fancy Color 1</b>: <span class="metalpurity1">&nbsp; ' + diamonddata.fancycolor1 + '</span></li>';
@@ -678,7 +705,7 @@
                             // htmldata += '<div class="starimg">';
                             // htmldata += '<img src="<?php echo $config->getImageurl(); ?>images/searchpage/star.svg" alt="' + diamonddata.stock + '" title="' + diamonddata.stock + '">';
                             // htmldata += '</div>';
-                         
+
                             if (diamonddata.isparcel == 1) {
                                 htmldata += '<h4>' + diamonddata.shape + ', ' + diamonddata.sievename + '-' + diamonddata.tosievename + ', ' + diamonddata.color + ', ' + diamonddata.clarity + ', ' + diamonddata.cut + ', ' + diamonddata.polish + ', ' + diamonddata.symmetry + '</h4>';
 
@@ -743,22 +770,41 @@
 
                             htmldata += '<h5>Media</h5>';
                             htmldata += '<div class="media">';
+                            // if (diamonddata.diamondimagedetail.length > 0) {
+                            //     for (var im in diamonddata.diamondimagedetail) {
+                            //         htmldata += '<div class="mediaurl mr-2">';
+                            //         htmldata += '<a href="<?php echo $config->getImageurl(); ?>' + diamonddata.diamondimagedetail[im].image + '">';
+                            //         htmldata += '<img src="<?php echo $config->getImageurl(); ?>' + diamonddata.diamondimagedetail[im].image + '" alt="' + diamonddata.stock + '" width="100%" title="' + diamonddata.stock + '">';
+                            //         htmldata += '</a>';
+                            //         htmldata += '</div>';
+                            //     }
+                            // } else {
+                            //     htmldata += ' <b<span>No Media</span></b>';
+                            // }
+
                             if (diamonddata.diamondimagedetail.length > 0) {
                                 for (var im in diamonddata.diamondimagedetail) {
+
+                                    var imgUrl = '<?php echo $config->getImageurl(); ?>' +
+                                                diamonddata.diamondimagedetail[im].image;
+
                                     htmldata += '<div class="mediaurl mr-2">';
-                                    htmldata += '<a href="<?php echo $config->getImageurl(); ?>' + diamonddata.diamondimagedetail[im].image + '" target="_blank">';
-                                    htmldata += '<img src="<?php echo $config->getImageurl(); ?>' + diamonddata.diamondimagedetail[im].image + '" alt="' + diamonddata.stock + '" width="100%" title="' + diamonddata.stock + '">';
-                                    htmldata += '</a>';
+
+                                    htmldata += '    <a href="' + imgUrl + '">';
+                                    htmldata += '        <img src="' + imgUrl + '" alt="' + diamonddata.stock + '" width="100%" title="' + diamonddata.stock + '">';
+                                    htmldata += '    </a>';
+
+                                    htmldata += '    <span class="copy-image-btn" data-imgurl="' + imgUrl + '" title="Copy image URL">';
+                                    htmldata += '        <i class="fa fa-copy"></i>';
+                                    htmldata += '    </span>';
+
                                     htmldata += '</div>';
                                 }
-
                             } else {
-
-                                htmldata += ' <b<span>No Media</span></b>';
+                                htmldata += '<b><span>No Media</span></b>';
                             }
 
                             htmldata += '</div>';
-
                             if (diamonddata.diamondimglink != '' && diamonddata.diamondimglink != null) {
                                 htmldata += '<h5>Image URL</h5>';
                                 htmldata += '<div class="media">';
@@ -896,7 +942,14 @@
                             htmldata += '<li><b>Contact Person</b>: <span class="metalpurity1">&nbsp; ' + sellerdetails.personname + '</span></li>';
                             // htmldata += '<li class="hidephoneno1" data-id="'+diamonddata.id+'"><b>Phone</b>: <span class="metalpurity1" title="Click To Unlock">&nbsp; ***** ***** <i class="fas fa-lock"></i></span></li>';
                             // htmldata += '<li class="showphoneno'+diamonddata.id+' d-none"><b>Phone</b>: <span class="metalpurity1">&nbsp; <a href="tel:' + sellerdetails.phonecode + '' + sellerdetails.businessphoneno + '" >' + sellerdetails.phonecode + ' ' + sellerdetails.businessphoneno + '</a></span></li>';
-                            htmldata += '<li><b>Phone</b>: <span class="metalpurity1 phonesearch">&nbsp;<a href="tel:' + sellerdetails.phonecode + '' + sellerdetails.businessphoneno + '" >' + sellerdetails.phonecode + ' ' + sellerdetails.businessphoneno + '</a></span></li>';
+                            // htmldata += '<li><b>Phone</b>: <span class="metalpurity1 phonesearch">&nbsp;<a href="tel:' + sellerdetails.phonecode + '' + sellerdetails.businessphoneno + '" >' + sellerdetails.phonecode + ' ' + sellerdetails.businessphoneno + '</a></span></li>';
+                            htmldata += '<li><b>Phone</b>: <span class="metalpurity1 phonesearch">&nbsp;<a href="https://wa.me/' +
+                                (sellerdetails.phonecode || '').replace(/\D/g, '') +
+                                (sellerdetails.businessphoneno || '').replace(/\D/g, '') +
+                                '" target="_blank">' +
+                                (sellerdetails.phonecode || '') + ' ' +
+                                (sellerdetails.businessphoneno || '') +
+                                '</a></span></li>';
                             htmldata += '</ul>';
                             htmldata += '</div>';
                             htmldata += '</div>';
@@ -1004,7 +1057,6 @@
         }
     });
 
-
     $('body').on('change', '#sortbyid', function() {
         $('#listdiamondDatatbl').attr('data-nextpage', 0);
         listdiamonddata(1, 'form-diamond-side-search');
@@ -1077,17 +1129,16 @@
                 // showloader();
                 $('.chart-loading').show();
                 var pagename = getpagename();
-                var useraction = $('#formevent').val();
                 formdata = new FormData(form);
-                formdata.append("action", "contactdiamondseller");
+                formdata.append("action", "adddiamondrequest");
                 var headersdata = {
                     'Accept': 'application/json',
                     platform: 4,
                     userpagename: pagename,
-                    useraction: useraction,
+                    useraction: 'editright',
                     masterlisting: false
                 };
-                ajaxrequest("POST", '<?php echo $config->getEndpointurl(); ?>diamond', formdata, headersdata, Onsuccesscontactdiamondseller, OnErrorcontactdiamondseller)
+                ajaxrequest("POST", '<?php echo $config->getEndpointurl(); ?>productrequest', formdata, headersdata, Onsuccesscontactdiamondseller, OnErrorcontactdiamondseller)
 
                 function Onsuccesscontactdiamondseller(data) {
                     // hideloader();
@@ -1114,7 +1165,11 @@
                 }
 
                 function OnErrorcontactdiamondseller(content) {
-
+                    $('.chart-loading').hide();
+                    var errorMessage = content && content.responseJSON && content.responseJSON.message ?
+                        content.responseJSON.message :
+                        'Unable to send your request. Please try again.';
+                    Notiflix.Notify.Failure(errorMessage);
                 }
             },
         });
@@ -2652,9 +2707,8 @@
             });
             $('#s_flttointensity').val(flttointensity);
             $('#s_flttointensity').select2();
-        }
-        else if (fltfromintensity != '' && flttointensity == '') {
-            
+        } else if (fltfromintensity != '' && flttointensity == '') {
+
             fltfromintensityarr.push({
                 'id': fltfromintensity,
                 'name': fltfromintensityname
@@ -3281,8 +3335,7 @@
             var name = fltfrommilkyarr[0].name + ' To ' + flttomilkyarr[0].name;
             // console.log(fltfrommilkyarr[0].name);
             // console.log(name);
-            if(id!='' && id!='undefined')
-            {
+            if (id != '' && id != 'undefined') {
                 htmllistdata += '<a href="javascript:void(0);" data-type="' + type + '" data-id="' + id + '" data-name="' + name + '" class="btn m-1 removemilkyflt  fltmilky' + id + ' searchbtnset"><b>Milky : </b><span>' + name + '</span> <span class="btn-remove-tag">X</span></a>';
             }
         } else if (fltfrommilkyarr.length > 0 && flttomilkyarr.length == 0) {
@@ -3292,8 +3345,7 @@
 
             // console.log(fltfrommilkyarr[0].name);
             // console.log(name);
-            if(id!='' && id!='undefined')
-            {
+            if (id != '' && id != 'undefined') {
                 htmllistdata += '<a href="javascript:void(0);" data-type="' + type + '" data-id="' + id + '" data-name="' + name + '" class="btn m-1 removemilkyflt  fltmilky' + id + ' searchbtnset"><b>Milky : </b><span>' + name + '</span> <span class="btn-remove-tag">X</span></a>';
             }
         }
@@ -3371,7 +3423,7 @@
                 htmllistdata += '<a href="javascript:void(0);" data-type="' + type + '" data-id="' + id + '" data-name="' + name + '" class="btn m-1 removefancyintensityflt  fltfancyintensity' + id + ' searchbtnset"><b>Fancy Intensity : </b><span>' + name + '</span> <span class="btn-remove-tag">X</span></a>';
             }
 
-        }else if (fltfromintensityarr.length > 0  && flttointensityarr.length==0) {
+        } else if (fltfromintensityarr.length > 0 && flttointensityarr.length == 0) {
 
             var id = fltfromintensityarr[0].id;
             var name = fltfromintensityarr[0].name;
@@ -4884,7 +4936,7 @@
             });
             flttointensityidarr.push(flttointensity);
 
-        }else  if (fltfromintensity != '' && flttointensity == '') {
+        } else if (fltfromintensity != '' && flttointensity == '') {
             fltfromintensityarr.push({
                 'id': fltfromintensity,
                 'name': fltfromintensityname

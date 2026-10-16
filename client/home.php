@@ -164,7 +164,7 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
 
                         <div class="tc-user-menu-divider"></div>
 
-                        <a href="javascript:void(0)"  onclick="logout();" class="tc-user-logout">
+                        <a href="javascript:void(0)" id="btnlogout" class="tc-user-logout">
                             <i class="fas fa-sign-out-alt"></i>
                             <span>Logout</span>
                         </a>

@@ -34,13 +34,58 @@ if($isvalidUser['status'] == 1)
 					$nextpage=trim($IISMethods->sanitize($_POST['nextpage']));
 					$page=trim($IISMethods->sanitize($_POST['page']));
 					$filter=trim($IISMethods->sanitize($_POST['filter'],'OUT'));
+					$openGroupId=isset($_POST['groupid']) ? trim($IISMethods->sanitize($_POST['groupid'])) : '';
+					$openProductId=isset($_POST['productid']) ? trim($IISMethods->sanitize($_POST['productid'])) : '';
+					$openProductType=isset($_POST['producttype']) ? (int)$IISMethods->sanitize($_POST['producttype']) : 0;
 					$page -= 1;
 					$per_page = trim($IISMethods->sanitize($_POST['per_page']));
 					$start = (int)$page * (int)$per_page;
 					// print_r($_POST); exit;
 					$chatperson=new chatperson();
 					
-					if($type==1)
+					if($openGroupId && $openProductId && ($openProductType==1 || $openProductType==2))
+					{
+						$query_main="SELECT pm.id AS personid,pm.personname,
+							IFNULL(cm.diamondid,'') AS diamondid,IFNULL(cm.diamondname,'') AS diamondname,
+							IFNULL(cm.buyrequestid,'') AS buyrequestid,IFNULL(cm.buyrequestname,'') AS buyrequestname,
+							IFNULL(cm.jewelleryid,'') AS jewelleryid,IFNULL(cm.jewelleryname,'') AS jewelleryname,
+							cm.responsetype,IFNULL(CONCAT(pm.phonecode,' ',pm.businessphoneno),'') AS contactno,
+							CASE WHEN IFNULL(pm.profileimg,'')<>'' THEN CONCAT(:open_imgpath,pm.profileimg) ELSE :open_defaultimage END AS image,
+							DATE_FORMAT(cm.entry_date,'%d/%m/%Y %h:%i %p') AS lastchatdate,
+							DATE_FORMAT(IFNULL((SELECT MAX(ch.entry_date) FROM tblchathistory ch
+								WHERE ch.groupid=cg.id AND ch.uid=:open_lastseen_uid),:open_currdatetime),'%d/%m/%Y %h:%i %p') AS lseen,
+							cg.id AS groupid,cm.message AS lastchatmsg,cm.filetype AS msgfiletype,
+							cm.isdelete,DATE_FORMAT(cm.timestamp,'%d/%m/%Y %h:%i %p') AS lastmsgtime,
+							0 AS unreadmsg
+							FROM tblchatgroup cg
+							INNER JOIN tblpersonmaster pm ON pm.id=CASE WHEN cg.personid=:open_person_side THEN cg.uid ELSE cg.personid END
+							INNER JOIN tblchatmessage cm ON cm.groupid=cg.id
+								AND ((cm.uid=:open_message_uid AND cm.sendpersonid=pm.id)
+									OR (cm.uid=pm.id AND cm.sendpersonid=:open_sendperson_uid))
+							WHERE cg.id=:open_groupid
+								AND (cg.personid=:open_group_personid OR cg.uid=:open_group_uid)
+								AND pm.isactive=1
+								AND ((:open_type_diamond=1 AND cm.diamondid=:open_diamondid)
+									OR (:open_type_jewellery=2 AND cm.jewelleryid=:open_jewelleryid))
+							ORDER BY cm.timestamp DESC LIMIT 1";
+						$parms=array(
+							':open_imgpath'=>$imgpath,
+							':open_defaultimage'=>$config->getDefaultProfileImageurl(),
+							':open_lastseen_uid'=>$uid,
+							':open_currdatetime'=>$currdatetime,
+							':open_person_side'=>$uid,
+							':open_message_uid'=>$uid,
+							':open_sendperson_uid'=>$uid,
+							':open_groupid'=>$openGroupId,
+							':open_group_personid'=>$uid,
+							':open_group_uid'=>$uid,
+							':open_type_diamond'=>$openProductType,
+							':open_diamondid'=>$openProductId,
+							':open_type_jewellery'=>$openProductType,
+							':open_jewelleryid'=>$openProductId,
+						);
+					}
+					else if($type==1)
 					{
 						$qry="SELECT tmp.*,DATE_FORMAT(tmp.lastseen,'%d/%m/%Y %h:%i %p') as lseen,IFNULL((
 									SELECT COUNT(DISTINCT id) AS unreadmsg FROM `tblchatmessage` 
@@ -59,7 +104,7 @@ if($isvalidUser['status'] == 1)
 												CASE WHEN (cm.responsetype=1) THEN cm.diamondid
 												WHEN (cm.responsetype=2) THEN cm.buyrequestid
 												else cm.jewelleryid
-												end ) AS tmp WHERE DATE_ADD(STR_TO_DATE(tmp.lastmsgtime,'%d/%m/%Y %h:%i %p'), INTERVAL 10 DAY)>=:currdatetime";
+												end ) AS tmp";
 							$parms = array(
 								':uid'=>$uid,
 								':imgpath'=>$imgpath,
@@ -92,7 +137,7 @@ if($isvalidUser['status'] == 1)
 										CASE WHEN (cm.responsetype=1) THEN cm.diamondid
 										WHEN (cm.responsetype=2) THEN cm.buyrequestid
 										else cm.jewelleryid
-										end ) AS tmp WHERE DATE_ADD(STR_TO_DATE(tmp.lastmsgtime,'%d/%m/%Y %h:%i %p'), INTERVAL 10 DAY)>=:currdatetime";
+										end ) AS tmp";
 						$parms = array(
 							':uid'=>$uid,
 							':imgpath'=>$imgpath,
@@ -102,7 +147,7 @@ if($isvalidUser['status'] == 1)
 						);
 						if($filter !='')
 						{
-							$qry.=" and tmp.personname LIKE :personname ";
+							$qry.=" WHERE tmp.personname LIKE :personname ";
 							$parms[':personname']='%'.$filter.'%';
 
 							
@@ -113,7 +158,10 @@ if($isvalidUser['status'] == 1)
 						// $qryextra=" ORDER BY tmp.lastchatdate DESC  ";//LIMIT $start, $per_page
 						$qryextra=" ORDER BY STR_TO_DATE(tmp.lastmsgtime,'%d/%m/%Y %h:%i %p') DESC  ";//LIMIT $start, $per_page
 					}
-					$query_main=$qry.$qryextra;
+					if(!$openGroupId || !$openProductId || ($openProductType!=1 && $openProductType!=2))
+					{
+						$query_main=$qry.$qryextra;
+					}
 					
 					
 					// echo $query_main;
@@ -376,10 +424,11 @@ if($isvalidUser['status'] == 1)
 						// echo $qrychatmsg;
 						// print_r($chatparams);
 						$reschatmsg=$DB->getmenual($qrychatmsg,$chatparams);
+						$response['datasize']=count($reschatmsg);
 						
 						// $numchatmsg=sizeof($reschatmsg);
 						// print_r($reschatmsg);
-						if($reschatmsg > 0)
+						if(!empty($reschatmsg))
 						{	
 							$x=0;
 							foreach($reschatmsg AS $rowchatmsg)
