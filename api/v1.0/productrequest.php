@@ -30,30 +30,58 @@ if ($isvalidUser['status'] == 1) {
             /* =====================================================
              * ACTION 1 : addproductrequest  (Contact Seller → Request)
              * ===================================================== */
-            if ($action == 'addproductrequest') {
-                $productid   = $IISMethods->sanitize($_POST['contactsellerjewelleryid']);
-                $productname = $IISMethods->sanitize($_POST['contactsellerjewelleryname']);
-                $messagetext = $IISMethods->sanitize($_POST['jewellerymessagetext']);
-                $offerprice  = $IISMethods->sanitize($_POST['jewelleryofferprice']);
+            if ($action == 'addproductrequest' || $action == 'adddiamondrequest') {
+                $isdiamondrequest = ($action == 'adddiamondrequest');
+                $productlabel = $isdiamondrequest ? 'Diamond' : 'Jewellery';
+                $productname = '';
+                if ($isdiamondrequest) {
+                    $productid = $IISMethods->sanitize($_POST['contactsellerdiamondid']);
+                    $messagetext = $IISMethods->sanitize($_POST['messagetext']);
+                    $offerprice = $IISMethods->sanitize($_POST['offerprice']);
+                    $producttype = 1;
+                } else {
+                    $productid   = $IISMethods->sanitize($_POST['contactsellerjewelleryid']);
+                    $productname = $IISMethods->sanitize($_POST['contactsellerjewelleryname']);
+                    $messagetext = $IISMethods->sanitize($_POST['jewellerymessagetext']);
+                    $offerprice  = $IISMethods->sanitize($_POST['jewelleryofferprice']);
+                    $producttype = 2;
+                }
+                if ($isdiamondrequest && $offerprice === '') {
+                    $offerprice = 0;
+                }
 
                 if ($CanMemberToMemberChat != 1) {
                     $message = $errmsg['permissionrequired'];
-                } else if (!$productid || !$messagetext || $offerprice === '') {
+                } else if (!$productid || !$messagetext || (!$isdiamondrequest && $offerprice === '')) {
                     $message = $errmsg['required'];
                 } else {
-                    $qrychk = "SELECT d.id, d.personid, pm.personname, pm.email
-                               FROM jewellerylist d
-                               INNER JOIN tblpersonmaster pm ON pm.id = d.personid
-                               WHERE d.id = :id AND d.isactive = 1";
+                    if ($isdiamondrequest) {
+                        $qrychk = "SELECT d.id, d.personid, pm.personname, pm.email,
+                                          d.stock, d.shape, d.size, d.color, d.clarity
+                                   FROM diamondlist d
+                                   INNER JOIN tblpersonmaster pm ON pm.id = d.personid
+                                   WHERE d.id = :id AND d.isactive = 1";
+                    } else {
+                        $qrychk = "SELECT d.id, d.personid, pm.personname, pm.email
+                                   FROM jewellerylist d
+                                   INNER JOIN tblpersonmaster pm ON pm.id = d.personid
+                                   WHERE d.id = :id AND d.isactive = 1";
+                    }
                     $reschk = $DB->getmenual($qrychk, array(':id' => $productid));
 
                     if (sizeof($reschk) == 0) {
-                        $message = $errmsg['nojewelleryfound'];
+                        $message = $isdiamondrequest ? $errmsg['nodiamondfound'] : $errmsg['nojewelleryfound'];
                     } else if ($reschk[0]['personid'] == $uid) {                       // F4 guard
                         $message = $errmsg['ownproductrequest'];
                     } else {
                         $seller = $reschk[0];
-                        $pendingkey = $uid . '|' . $productid;
+                        if ($isdiamondrequest) {
+                            $productname = trim(implode(' ', array_filter(array(
+                                $seller['stock'], $seller['shape'], $seller['size'] ? $seller['size'] . 'ct' : '',
+                                $seller['color'], $seller['clarity'],
+                            ))));
+                        }
+                        $pendingkey = $uid . '|' . ($isdiamondrequest ? 'diamond|' : '') . $productid;
 
                         $qrydup = "SELECT id FROM tblproductrequest WHERE pendingkey = :pk";
                         $resdup = $DB->getmenual($qrydup, array(':pk' => $pendingkey));
@@ -81,7 +109,7 @@ if ($isvalidUser['status'] == 1) {
                                     'buyername'   => $buyer['personname'],
                                     'sellerid'    => $seller['personid'],
                                     'sellername'  => $seller['personname'],
-                                    'producttype' => 2,
+                                    'producttype' => $producttype,
                                     'productid'   => $productid,
                                     'productname' => $productname,
                                     'message'     => $messagetext,
@@ -107,8 +135,8 @@ if ($isvalidUser['status'] == 1) {
                                     'New Product Request ' . $requestno . ' from ' . $buyer['personname'],
                                     $seller['personname'],
                                     'You have received a new product request',
-                                    array('Request No' => $requestno, 'Jewellery' => $productname,
-                                          'Message' => $messagetext, 'Offer Price' => '$' . $offerprice,
+                                    array('Request No' => $requestno, $productlabel => $productname,
+                                          'Message' => $messagetext, 'Offer Price' => ((float)$offerprice > 0 ? '$' . $offerprice : '-'),
                                           'Send By' => $buyer['personname'], 'Date Time' => $datetime),
                                     'buyrequest?tab=seller_productrequest', 'To Approve / Cancel Request');
                             } catch (Exception $e) {
@@ -131,13 +159,21 @@ if ($isvalidUser['status'] == 1) {
                 $fltstatus = (int)$IISMethods->sanitize($_POST['fltstatus']);
 
                 $qry = "SELECT pr.id, pr.requestno, pr.buyerid, pr.buyername, pr.sellerid, pr.sellername,
-                               pr.productid, pr.productname, pr.message, pr.offerprice,
+                               pr.producttype, pr.productid, pr.productname, pr.message, pr.offerprice,
                                CASE WHEN pr.buyerid = :uid_requesttype THEN 'my_buy_request' ELSE 'buyer_request' END AS requesttype,
-                               IFNULL((SELECT CONCAT(:imgurl, ji.image)
-                                       FROM tbljewelleryimages ji
-                                       WHERE ji.jewelleryid = pr.productid
-                                       ORDER BY ji.timestamp DESC
-                                       LIMIT 1), :defaultjewelleryimgurl) AS productimage,
+                               CASE WHEN pr.producttype = 1 THEN
+                                   IFNULL((SELECT CONCAT(:imgurl_d, di.image)
+                                           FROM tbldiamondimages di
+                                           WHERE di.diamondid = pr.productid
+                                           ORDER BY di.timestamp DESC
+                                           LIMIT 1), :defaultdiamondimgurl)
+                               ELSE
+                                   IFNULL((SELECT CONCAT(:imgurl_j, ji.image)
+                                           FROM tbljewelleryimages ji
+                                           WHERE ji.jewelleryid = pr.productid
+                                           ORDER BY ji.timestamp DESC
+                                           LIMIT 1), :defaultjewelleryimgurl)
+                               END AS productimage,
                                pr.status, pr.statustext, IFNULL(pr.groupid,'') AS groupid,
                                DATE_FORMAT(pr.entry_date,'%d/%m/%Y %h:%i %p') AS createdate,
                                CASE WHEN (pr.sellerid = :uid_canapprove AND pr.status = 1) THEN 1 ELSE 0 END AS canapprove,
@@ -150,7 +186,9 @@ if ($isvalidUser['status'] == 1) {
                     ':uid_cancancel' => $uid,
                     ':uid_requesttype' => $uid,
                     ':uid2' => $uid,
-                    ':imgurl' => $config->getImageurl(),
+                    ':imgurl_d' => $config->getImageurl(),
+                    ':imgurl_j' => $config->getImageurl(),
+                    ':defaultdiamondimgurl' => $config->getDefualtDiamondImageurl(),
                     ':defaultjewelleryimgurl' => $config->getDefualtJewelleryImageurl(),
                 );
 
@@ -185,8 +223,8 @@ if ($isvalidUser['status'] == 1) {
                     if ($r->canopenchat == 1) {
                         $isbuyerview = ($view == 'buyer_myrequest' || $view == 'buyer_status' || $view == 'trade_status' || $view == 'trade_allrequest' || $box == 'sent') && $r->buyerid == $uid;
                         $r->chatlink = $isbuyerview
-                            ? prchatlink($r->groupid, $r->sellerid, 2, $r->productid)
-                            : prchatlink($r->groupid, $r->buyerid, 1, $r->productid);
+                            ? prchatlink($r->groupid, $r->sellerid, 2, $r->productid, $r->producttype)
+                            : prchatlink($r->groupid, $r->buyerid, 1, $r->productid, $r->producttype);
                     }
                 }
                 if (sizeof($rows) > 0) {
@@ -224,14 +262,16 @@ if ($isvalidUser['status'] == 1) {
                         $response['result'] = array(
                             'groupid' => $pr['groupid'], 'personid' => $buyerid,
                             'chattype' => 1, 'productid' => $pr['productid'],
-                            'chatlink' => prchatlink($pr['groupid'], $buyerid, 1, $pr['productid']),
+                            'chatlink' => prchatlink($pr['groupid'], $buyerid, 1, $pr['productid'], $pr['producttype']),
                         );
                     } else if ($pr['status'] != 1) {
                         $message = $errmsg['productrequestprocessed'];
                     } else if ($CanMemberToMemberChat != 1) {
                         $message = $errmsg['permissionrequired'];
                     } else {
-                        $reschkp = $DB->getmenual("SELECT id FROM jewellerylist WHERE id = :id AND isactive = 1", array(':id' => $pr['productid']));
+                        $productlabel = ((int)$pr['producttype'] == 1) ? 'Diamond' : 'Jewellery';
+                        $producttable = ((int)$pr['producttype'] == 1) ? 'diamondlist' : 'jewellerylist';
+                        $reschkp = $DB->getmenual("SELECT id FROM " . $producttable . " WHERE id = :id AND isactive = 1", array(':id' => $pr['productid']));
                         if (sizeof($reschkp) == 0) {
                             $message = $errmsg['productnotavailable'];
                         } else {
@@ -245,8 +285,9 @@ if ($isvalidUser['status'] == 1) {
                             $uniqname = uniqid();
                             $ismainmsg = 1;
                             if (!$isnewgroup) {
+                                $productcolumn = ((int)$pr['producttype'] == 1) ? 'diamondid' : 'jewelleryid';
                                 $resun = $DB->getmenual(
-                                    "SELECT uniqname FROM tblchatmessage WHERE groupid = :groupid AND jewelleryid = :jid AND issupport = 1 AND chattype = 2 LIMIT 1",
+                                    "SELECT uniqname FROM tblchatmessage WHERE groupid = :groupid AND " . $productcolumn . " = :jid AND issupport = 1 AND chattype = 2 LIMIT 1",
                                     array(':groupid' => $groupid, ':jid' => $pr['productid']));
                                 if (sizeof($resun) > 0) {
                                     $uniqname = $resun[0]['uniqname'];
@@ -304,30 +345,42 @@ if ($isvalidUser['status'] == 1) {
                                         'entry_uid' => $uid, 'entry_date' => $datetime, 'timestamp' => $datetime,
                                     ));
                                 }
-                                prexec($DB, 'i', 'tblchatmessage', array(
+                                $chatmessage = array(
                                     'id' => $seedmsgid, 'uniqname' => $uniqname, 'groupid' => $groupid,
                                     'message' => $pr['message'],
                                     'uid' => $buyerid,
                                     'sendpersonid' => $sellerid,
                                     'type' => 1, 'filetype' => 0, 'fmsgid' => '', 'rplymsgid' => '',
                                     'issupport' => 1, 'ismainmsg' => $ismainmsg,
-                                    'jewelleryid' => $pr['productid'],
-                                    'jewelleryname' => $pr['productname'],
-                                    'jewelleryofferprice' => $pr['offerprice'],
-                                    'persontype' => 1, 'chattype' => 2, 'responsetype' => 3,
                                     'productrequestid' => $requestid,
                                     'entry_uid' => $buyerid,
                                     'entry_date' => $pr['entry_date'], 
-                                    'timestamp' => $datetime,     
-                                ));
+                                    'timestamp' => $datetime,
+                                );
+                                if ((int)$pr['producttype'] == 1) {
+                                    $chatmessage = array_merge($chatmessage, array(
+                                        'diamondid' => $pr['productid'],
+                                        'diamondname' => $pr['productname'],
+                                        'diamondofferprice' => $pr['offerprice'],
+                                        'persontype' => 1, 'chattype' => 2, 'responsetype' => 1,
+                                    ));
+                                } else {
+                                    $chatmessage = array_merge($chatmessage, array(
+                                        'jewelleryid' => $pr['productid'],
+                                        'jewelleryname' => $pr['productname'],
+                                        'jewelleryofferprice' => $pr['offerprice'],
+                                        'persontype' => 1, 'chattype' => 2, 'responsetype' => 3,
+                                    ));
+                                }
+                                prexec($DB, 'i', 'tblchatmessage', $chatmessage);
 
                                 prexec($DB, 'u', 'tblpersonmaster', array(
                                     'chatmsgid' => $seedmsgid, 'lastchatmsg' => $pr['message'],
                                     'msgfiletype' => 0, 'lastchat_date' => $datetime,
                                 ), array('id' => $sellerid));
 
-                                $buyerchatlink  = prchatlink($groupid, $sellerid, 2, $pr['productid']);
-                                $sellerchatlink = prchatlink($groupid, $buyerid, 1, $pr['productid']);
+                                $buyerchatlink  = prchatlink($groupid, $sellerid, 2, $pr['productid'], $pr['producttype']);
+                                $sellerchatlink = prchatlink($groupid, $buyerid, 1, $pr['productid'], $pr['producttype']);
 
                                 $DB->committransaction();
 
@@ -343,7 +396,7 @@ if ($isvalidUser['status'] == 1) {
                                     'Your request ' . $pr['requestno'] . ' has been approved',
                                     $pr['buyername'],
                                     'Your request has been approved. Check your dashboard chat.',
-                                    array('Request No' => $pr['requestno'], 'Jewellery' => $pr['productname'],
+                                    array('Request No' => $pr['requestno'], $productlabel => $pr['productname'],
                                           'Seller' => $pr['sellername'], 'Date Time' => $datetime),
                                     $buyerchatlink, 'To Open Chat');
                             } catch (Exception $e) {
@@ -377,6 +430,7 @@ if ($isvalidUser['status'] == 1) {
                 } else {
                     $pr = $respr[0];
                     $isseller = ($pr['sellerid'] == $uid);
+                    $productlabel = ((int)$pr['producttype'] == 1) ? 'Diamond' : 'Jewellery';
 
                     if (!$isseller) {
                         $message = $errmsg['unauthorizedaction'];
@@ -408,14 +462,14 @@ if ($isvalidUser['status'] == 1) {
                                 prsendmail($DB, $config, $pr['buyeremail'],
                                     'Your request ' . $pr['requestno'] . ' has been cancelled',
                                     $pr['buyername'], 'Your request has been cancelled',
-                                    array('Request No' => $pr['requestno'], 'Jewellery' => $pr['productname'],
+                                    array('Request No' => $pr['requestno'], $productlabel => $pr['productname'],
                                           'Reason' => ($reason ? $reason : '-'), 'Date Time' => $datetime),
                                     'buyrequest?tab=buyer_status', 'To View Your Requests');
                             } else {
                                 prsendmail($DB, $config, $pr['selleremail'],
                                     'Request ' . $pr['requestno'] . ' cancelled by buyer',
                                     $pr['sellername'], 'Request has been cancelled by the buyer',
-                                    array('Request No' => $pr['requestno'], 'Jewellery' => $pr['productname'],
+                                    array('Request No' => $pr['requestno'], $productlabel => $pr['productname'],
                                           'Buyer' => $pr['buyername'], 'Date Time' => $datetime),
                                     'buyrequest?tab=seller_status', 'To View Requests');
                             }

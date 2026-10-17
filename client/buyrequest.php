@@ -310,13 +310,13 @@ else
 
                                     <li>
 
-                                        <a class="nav-link text-center active" id="seller-productrequest-tab" data-toggle="pill" href="#seller-productrequest">Buyer Request</a>
+                                        <a class="nav-link text-center <?php if($ShowBuyerProductRequestTabs!=1){ echo 'active'; } ?>" id="seller-productrequest-tab" data-toggle="pill" href="#seller-productrequest">Buyer Request</a>
 
                                     </li>
 
                                     <li>
 
-                                        <a class="nav-link text-center" id="buyer-myrequest-tab" data-toggle="pill" href="#buyer-myrequest">My Buy Request</a>
+                                        <a class="nav-link text-center <?php if($ShowBuyerProductRequestTabs==1){ echo 'active'; } ?>" id="buyer-myrequest-tab" data-toggle="pill" href="#buyer-myrequest">My Buy Request</a>
 
                                     </li>
 
@@ -1912,7 +1912,7 @@ else
 
                                 <?php if($CanBuyRequest==1) { ?>
 
-                                <div class="tab-pane fade product-request-pane <?php if($ShowBuyerProductRequestTabs==1 && $ShowSellerProductRequestTabs!=1){ echo 'show active'; } ?>" id="buyer-myrequest" role="tabpanel" aria-labelledby="buyer-myrequest-tab">
+                                <div class="tab-pane fade product-request-pane <?php if($ShowBuyerProductRequestTabs==1 && ($ShowSellerProductRequestTabs!=1 || $IsTradeProPackage==1)){ echo 'show active'; } ?>" id="buyer-myrequest" role="tabpanel" aria-labelledby="buyer-myrequest-tab">
                                     <div class="col-12 col-md-12 setcoloall">
                                         <div class="row searchheaddet setmtopallbu">
                                             <div class="col-sm-12 col-xs-12 col-md-6 moredetail">
@@ -1948,7 +1948,7 @@ else
 
                                 <?php if($ShowSellerProductRequestTabs==1) { ?>
 
-                                <div class="tab-pane fade product-request-pane <?php if($ShowSellerProductRequestTabs==1 && ($IsTradeProPackage==1 || $ShowBuyerProductRequestTabs!=1)){ echo 'show active'; } ?>" id="seller-productrequest" role="tabpanel" aria-labelledby="seller-productrequest-tab">
+                                <div class="tab-pane fade product-request-pane <?php if($ShowSellerProductRequestTabs==1 && ($IsTradeProPackage!=1 || $ShowBuyerProductRequestTabs!=1)){ echo 'show active'; } ?>" id="seller-productrequest" role="tabpanel" aria-labelledby="seller-productrequest-tab">
                                     <div class="col-12 col-md-12 setcoloall">
                                         <div class="row searchheaddet setmtopallbu">
                                             <div class="col-sm-12 col-xs-12 col-md-6 moredetail">
@@ -10097,8 +10097,6 @@ else
     var prCanChat  = <?php echo ($ShowBuyerProductRequestTabs==1 || $ShowSellerProductRequestTabs==1) ? 1 : 0; ?>;
     var prHasBuyRight = <?php echo ($ShowBuyerProductRequestTabs==1) ? 1 : 0; ?>;
     var prHasSellerRight = <?php echo ($ShowSellerProductRequestTabs==1) ? 1 : 0; ?>;
-    var prIsTradePro = <?php echo ($IsTradeProPackage==1) ? 1 : 0; ?>;
-
     function prHeaders() {
         return {
             'Accept': 'application/json',
@@ -10171,7 +10169,7 @@ else
                     htmldata += '<td>' + prEsc(personName) + '</td>';
                     htmldata += '<td>' + prEsc(d.productname) + '</td>';
                     htmldata += '<td>' + prEsc(d.message) + '</td>';
-                    htmldata += '<td>$' + prEsc(d.offerprice) + '</td>';
+                    htmldata += '<td>' + (parseFloat(d.offerprice) > 0 ? '$' + prEsc(d.offerprice) : '-') + '</td>';
                     htmldata += '<td>' + prEsc(d.createdate) + '</td>';
 
                     if (cfg.showStatus) {
@@ -10306,8 +10304,6 @@ else
                 $('#buy-request-tab #trade-status-tab').click();
             } else if (prtab == 'trade_allrequest' && $('#trade-allrequest-tab').length) {
                 $('#buy-request-tab #trade-allrequest-tab').click();
-            } else if (prIsTradePro == 1 && $('#seller-productrequest-tab').length) {
-                listProductRequestView('seller_productrequest');
             } else if (prHasBuyRight == 1 && $('#buyer-myrequest-tab').length) {
                 listProductRequestView('buyer_myrequest');
             } else if (prHasSellerRight == 1 && $('#seller-productrequest-tab').length) {

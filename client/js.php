@@ -2,15 +2,42 @@
 
 <?php
 
-$CanShareJewellery = $DB->getpackagewiseuserright($LoginInfo->getUid(),3)['attributeval'];
+$CanShareJewellery = $DB->getpackagewiseuserright($LoginInfo->getUid(), 3)['attributeval'];
 
-$CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['attributeval'];
+$CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(), 4)['attributeval'];
 
 
 
 ?>
 
+<style>
+    .item {
+        position: relative;
+    }
 
+    .item .copy-image-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #fff;
+        color: #333;
+        padding: 8px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        z-index: 999;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .item:hover .copy-image-btn {
+        display: block;
+    }
+
+    .item .copy-image-btn:hover {
+        background: #007bff;
+        color: #fff;
+    }
+</style>
 
 
 
@@ -173,33 +200,22 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 <script>
-
     var endpointurl = '<?php echo $config->getEndpointurl() ?>';
-
 </script>
 
 <script>
-
     var dirpath = '<?php echo $config->getDirpath() ?>';
-
 </script>
 
 <script>
-
     var page404url = '<?php echo $config->getPage404url() ?>';
-
 </script>
 
 <script>
-
     var Imageurl = '<?php echo $config->getImageurl() ?>';
-
 </script>
 
 <script>
-
-
-
     // $(window).on('load', function() {
 
     // $('.acr-preloader').delay(500).fadeOut(500);
@@ -270,7 +286,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
             }
 
-        }     
+        }
 
     }
 
@@ -320,13 +336,13 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
     setInterval(function() {
 
-        checkuserpackageexpiry();  
+        checkuserpackageexpiry();
 
     }, 50000);
 
-   
 
-    function checkuserpackageexpiry(){
+
+    function checkuserpackageexpiry() {
 
         var pagename = getpagename();
 
@@ -362,15 +378,17 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
             if (resultdata.IsSessionExpire == 1) {
 
-                Notiflix.Report.Warning(resultdata.ExpiryTitle,resultdata.message, false, function(){window.location=resultdata.ExpiryURL;});
+                Notiflix.Report.Warning(resultdata.ExpiryTitle, resultdata.message, false, function() {
+                    window.location = resultdata.ExpiryURL;
+                });
 
-            } 
-
-            else if(resultdata.IsPackageExpire == 1)
+            } else if (resultdata.IsPackageExpire == 1)
 
             {
 
-                Notiflix.Report.Warning(resultdata.ExpiryTitle,resultdata.message, false, function(){window.location=resultdata.ExpiryURL;});
+                Notiflix.Report.Warning(resultdata.ExpiryTitle, resultdata.message, false, function() {
+                    window.location = resultdata.ExpiryURL;
+                });
 
             }
 
@@ -386,25 +404,25 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
     }
 
-    
+
 
 
 
     // $(window).on('load',function(){
 
-        
+
 
     // });
 
-    
 
 
 
-    $(document).ajaxStop(function () {
+
+    $(document).ajaxStop(function() {
 
 
 
-        
+
 
 
 
@@ -422,11 +440,11 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
     });
 
-    
+
 
     $(document).ready(function() {
 
-        
+
 
         // setTimeout(function() {
 
@@ -550,15 +568,15 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
         var ok = k >= 48 && k <= 57 || // 0-9
 
-            k ==8 || //backspace
+            k == 8 || //backspace
 
-            k==0 || //arrow key
+            k == 0 || //arrow key
 
-            k==45 || // Minus Sign
+            k == 45 || // Minus Sign
 
-            k==46; //. sign
+            k == 46; //. sign
 
-        if (!ok){
+        if (!ok) {
 
             e.preventDefault();
 
@@ -572,19 +590,19 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
         var ok = k >= 48 && k <= 57 || // 0-9
 
-		  	k ==8 || //backspace
+            k == 8 || //backspace
 
-		    k==0 || //arrow key
+            k == 0 || //arrow key
 
-		     
 
-		    k==45 ||
 
-		    k==46; //. sign
+            k == 45 ||
 
-		    
+            k == 46; //. sign
 
-		if (!ok){
+
+
+        if (!ok) {
 
             e.preventDefault();
 
@@ -634,8 +652,9 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 
-    $('#btnlogout').click(function() {
+    $(document).on('click', '#btnlogout', function(event) {
 
+        event.preventDefault();
 
 
         // $('.preloader-activate').addClass('preloader-active');
@@ -674,7 +693,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
             // hideloader();
 
-            
+
 
             // $('.preloader-activate').removeClass('preloader-active');
 
@@ -694,7 +713,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
             }
 
-           
+
 
         }
 
@@ -702,7 +721,8 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
         function OnErrorlogout(content) {
 
-
+            $('.mainloader').addClass('d-none');
+            Notiflix.Notify.Failure('Unable to log out. Please try again.');
 
         }
 
@@ -806,275 +826,275 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                     htmldata += '                    <div class="">';
 
-                    
 
-                    
 
-                   
 
-                         
 
 
 
-                           
 
-                            // htmldata+='<div class="owl-carousel our-jewellery-slider">';
 
-                            
 
-                            
 
-                                // alert( jewellerydata.jewelleryimagesdetail[i].image );
 
-                           
 
-                            
+                    // htmldata+='<div class="owl-carousel our-jewellery-slider">';
 
-                            // htmldata+='</div>';
 
-                            if (jewellerydata.hasjewelleryimages == 1 || jewellerydata.hasjewelleryvideos == 1) {
 
-                                htmldata += '<div class="simple-gallery owl-carousel owl-theme our-jewellery-slider1 " id="sync1">';
 
-                                
 
-                               
+                    // alert( jewellerydata.jewelleryimagesdetail[i].image );
 
-                                
 
-                                    for (var k in jewellerydata.jewelleryimagesdetail) {
 
-                                        var trtmp = k;
 
-                                        htmldata += '<div class="item"><img class="maxi1 primary blur-up lazyloaded bigimgDiv'+jewellerydata.jewelleryimagesdetail[k].id+'" data-id="'+jewellerydata.jewelleryimagesdetail[k].id+'" data-index="'+trtmp+'" src="' + jewellerydata.jewelleryimagesdetail[k].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '"></div>';
 
+                    // htmldata+='</div>';
 
+                    if (jewellerydata.hasjewelleryimages == 1 || jewellerydata.hasjewelleryvideos == 1) {
 
-                                        
+                        htmldata += '<div class="simple-gallery owl-carousel owl-theme our-jewellery-slider1" id="sync1">';
 
-                                    }
 
-                                   
 
-                                
 
-                                    for (var h in jewellerydata.jewelleryvideosdetail) 
 
-                                    {
 
-                                     
 
-                                        htmldata += '<div class="item"><video class="maxi1 primary blur-up lazyloaded " autoplay="" muted="" loop="">';
+                        for (var k in jewellerydata.jewelleryimagesdetail) {
 
-                                        htmldata += '<source class="videomaxi" src="' + jewellerydata.jewelleryvideosdetail[h].video + '">';
+                            var trtmp = k;
 
-                                        htmldata += '</video></div>';
+                            // htmldata += '<div class="item"><img class="maxi1 primary blur-up lazyloaded bigimgDiv'+jewellerydata.jewelleryimagesdetail[k].id+'" data-id="'+jewellerydata.jewelleryimagesdetail[k].id+'" data-index="'+trtmp+'" src="' + jewellerydata.jewelleryimagesdetail[k].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '"></div>';
+                            htmldata += '<div class="item">';
+                            htmldata += '    <img class="maxi1 primary blur-up lazyloaded bigimgDiv' + jewellerydata.jewelleryimagesdetail[k].id + '" data-id="' + jewellerydata.jewelleryimagesdetail[k].id + '" data-index="' + trtmp + '" src="' + jewellerydata.jewelleryimagesdetail[k].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+                            htmldata += '    <span class="copy-image-btn" data-imgurl="' + jewellerydata.jewelleryimagesdetail[k].image + '" title="Copy image URL">';
+                            htmldata += '        <i class="fa fa-copy"></i>';
+                            htmldata += '    </span>';
+                            htmldata += '</div>';
 
-                                        
+                        }
 
-                                    }
 
-                                
 
 
 
-                                htmldata += '</div>';
+                        for (var h in jewellerydata.jewelleryvideosdetail)
 
-                            }
+                        {
 
-                            // if (jewellerydata.jewelleryvideosdetail.length > 0) {
 
-                            //     htmldata += '                    <div class="simple-gallery imagevideoDivclass owl-carousel our-jewellery-slider">';
 
-                               
+                            htmldata += '<div class="item"><video class="maxi1 primary blur-up lazyloaded " autoplay="" muted="" loop="">';
 
-                            //     for (var k in jewellerydata.jewelleryvideosdetail) {
+                            htmldata += '<source class="videomaxi" src="' + jewellerydata.jewelleryvideosdetail[h].video + '">';
 
-                            //         var imgclass = '';
+                            htmldata += '</video></div>';
 
-                            //         if (k == 0) {
 
-                            //             imgclass = 'active';
 
-                            //         }
+                        }
 
-                            //     // htmldata += '<img class="maxi1 primary ' + imgclass + ' blur-up lazyloaded" src="' + jewellerydata.jewelleryvideosdetail[k].video + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
 
 
 
-                            //     htmldata += '<video class="maxi1 primary blur-up lazyloaded " autoplay="" muted="" loop="">';
 
-                            //     htmldata += '<source class="videomaxi" src="' + jewellerydata.jewelleryvideosdetail[k].video + '">';
+                        htmldata += '</div>';
 
-                            //     htmldata += '</video>';
+                    }
 
-                            //     }
+                    // if (jewellerydata.jewelleryvideosdetail.length > 0) {
 
-                            //     htmldata += '</div>';
+                    //     htmldata += '                    <div class="simple-gallery imagevideoDivclass owl-carousel our-jewellery-slider">';
 
-                               
 
-                            //     }
 
-                        
+                    //     for (var k in jewellerydata.jewelleryvideosdetail) {
 
-                            
+                    //         var imgclass = '';
 
-                               
+                    //         if (k == 0) {
 
-                        
+                    //             imgclass = 'active';
 
-                        // else
+                    //         }
 
-                        // {
+                    //     // htmldata += '<img class="maxi1 primary ' + imgclass + ' blur-up lazyloaded" src="' + jewellerydata.jewelleryvideosdetail[k].video + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
 
-                        //     if (jewellerydata.jewelleryimglink != '') {
 
-                        //         // htmldata += '                        <div class="simple-gallery samplelinkimg">';
 
-                        //         htmldata += '                        <img class="primary blur-up  mt-5 lazyloaded" src="' + jewellerydata.jewelleryimglink + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+                    //     htmldata += '<video class="maxi1 primary blur-up lazyloaded " autoplay="" muted="" loop="">';
 
-                        //         // htmldata += '                        </div>';
+                    //     htmldata += '<source class="videomaxi" src="' + jewellerydata.jewelleryvideosdetail[k].video + '">';
 
-                        //     }  
+                    //     htmldata += '</video>';
 
-                        //     else{
+                    //     }
 
-                            
+                    //     htmldata += '</div>';
 
-                        //         htmldata += '                        <img class="maxi primary blur-up lazyloaded" src="' + jewellerydata.imgurl + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
 
 
+                    //     }
 
-                        //     }  
 
-                        // }
 
-                  
 
-                   
 
-                    
+
+
+
+
+                    // else
+
+                    // {
+
+                    //     if (jewellerydata.jewelleryimglink != '') {
+
+                    //         // htmldata += '                        <div class="simple-gallery samplelinkimg">';
+
+                    //         htmldata += '                        <img class="primary blur-up  mt-5 lazyloaded" src="' + jewellerydata.jewelleryimglink + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+
+                    //         // htmldata += '                        </div>';
+
+                    //     }  
+
+                    //     else{
+
+
+
+                    //         htmldata += '                        <img class="maxi primary blur-up lazyloaded" src="' + jewellerydata.imgurl + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+
+
+
+                    //     }  
+
+                    // }
+
+
+
+
+
+
 
                     htmldata += '<div class="col-12 searmedia">';
 
-                            htmldata += '<div class="row">';
+                    htmldata += '<div class="row">';
 
-                            htmldata += '<div class="col-md-10 mediasearch">';
-
-
-
-                            htmldata += '<h5>Media</h5>';
-
-                            htmldata += '<div class="media row">';
-
-                                if (jewellerydata.jewelleryimagesdetail.length > 0) {
-
-                                    htmldata += '<div class="mini owl-carousel owl-theme" id="sync2" >';
-
-                                    for (var ji in jewellerydata.jewelleryimagesdetail) {
-
-                                        var imgclass = '';
-
-                                        var trtmp = ji;
-
-                                        if (ji == 0) {
-
-                                            imgclass = 'active';
-
-                                        }
-
-                                        htmldata += '<div class="item"><img class="primary blur-up lazyloaded imageclass" data-id="' + jewellerydata.jewelleryimagesdetail[ji].id + '"  data-index="'+trtmp+'1" src="' + jewellerydata.jewelleryimagesdetail[ji].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '"></div>';
-
-                                        
-
-                                    }
-
-                                    
-
-                                    for (var jj in jewellerydata.jewelleryvideosdetail) {
-
-                                        var imgclass = '';
-
-                                        if (jj== 0) {
-
-                                            imgclass = 'active';
-
-                                        }
-
-                                        htmldata += '<div class="item"><img class="primary ' + imgclass + ' blur-up lazyloaded videoclass" data-video="'+jewellerydata.jewelleryvideosdetail[jj].video+'" src="<?php echo $config->getImageurl(); ?>play-button.jpg" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '"></div>';
-
-                                    }
-
-                                    htmldata += '</div>';
-
-                                }
-
-                                else {
+                    htmldata += '<div class="col-md-10 mediasearch">';
 
 
 
-                                    htmldata += ' <b<span>No Media</span></b>';
+                    htmldata += '<h5>Media</h5>';
 
-                                }
+                    htmldata += '<div class="media row">';
 
+                    if (jewellerydata.jewelleryimagesdetail.length > 0) {
 
+                        htmldata += '<div class="mini owl-carousel owl-theme" id="sync2" >';
 
-                            htmldata += '</div>';
+                        for (var ji in jewellerydata.jewelleryimagesdetail) {
 
+                            var imgclass = '';
 
+                            var trtmp = ji;
 
-                            if (jewellerydata.jewelleryimglink != '' && jewellerydata.jewelleryimglink != null) {
+                            if (ji == 0) {
 
-                                htmldata += '<h5>Image URL</h5>';
-
-                                htmldata += '<div class="media">';
-
-                                htmldata += '<div class="mediaurl mr-2">';
-
-                                htmldata += '<a href="' + jewellerydata.jewelleryimglink + '" target="_blank">';
-
-                                htmldata += '<i class="fas fa-image"></i>';
-
-                                htmldata += '</a>';
-
-                                htmldata += '</div>';
-
-                                htmldata += '</div>';
+                                imgclass = 'active';
 
                             }
 
-                            if (jewellerydata.jewelleryvideolink != '' && jewellerydata.jewelleryvideolink != null) {
-
-                                htmldata += '<h5>Media URL</h5>';
-
-                                htmldata += '<div class="media">';
-
-                                htmldata += '<div class="mediaurl">';
-
-                                htmldata += '<a href="' + jewellerydata.jewelleryvideolink + '" target="_blank"><i class="fas fa-play"></i></a>';
-
-                                htmldata += '</div>';
-
-                                htmldata += '</div>'; 
-
-                            } 
-
-                           
-
-                           
+                            htmldata += '<div class="item"><img class="primary blur-up lazyloaded imageclass" data-id="' + jewellerydata.jewelleryimagesdetail[ji].id + '"  data-index="' + trtmp + '1" src="' + jewellerydata.jewelleryimagesdetail[ji].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '"></div>';
 
 
 
-                            htmldata += '</div>';
+                        }
 
-                            htmldata += '</div>';
 
-                            htmldata += '</div>';
+
+                        for (var jj in jewellerydata.jewelleryvideosdetail) {
+
+                            var imgclass = '';
+
+                            if (jj == 0) {
+
+                                imgclass = 'active';
+
+                            }
+
+                            htmldata += '<div class="item"><img class="primary ' + imgclass + ' blur-up lazyloaded videoclass" data-video="' + jewellerydata.jewelleryvideosdetail[jj].video + '" src="<?php echo $config->getImageurl(); ?>play-button.jpg" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '"></div>';
+
+                        }
+
+                        htmldata += '</div>';
+
+                    } else {
+
+
+
+                        htmldata += ' <b<span>No Media</span></b>';
+
+                    }
+
+
+
+                    htmldata += '</div>';
+
+
+
+                    if (jewellerydata.jewelleryimglink != '' && jewellerydata.jewelleryimglink != null) {
+
+                        htmldata += '<h5>Image URL</h5>';
+
+                        htmldata += '<div class="media">';
+
+                        htmldata += '<div class="mediaurl mr-2">';
+
+                        htmldata += '<a href="' + jewellerydata.jewelleryimglink + '" target="_blank">';
+
+                        htmldata += '<i class="fas fa-image"></i>';
+
+                        htmldata += '</a>';
+
+                        htmldata += '</div>';
+
+                        htmldata += '</div>';
+
+                    }
+
+                    if (jewellerydata.jewelleryvideolink != '' && jewellerydata.jewelleryvideolink != null) {
+
+                        htmldata += '<h5>Media URL</h5>';
+
+                        htmldata += '<div class="media">';
+
+                        htmldata += '<div class="mediaurl">';
+
+                        htmldata += '<a href="' + jewellerydata.jewelleryvideolink + '" target="_blank"><i class="fas fa-play"></i></a>';
+
+                        htmldata += '</div>';
+
+                        htmldata += '</div>';
+
+                    }
+
+
+
+
+
+
+
+                    htmldata += '</div>';
+
+                    htmldata += '</div>';
+
+                    htmldata += '</div>';
 
                     htmldata += '                    </div>';
 
-                   
+
 
                     htmldata += '                </div>';
 
@@ -1094,17 +1114,15 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                     htmldata += '                        <div class="contectse text-center">';
 
-                  
 
-                    <?php 
 
-                    if($CanMemberToMemberChat==1)
+                    <?php
 
-                    {
+                    if ($CanMemberToMemberChat == 1) {
 
-                        ?>
+                    ?>
 
-                        if(jewellerydata.canresponse==1)
+                        if (jewellerydata.canresponse == 1)
 
                         {
 
@@ -1112,25 +1130,23 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                         }
 
-                     
 
-                      <?php 
 
-                        } ?>    
+                    <?php
 
-                   <?php  if($CanShareJewellery==1) 
+                    } ?>
 
-                    { ?>
+                    <?php if ($CanShareJewellery == 1) { ?>
 
-                     if (jewellerydata.sharable == 1) {
+                        if (jewellerydata.sharable == 1) {
 
-                        htmldata += '<button type="button" class="btn sharejewellery" data-jewelleryid="' + jewellerydata.id + '"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/share.svg" alt="' + jewellerydata.itemtitle + '" title="Share ' + jewellerydata.itemtitle + '"></button>';
+                            htmldata += '<button type="button" class="btn sharejewellery" data-jewelleryid="' + jewellerydata.id + '"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/share.svg" alt="' + jewellerydata.itemtitle + '" title="Share ' + jewellerydata.itemtitle + '"></button>';
 
-                     }   
+                        }
 
                     <?php  } ?>
 
-                     if (jewellerydata.ismyfavoriteitem == 1) {
+                    if (jewellerydata.ismyfavoriteitem == 1) {
 
                         htmldata += '<a href="javascript:void(0);" data-jewellerytitle="' + jewellerydata.itemtitle + '" data-jewelleryid="' + jewellerydata.id + '" data-ismyfavoriteitem="' + jewellerydata.ismyfavoriteitem + '" class="pull-right myfavoriteitem' + jewellerydata.id + ' addtomyfavorite"><i class="fas fa-heart clsaddtomyfavorite"></i></a>';
 
@@ -1252,7 +1268,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 
-                    
+
 
                     htmldata += '                        <h3>Gemstone</h3>';
 
@@ -1364,9 +1380,10 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                     htmldata += '                            <li><b>Contact Person</b>: <span class="metalpurity1 "tabindex="0" data-toggle="tooltip" title="Abc">&nbsp; ' + sellerdetails.personname + '</span></li>';
 
-                    htmldata += '<li class="hidephoneno1" data-id="'+jewellerydata.id+'"><b>Phone</b>: <span class="metalpurity1" title="Click To Unlock">&nbsp; ***** ***** <i class="fas fa-lock"></i></span></li>';
+                    htmldata += '<li class="hidephoneno1" data-id="' + jewellerydata.id + '"><b>Phone</b>: <span class="metalpurity1" title="Click To Unlock">&nbsp; ***** ***** <i class="fas fa-lock"></i></span></li>';
 
-                    htmldata += '<li class="showphoneno'+jewellerydata.id+' d-none"><b>Phone</b>: <span class="metalpurity1">&nbsp; <a href="tel:' + sellerdetails.phonecode + '' + sellerdetails.businessphoneno + '" >' + sellerdetails.phonecode + ' ' + sellerdetails.businessphoneno + '</a></span></li>';
+                    // htmldata += '<li class="showphoneno'+jewellerydata.id+' d-none"><b>Phone</b>: <span class="metalpurity1">&nbsp; <a href="tel:' + sellerdetails.phonecode + '' + sellerdetails.businessphoneno + '" >' + sellerdetails.phonecode + ' ' + sellerdetails.businessphoneno + '</a></span></li>';
+                    htmldata += '<li class="showphoneno' + jewellerydata.id + ' d-none"><b>Phone</b>: <span class="metalpurity1">&nbsp; <a href="https://wa.me/' + (sellerdetails.phonecode || '').replace(/\D/g, '') + (sellerdetails.businessphoneno || '').replace(/\D/g, '') + '" target="_blank">' + sellerdetails.phonecode + ' ' + sellerdetails.businessphoneno + '</a></span></li>';
 
                     // htmldata += '                            <li class="hyp-contect">Contact Seller</li>';
 
@@ -1434,7 +1451,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 
-                    
+
 
 
 
@@ -1516,59 +1533,59 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 
-                    if (jewellerydata.keyworddescription != '') 
+                    if (jewellerydata.keyworddescription != '')
 
                     {
 
-                    htmldata += '<div class="card mt-4">';
+                        htmldata += '<div class="card mt-4">';
 
                         htmldata += '<div class="card-body">';
 
-                            htmldata += '<h5 calss="avilabtnsetjw">Keyword Description</h5>';
+                        htmldata += '<h5 calss="avilabtnsetjw">Keyword Description</h5>';
 
-                            htmldata += '<div class="Notessearchd Notessearchd-space">';
+                        htmldata += '<div class="Notessearchd Notessearchd-space">';
 
-                                htmldata += '<ul>';
+                        htmldata += '<ul>';
 
-                                    htmldata += '<li><p>' + jewellerydata.keyworddescription + '</p></li>';
+                        htmldata += '<li><p>' + jewellerydata.keyworddescription + '</p></li>';
 
-                                htmldata += '</ul>';
-
-                            htmldata += '</div>';
+                        htmldata += '</ul>';
 
                         htmldata += '</div>';
 
-                    htmldata += '</div>';
+                        htmldata += '</div>';
+
+                        htmldata += '</div>';
 
                     }
 
-                    if (jewellerydata.suppliercomment != '') 
+                    if (jewellerydata.suppliercomment != '')
 
                     {
 
-                    htmldata += '<div class="card mt-4">';
+                        htmldata += '<div class="card mt-4">';
 
                         htmldata += '<div class="card-body">';
 
-                            htmldata += '<h5 calss="avilabtnsetjw">Suppliers Comment</h5>';
+                        htmldata += '<h5 calss="avilabtnsetjw">Suppliers Comment</h5>';
 
-                            htmldata += '<div class="Notessearchd Notessearchd-space">';
+                        htmldata += '<div class="Notessearchd Notessearchd-space">';
 
-                                htmldata += '<ul>';
+                        htmldata += '<ul>';
 
-                                    htmldata += '<li><p>' + jewellerydata.suppliercomment + '</p></li>';
+                        htmldata += '<li><p>' + jewellerydata.suppliercomment + '</p></li>';
 
-                                htmldata += '</ul>';
-
-                            htmldata += '</div>';
+                        htmldata += '</ul>';
 
                         htmldata += '</div>';
 
-                    htmldata += '</div>';
+                        htmldata += '</div>';
+
+                        htmldata += '</div>';
 
                     }
 
-                        
+
 
 
 
@@ -1732,9 +1749,9 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                 prodGallery();
 
-                
 
-                
+
+
 
 
 
@@ -1762,39 +1779,39 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                     console.log(imgid);
 
-                    $("#jewellerydetailmodal .our-jewellery-slider .bigimgDiv"+imgid).parent().addClass('active');
-
-                     
-
-                      
+                    $("#jewellerydetailmodal .our-jewellery-slider .bigimgDiv" + imgid).parent().addClass('active');
 
 
 
 
 
-                     
 
 
 
-                     
-
-                        //  alert(image);
-
-                        // var htmldata ="";
-
-                        // if(image)
-
-                        // {
-
-                        //     htmldata += '<img class="maxi primary blur-up lazyloaded" src="' + image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
-
-                        // }
 
 
 
-                        // $('.imagevideoDivclass').html(htmldata);
 
-                    
+
+
+
+                    //  alert(image);
+
+                    // var htmldata ="";
+
+                    // if(image)
+
+                    // {
+
+                    //     htmldata += '<img class="maxi primary blur-up lazyloaded" src="' + image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+
+                    // }
+
+
+
+                    // $('.imagevideoDivclass').html(htmldata);
+
+
 
                 });
 
@@ -1802,15 +1819,15 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                 $("#jewellerydetailmodal .mini .videoclass").click(function() {
 
-                       
 
-                        
 
-                       var video = $(this).attr('data-video');
 
-                      
 
-                        // $("#jewellerydetailmodal .maxi1").attr("src", $(this).attr("src").replace("100x100", "400x400"));
+                    var video = $(this).attr('data-video');
+
+
+
+                    // $("#jewellerydetailmodal .maxi1").attr("src", $(this).attr("src").replace("100x100", "400x400"));
 
                     //    var htmldata ="";
 
@@ -1818,7 +1835,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                     //    {
 
-                          
+
 
                     //        htmldata += '<video class="maxi1 primary blur-up lazyloaded " autoplay="" muted="" loop="">';
 
@@ -1830,7 +1847,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                     //    $('.imagevideoDivclass').html(htmldata);
 
-                       
+
 
                 });
 
@@ -1856,19 +1873,19 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 
-                $('.hidephoneno1').on('click',function(){
+                $('.hidephoneno1').on('click', function() {
 
-                        
 
-                        var id =$(this).data('id');
 
-                        
+                    var id = $(this).data('id');
 
-                        $(this).addClass('d-none');
 
-                        $('.showphoneno'+id).removeClass('d-none');
 
-                    });
+                    $(this).addClass('d-none');
+
+                    $('.showphoneno' + id).removeClass('d-none');
+
+                });
 
 
 
@@ -1950,7 +1967,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                                     $('#sharejewellerysearch').modal('hide');
 
-                                }else if(resultdata.status == -1)
+                                } else if (resultdata.status == -1)
 
                                 {
 
@@ -2058,7 +2075,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                             formdata = new FormData(form);
 
-                           // formdata.append("action", "contactjewelleryseller");
+                            // formdata.append("action", "contactjewelleryseller");
 
                             formdata.append("action", "addproductrequest");
 
@@ -2102,7 +2119,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                                     $('#contactjewelleryseller').modal('hide');
 
-                                }else if(resultdata.status == -1)
+                                } else if (resultdata.status == -1)
 
                                 {
 
@@ -2134,7 +2151,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 
-            }else if(resultdata.status == -1)
+            } else if (resultdata.status == -1)
 
             {
 
@@ -2378,7 +2395,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
                 }
 
-            }else if(resultdata.status == -1)
+            } else if (resultdata.status == -1)
 
             {
 
@@ -2410,23 +2427,21 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
 
 
-    $('.res-btn-set').click(function(){
+    $('.res-btn-set').click(function() {
 
-        if($(".widthset").hasClass("width-mobile-set"))
+        if ($(".widthset").hasClass("width-mobile-set"))
 
         {
 
-            $('.widthset').removeClass('width-mobile-set'); 
+            $('.widthset').removeClass('width-mobile-set');
+
+        } else {
+
+            $('.widthset').addClass('width-mobile-set');
 
         }
 
-        else{
 
-            $('.widthset').addClass('width-mobile-set'); 
-
-        }
-
-        
 
     });
 
@@ -2436,7 +2451,7 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
     // FOR PLAN UPGRADE & RENEW
 
-    function checkuserlogin(typeid,packageid,btntype){
+    function checkuserlogin(typeid, packageid, btntype) {
 
 
 
@@ -2516,9 +2531,25 @@ $CanMemberToMemberChat = $DB->getpackagewiseuserright($LoginInfo->getUid(),4)['a
 
     }
 
+    $(document).on('click', '.copy-image-btn', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
+        var imgUrl = $(this).attr('data-imgurl');
 
+        navigator.clipboard.writeText(imgUrl)
+            .then(function() {
+                Notiflix.Notify.Success('Image URL copied successfully!');
+            })
+            .catch(function() {
+                var textarea = document.createElement('textarea');
+                textarea.value = imgUrl;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
 
-
+                Notiflix.Notify.Success('Image URL copied successfully!');
+            });
+    });
 </script>
-
