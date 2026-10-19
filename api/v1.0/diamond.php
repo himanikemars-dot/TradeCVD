@@ -146,6 +146,7 @@ if ($isvalidUser['status'] == 1) {
 
                 //Fancy Color
                 $withfancycolor = $IISMethods->sanitize($_POST['withfancycolor']);
+                $isfancy = (isset($_POST['isfancy']) && $_POST['isfancy'] == 1) ? 1 : 0;
                 $fancyintensityid = $IISMethods->sanitize($_POST['fancyintensityid']);
                 $overtoneid = $_POST['overtoneid'];    //Multiple
                 $fancycolorid1 = $IISMethods->sanitize($_POST['fancycolorid1']);
@@ -427,6 +428,7 @@ if ($isvalidUser['status'] == 1) {
                         $insqry = array(
                             'personid' => $uid,
                             'personname' => $rowdata['personname'],
+                            'isfancy' => $isfancy,
                             'stock' => $stock,
                             'price' => $price,
                             'totalprice' => $totalprice,
@@ -1600,6 +1602,10 @@ if ($isvalidUser['status'] == 1) {
                 {
                     $query_main .= " AND ifnull(d.isparcel,0)=:isdiamondsearch";
                     $params[':isdiamondsearch'] = 0;
+                }
+                if (isset($_POST['isfancy']) && in_array($_POST['isfancy'], array('0', '1', 0, 1), true)) {
+                    $query_main .= " AND EXISTS (SELECT 1 FROM tbldiamond td WHERE td.id=d.id AND IFNULL(td.isfancy,0)=:isfancy)";
+                    $params[':isfancy'] = (int)$_POST['isfancy'];
                 }
                 // Parcel or not
                 if ($fltparcel)  // parcel
@@ -2939,6 +2945,8 @@ if ($isvalidUser['status'] == 1) {
                 }
             } else if ($action == 'uploaddiamondcsv') 
             {
+                $isfancy = (isset($_POST['isfancy']) && $_POST['isfancy'] == 1) ? 1 : 0;
+
                 if ($CanListDiamondXL == 1) {
 
                     // ini_set('display_errors', 1);
@@ -4098,6 +4106,7 @@ if ($isvalidUser['status'] == 1) {
                                 $insqry = array(
                                     'personid' => $uid,
                                     'personname' => $rowdata['personname'],
+                                    'isfancy' => $isfancy,
                                     'stock' => $stock,
                                     'price' => $price,
                                     'totalprice' => $totalpriceafterdiscount,

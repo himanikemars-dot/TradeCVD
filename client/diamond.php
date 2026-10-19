@@ -25,29 +25,23 @@ $id = $_REQUEST['id'];
 if ($LoginInfo) {
 
     if ($LoginInfo->getAdlogin() != '' && $LoginInfo->getIsguestuser() == 0) {
-
     } else {
 
 ?>
 
         <script>
-
             window.location = '<?php echo $config->getWeburl(); ?>home';
-
         </script>
 
     <?php
 
     }
-
 } else {
 
     ?>
 
     <script>
-
         window.location = '<?php echo $config->getWeburl(); ?>home';
-
     </script>
 
 <?php
@@ -120,35 +114,34 @@ if ($LoginInfo) {
 
 <body class="light home-page all-page-sidebarset max-w-2560px">
 
-    <?php 
+    <?php
 
-    $CheckUserRights=$DB->checkpackagewiseuserright($LoginInfo->getUid());
+    $CheckUserRights = $DB->checkpackagewiseuserright($LoginInfo->getUid());
 
     // echo $CheckUserRights['IsPackageExpire']; exit;
 
-    if($CheckUserRights['IsPackageExpire']==1){
+    if ($CheckUserRights['IsPackageExpire'] == 1) {
 
-        ?>
+    ?>
 
         <script>
-
-            Notiflix.Report.Warning('<?php echo $config->getPackageExpiredTitle(); ?>','<?php echo $config->getPackageExpiredMessage(); ?>', false, function(){window.location='<?php echo $config->getPackageExpiredURL(); ?>';});
+            Notiflix.Report.Warning('<?php echo $config->getPackageExpiredTitle(); ?>', '<?php echo $config->getPackageExpiredMessage(); ?>', false, function() {
+                window.location = '<?php echo $config->getPackageExpiredURL(); ?>';
+            });
 
             $('#preloader').addClass('d-none');
 
             $('#ctn-preloader').addClass('loaded');
-
-       </script>
+        </script>
 
     <?php
 
-    exit;
-
+        exit;
     }
 
     // 1 - Diamond Search , 6 - List Diamonds for Sale, 3 - Share Diamonds and Jewelry, 8 - SavaniGems XL for Excel
 
-    
+
 
     $CanDiamondSearch = $DB->getpackagewiseuserright($LoginInfo->getUid(), 1)['attributeval'];
 
@@ -168,16 +161,14 @@ if ($LoginInfo) {
 
     $CanMemberlimitdiamond = $DB->getpackagewiseuserright($LoginInfo->getUid(), 6)['limitvalue'];
 
-    $totaldiamondupload=$DB->getTotalDiamond($LoginInfo->getUid());
+    $totaldiamondupload = $DB->getTotalDiamond($LoginInfo->getUid());
 
     if ($CanDiamondSearch != 1 && $CanListDiamondForList != 1) {
 
     ?>
 
         <script>
-
             window.location = '<?php echo $config->getportalbaseurl(); ?>home';
-
         </script>
 
     <?php
@@ -218,7 +209,7 @@ if ($LoginInfo) {
 
                                     <li>
 
-                                        <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" >Search</a>
+                                        <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1">Search</a>
 
                                     </li>
 
@@ -276,7 +267,7 @@ if ($LoginInfo) {
 
                             <div class="tab-pane  show active" id="v-pills-1">
 
-                            <?php include('diamondmarketplace.php'); ?>
+                                <?php include('diamondmarketplace.php'); ?>
 
                                 <div class="row row-eq-height">
 
@@ -286,9 +277,9 @@ if ($LoginInfo) {
 
 
 
-                                    
 
-                
+
+
 
                                 </div>
 
@@ -306,23 +297,21 @@ if ($LoginInfo) {
 
                                 <div class="row row-eq-height">
 
-                                    
+
 
                                     <div class="col-md-12 mt-3 text-center">
 
                                         <?php
 
-                                        if($CanMemberlimitdiamond>0)
+                                        if ($CanMemberlimitdiamond > 0) {
 
-                                        {
-
-                                            ?>
+                                        ?>
 
                                             <span class="text-danger "><strong>Your Diamond Upload Limit is $<?php echo $CanMemberlimitdiamond; ?></strong></span>
 
-                                           | <span class="text-success "><strong>Total Diamond Upload is $<?php echo $totaldiamondupload; ?></strong></span>
+                                            | <span class="text-success "><strong>Total Diamond Upload is $<?php echo $totaldiamondupload; ?></strong></span>
 
-                                            <?php
+                                        <?php
 
                                         }
 
@@ -342,7 +331,7 @@ if ($LoginInfo) {
 
                                                 ?>
 
-                                                    <nav>
+                                                    <!-- <nav>
 
                                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -362,7 +351,41 @@ if ($LoginInfo) {
 
                                                         </div>
 
-                                                    </nav>
+                                                    </nav> -->
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <nav>
+
+                                                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                                                                <a class="nav-item nav-link active" id="nav-h-tab" data-toggle="tab"
+                                                                    href="#nav-h" role="tab" onclick="filldocumnetupload(1);"
+                                                                    aria-controls="nav-h" aria-selected="true">Single</a>
+
+                                                                <?php
+
+                                                                if ($CanListDiamondXL == 1) {
+
+                                                                ?>
+
+                                                                    <a class="nav-item nav-link ml-2" id="nav-p-tab" data-toggle="tab"
+                                                                        href="#nav-p" role="tab" onclick="filldocumnetupload(2);"
+                                                                        aria-controls="nav-p" aria-selected="false">Multiple</a>
+
+                                                                <?php
+
+                                                                } ?>
+
+                                                            </div>
+
+                                                        </nav>
+
+                                                        <div>
+                                                            <label class="switch pull-right mt-0 mb-0 ms-2">
+                                                                <input type="checkbox" name="diamond" value="1" id="fancy-diamond">
+                                                                <span class="slider round"></span>
+                                                            </label> <span class="pull-right"><b>Fancy Diamond</b></span>
+                                                        </div>
+                                                    </div>
 
                                                 <?php
 
@@ -376,11 +399,11 @@ if ($LoginInfo) {
 
                                                         <div class="tab-pane fade show active" id="nav-h" role="tabpanel" aria-labelledby="nav-h-tab">
 
-                                                           
+
 
                                                             <div class="showsinglehowcanihelp mt-2 d-none mr-1">
 
-                                                                
+
 
                                                             </div>
 
@@ -498,7 +521,7 @@ if ($LoginInfo) {
 
                                                                                         <div class="showmultiplehowcanihelp mt-2 d-none mr-1">
 
-                                                                
+
 
                                                                                         </div>
 
@@ -526,21 +549,19 @@ if ($LoginInfo) {
 
                                                                                         $CanMemberlimitdiamond = $DB->getpackagewiseuserright($LoginInfo->getUid(), 6)['limitvalue'];
 
-                                                                                        $totaldiamondupload=$DB->getTotalDiamond($LoginInfo->getUid());
+                                                                                        $totaldiamondupload = $DB->getTotalDiamond($LoginInfo->getUid());
 
-                                                                                        if($CanMembernolimitdiamond==1 || $totaldiamondupload<$CanMemberlimitdiamond)
-
-                                                                                        {
+                                                                                        if ($CanMembernolimitdiamond == 1 || $totaldiamondupload < $CanMemberlimitdiamond) {
 
                                                                                         ?>
 
-                                                                                        <div class="text-center p-5 setresup">
+                                                                                            <div class="text-center p-5 setresup">
 
-                                                                                            <button type="submit" id="btndiamondcsvupload" disabled class="btn send-btn  adminbtndark">Upload</button>
+                                                                                                <button type="submit" id="btndiamondcsvupload" disabled class="btn send-btn  adminbtndark">Upload</button>
 
-                                                                                            <input type="reset" value="Reset" id="btnresetdiamondcsvupload" class="btn reset-btn dash-reset-btn">
+                                                                                                <input type="reset" value="Reset" id="btnresetdiamondcsvupload" class="btn reset-btn dash-reset-btn">
 
-                                                                                        </div>
+                                                                                            </div>
 
                                                                                         <?php
 
@@ -620,9 +641,9 @@ if ($LoginInfo) {
 
                                                                 <li>&nbsp;<b class="totalmyprice"> Total Price : $0 </b></li>
 
-                                                                <li>&nbsp;<b class="lastupdateddt">  </b></li>
+                                                                <li>&nbsp;<b class="lastupdateddt"> </b></li>
 
-                                                                
+
 
                                                             </ul>
 
@@ -636,11 +657,9 @@ if ($LoginInfo) {
 
                                                                 $CanListDiamondUpdatePrice = $DB->getpackagewiseuserright($LoginInfo->getUid(), 8)['attributeval'];
 
-                                                                if($CanListDiamondUpdatePrice==1)
+                                                                if ($CanListDiamondUpdatePrice == 1) {
 
-                                                                {
-
-                                                                    ?>
+                                                                ?>
 
                                                                     <div class="searchgreade searchcom setsho">
 
@@ -648,7 +667,7 @@ if ($LoginInfo) {
 
                                                                     </div>
 
-                                                                    <?php
+                                                                <?php
 
                                                                 }
 
@@ -658,9 +677,9 @@ if ($LoginInfo) {
 
                                                                 <div class="delete-selected tbl-check d-none searchgreade searchcom setsho">
 
-                                                                
 
-                                                                    <a href="javascript:void(0);" class="btn btn-primary m-0 btnmultitrash trust-dataset" data-toggle="modal" ><i class="fas fa-trash"></i></a>
+
+                                                                    <a href="javascript:void(0);" class="btn btn-primary m-0 btnmultitrash trust-dataset" data-toggle="modal"><i class="fas fa-trash"></i></a>
 
                                                                 </div>
 
@@ -682,25 +701,25 @@ if ($LoginInfo) {
 
                                                                     <select class="form-control w-auto shortbydianmondse ml-auto" id="mydiamondsortbyid" name="mydiamondsortbyid">
 
-                                                                        
 
-                                                                        </select>
 
-                                                                    </div>
-
-                                                                    <div class="searchgreade searchcom">
-
-                                                                        <button type="button" class="btn searchbtnset"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="diamonds sort by" title="diamonds sort by"></button>
-
-                                                                    </div>
-
-                                                                    <div class="searchgreade searchcom">
-
-                                                                        <button type="button" class="btn searchbtnset navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle-mydiamond"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg" alt="diamonds filter" title="diamonds filter"></button>
-
-                                                                    </div>
+                                                                    </select>
 
                                                                 </div>
+
+                                                                <div class="searchgreade searchcom">
+
+                                                                    <button type="button" class="btn searchbtnset"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="diamonds sort by" title="diamonds sort by"></button>
+
+                                                                </div>
+
+                                                                <div class="searchgreade searchcom">
+
+                                                                    <button type="button" class="btn searchbtnset navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle-mydiamond"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg" alt="diamonds filter" title="diamonds filter"></button>
+
+                                                                </div>
+
+                                                            </div>
 
                                                         </div>
 
@@ -877,11 +896,6 @@ if ($LoginInfo) {
 <?php include('js.php'); ?>
 
 <script>
-
-
-
-   
-
     $(document).ready(function() {
 
         $("#Diamond-pills-tab li:first-child a").click();
@@ -926,7 +940,7 @@ if ($LoginInfo) {
 
     });
 
-    $('#v-pills-1-tab').on('click',function(){
+    $('#v-pills-1-tab').on('click', function() {
 
         $('#v-pills-1 #nav-tab .nav-link.active').trigger('click');
 
@@ -1050,7 +1064,7 @@ if ($LoginInfo) {
 
             $('#DiamondSearchData .select2').select2();
 
-            
+
 
             $('#form-diamond-search').removeClass('d-none');
 
@@ -1058,23 +1072,23 @@ if ($LoginInfo) {
 
 
 
-            var winwidth = $(window).width(); 
+            var winwidth = $(window).width();
 
-            var shapeshow=$('#shapeDivData .filter-containernew .filter input').length;
+            var shapeshow = $('#shapeDivData .filter-containernew .filter input').length;
 
-            var colorshow=$('#colorDivData .filter input').length;
+            var colorshow = $('#colorDivData .filter input').length;
 
-            var clarityshow=$('#clarityDivData .filter input').length;
+            var clarityshow = $('#clarityDivData .filter input').length;
 
-            var intensityshow=$('#intensityDivData .filter input').length;
+            var intensityshow = $('#intensityDivData .filter input').length;
 
-            var gradingshow=$('#labDivData .filter input').length;
+            var gradingshow = $('#labDivData .filter input').length;
 
-            var gridleshow=$('#gridleDivData .filter input').length;
+            var gridleshow = $('#gridleDivData .filter input').length;
 
-            var culetsizeshow=$('#culetsizeDivData .filter input').length;
+            var culetsizeshow = $('#culetsizeDivData .filter input').length;
 
-            var culetconditionshow=$('#culetconditionDivData .filter input').length;
+            var culetconditionshow = $('#culetconditionDivData .filter input').length;
 
             $('.btnshapshowmore').addClass('d-none');
 
@@ -1094,9 +1108,9 @@ if ($LoginInfo) {
 
             $('.btnshapshowmore').removeClass('d-none');
 
-            if(winwidth>991 && winwidth<=1500){
+            if (winwidth > 991 && winwidth <= 1500) {
 
-                if(shapeshow>7)
+                if (shapeshow > 7)
 
                 {
 
@@ -1106,7 +1120,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(colorshow>7)
+                if (colorshow > 7)
 
                 {
 
@@ -1114,7 +1128,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(clarityshow>13)
+                if (clarityshow > 13)
 
                 {
 
@@ -1122,7 +1136,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(intensityshow>6)
+                if (intensityshow > 6)
 
                 {
 
@@ -1130,7 +1144,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(gradingshow>7)
+                if (gradingshow > 7)
 
                 {
 
@@ -1138,7 +1152,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(gridleshow>7)
+                if (gridleshow > 7)
 
                 {
 
@@ -1146,7 +1160,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(culetsizeshow>7)
+                if (culetsizeshow > 7)
 
                 {
 
@@ -1154,7 +1168,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(culetconditionshow>7)
+                if (culetconditionshow > 7)
 
                 {
 
@@ -1162,13 +1176,11 @@ if ($LoginInfo) {
 
                 }
 
-            }
-
-            else if(winwidth <= 991)  //Mobile View
+            } else if (winwidth <= 991) //Mobile View
 
             {
 
-                if(shapeshow>6)
+                if (shapeshow > 6)
 
                 {
 
@@ -1178,7 +1190,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(colorshow>6)
+                if (colorshow > 6)
 
                 {
 
@@ -1186,7 +1198,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(clarityshow>6)
+                if (clarityshow > 6)
 
                 {
 
@@ -1194,7 +1206,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(intensityshow>3)
+                if (intensityshow > 3)
 
                 {
 
@@ -1202,7 +1214,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(gradingshow>6)
+                if (gradingshow > 6)
 
                 {
 
@@ -1210,7 +1222,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(gridleshow>6)
+                if (gridleshow > 6)
 
                 {
 
@@ -1218,7 +1230,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(culetsizeshow>6)
+                if (culetsizeshow > 6)
 
                 {
 
@@ -1226,7 +1238,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(culetconditionshow>6)
+                if (culetconditionshow > 6)
 
                 {
 
@@ -1234,9 +1246,9 @@ if ($LoginInfo) {
 
                 }
 
-            }else{
+            } else {
 
-                if(shapeshow>12)
+                if (shapeshow > 12)
 
                 {
 
@@ -1246,7 +1258,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(colorshow>12)
+                if (colorshow > 12)
 
                 {
 
@@ -1254,7 +1266,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(clarityshow>13)
+                if (clarityshow > 13)
 
                 {
 
@@ -1262,7 +1274,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(intensityshow>9)
+                if (intensityshow > 9)
 
                 {
 
@@ -1270,7 +1282,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(gradingshow>13)
+                if (gradingshow > 13)
 
                 {
 
@@ -1278,7 +1290,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(gridleshow>13)
+                if (gridleshow > 13)
 
                 {
 
@@ -1286,7 +1298,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(culetsizeshow>12)
+                if (culetsizeshow > 12)
 
                 {
 
@@ -1294,7 +1306,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(culetconditionshow>12)
+                if (culetconditionshow > 12)
 
                 {
 
@@ -1306,27 +1318,27 @@ if ($LoginInfo) {
 
 
 
-            $('#DiamondSearchData .show-more-filters').on('click',function() {
+            $('#DiamondSearchData .show-more-filters').on('click', function() {
 
-            //   
+                //   
 
                 $(this).parent().parent().find(".filter-container").toggleClass("show-more-container");
 
                 $(this).toggleClass("show-more-open");
 
-                if($(this).hasClass('show-more-open')==true)
+                if ($(this).hasClass('show-more-open') == true)
 
                 {
 
                     $(this).children("span").text("- Less");
 
-                }else{
+                } else {
 
                     $(this).children("span").text("+ More");
 
                 }
 
-             
+
 
             });
 
@@ -1338,9 +1350,9 @@ if ($LoginInfo) {
 
 
 
-            $('#fltfromintensity').on('change',function(){
+            $('#fltfromintensity').on('change', function() {
 
-                var fltfromintensity=$(this).val();
+                var fltfromintensity = $(this).val();
 
                 $('#s_fltfromintensity').val(fltfromintensity);
 
@@ -1350,9 +1362,9 @@ if ($LoginInfo) {
 
 
 
-            $('#fltfrommilkyid').on('change',function(){
+            $('#fltfrommilkyid').on('change', function() {
 
-                var fltfrommilkyid=$(this).val();
+                var fltfrommilkyid = $(this).val();
 
                 $('#s_fltfrommilkyid').val(fltfrommilkyid);
 
@@ -1362,9 +1374,9 @@ if ($LoginInfo) {
 
 
 
-            $('#fltfromcutid').on('change',function(){
+            $('#fltfromcutid').on('change', function() {
 
-                var fltfromcutid=$(this).val();
+                var fltfromcutid = $(this).val();
 
                 $('#s_fltfromcutid').val(fltfromcutid);
 
@@ -1374,9 +1386,9 @@ if ($LoginInfo) {
 
 
 
-            $('#fltfrompolishid').on('change',function(){
+            $('#fltfrompolishid').on('change', function() {
 
-                var fltfrompolishid=$(this).val();
+                var fltfrompolishid = $(this).val();
 
                 $('#s_fltfrompolishid').val(fltfrompolishid);
 
@@ -1386,9 +1398,9 @@ if ($LoginInfo) {
 
 
 
-            $('#fltfromsymmetryid').on('change',function(){
+            $('#fltfromsymmetryid').on('change', function() {
 
-                var fltfromsymmetryid=$(this).val();
+                var fltfromsymmetryid = $(this).val();
 
                 $('#s_fltfromsymmetryid').val(fltfromsymmetryid);
 
@@ -1398,19 +1410,19 @@ if ($LoginInfo) {
 
 
 
-            $('input[name="treatment"]').on('change',function(){
+            $('input[name="treatment"]').on('change', function() {
 
-                var treatment=$('input[name="treatment"]:checked').val();
+                var treatment = $('input[name="treatment"]:checked').val();
 
                 $('#listtreatmentDiv').html('');
 
-                if(treatment==1)
+                if (treatment == 1)
 
                 {
 
                     filldiamondtreat();
 
-                }else if(treatment==2)
+                } else if (treatment == 2)
 
                 {
 
@@ -1442,7 +1454,7 @@ if ($LoginInfo) {
 
 
 
-   
+
 
     function filldocumnetupload(typeid) {
 
@@ -1484,53 +1496,51 @@ if ($LoginInfo) {
 
             $('.showmultiplehowcanihelp').addClass('d-none');
 
-            var htmldata='';
+            var htmldata = '';
 
-            if(resultdata.status==1){
+            if (resultdata.status == 1) {
 
-                if(typeid==1)
+                if (typeid == 1)
 
                 {
 
-                    if(resultdata.data[0].fileurl!='')
+                    if (resultdata.data[0].fileurl != '')
 
                     {
 
                         $('.showsinglehowcanihelp').removeClass('d-none');
 
-                        htmldata+='<p class="text-right"><a href="'+resultdata.data[0].fileurlpath+'" target="_blank"><i class="fas fa-book"></i>&nbsp;How To Upload?</a></p>';
+                        htmldata += '<p class="text-right"><a href="' + resultdata.data[0].fileurlpath + '" target="_blank"><i class="fas fa-book"></i>&nbsp;How To Upload?</a></p>';
 
                     }
 
                     $('.showsinglehowcanihelp').html(htmldata);
 
-                }
+                } else if (typeid == 2) {
 
-                else if(typeid==2){
-
-                    if(resultdata.data[0].fileurl!='')
+                    if (resultdata.data[0].fileurl != '')
 
                     {
 
                         $('.showmultiplehowcanihelp').removeClass('d-none');
 
-                        htmldata+='<p class="text-right"><a href="'+resultdata.data[0].fileurlpath+'" target="_blank"><i class="fas fa-book"></i>&nbsp;How To Upload?</a></p>';
+                        htmldata += '<p class="text-right"><a href="' + resultdata.data[0].fileurlpath + '" target="_blank"><i class="fas fa-book"></i>&nbsp;How To Upload?</a></p>';
 
-                    } 
+                    }
 
-                    $('.showmultiplehowcanihelp').html(htmldata);   
+                    $('.showmultiplehowcanihelp').html(htmldata);
 
                 }
 
-                
 
-             }
 
-           
+            }
 
 
 
-            
+
+
+
 
         }
 
@@ -1546,7 +1556,7 @@ if ($LoginInfo) {
 
     function filltointensity() {
 
-        var displayorder=$('#fltfromintensity :selected').data('displayorder');
+        var displayorder = $('#fltfromintensity :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -1604,7 +1614,7 @@ if ($LoginInfo) {
 
     }
 
-    $('body').on('change','#s_fltfromintensity',function(){
+    $('body').on('change', '#s_fltfromintensity', function() {
 
         sfilltointensity();
 
@@ -1612,7 +1622,7 @@ if ($LoginInfo) {
 
     function sfilltointensity() {
 
-        var displayorder=$('#s_fltfromintensity :selected').data('displayorder');
+        var displayorder = $('#s_fltfromintensity :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -1672,7 +1682,7 @@ if ($LoginInfo) {
 
     function filltomilky() {
 
-        var displayorder=$('#fltfrommilkyid :selected').data('displayorder');
+        var displayorder = $('#fltfrommilkyid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -1730,7 +1740,7 @@ if ($LoginInfo) {
 
     }
 
-    $('body').on('change','#s_fltfrommilkyid',function(){
+    $('body').on('change', '#s_fltfrommilkyid', function() {
 
         sfilltomilky();
 
@@ -1738,7 +1748,7 @@ if ($LoginInfo) {
 
     function sfilltomilky() {
 
-        var displayorder=$('#s_fltfrommilkyid :selected').data('displayorder');
+        var displayorder = $('#s_fltfrommilkyid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -1790,25 +1800,25 @@ if ($LoginInfo) {
 
     }
 
-    $('body').on('change','#fltfromsieveid',function(){
+    $('body').on('change', '#fltfromsieveid', function() {
 
-               
 
-                var fltfromsieveid=$(this).val();
 
-              
+        var fltfromsieveid = $(this).val();
 
-                $('#s_fltfromsieveid').val(fltfromsieveid);
 
-                filltosieve();
 
-            })
+        $('#s_fltfromsieveid').val(fltfromsieveid);
+
+        filltosieve();
+
+    })
 
 
 
     function filltosieve() {
 
-        var displayorder=$('#fltfromsieveid :selected').data('displayorder');
+        var displayorder = $('#fltfromsieveid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -1868,7 +1878,7 @@ if ($LoginInfo) {
 
     function filltocut() {
 
-        var displayorder=$('#fltfromcutid :selected').data('displayorder');
+        var displayorder = $('#fltfromcutid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -1926,9 +1936,9 @@ if ($LoginInfo) {
 
     }
 
-    
 
-    $('body').on('change','#s_fltfromcutid',function(){
+
+    $('body').on('change', '#s_fltfromcutid', function() {
 
         sfilltocut();
 
@@ -1936,7 +1946,7 @@ if ($LoginInfo) {
 
     function sfilltocut() {
 
-        var displayorder=$('#s_fltfromcutid :selected').data('displayorder');
+        var displayorder = $('#s_fltfromcutid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -1992,7 +2002,7 @@ if ($LoginInfo) {
 
     function filltopolish() {
 
-        var displayorder=$('#fltfrompolishid :selected').data('displayorder');
+        var displayorder = $('#fltfrompolishid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -2050,7 +2060,7 @@ if ($LoginInfo) {
 
     }
 
-    $('body').on('change','#s_fltfrompolishid',function(){
+    $('body').on('change', '#s_fltfrompolishid', function() {
 
         sfilltopolish();
 
@@ -2058,7 +2068,7 @@ if ($LoginInfo) {
 
     function sfilltopolish() {
 
-        var displayorder=$('#s_fltfrompolishid :selected').data('displayorder');
+        var displayorder = $('#s_fltfrompolishid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -2114,7 +2124,7 @@ if ($LoginInfo) {
 
     function filltosymmetry() {
 
-        var displayorder=$('#fltfromsymmetryid :selected').data('displayorder');
+        var displayorder = $('#fltfromsymmetryid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -2172,7 +2182,7 @@ if ($LoginInfo) {
 
     }
 
-    $('body').on('change','#s_fltfromsymmetryid',function(){
+    $('body').on('change', '#s_fltfromsymmetryid', function() {
 
         sfilltosymmetry();
 
@@ -2180,7 +2190,7 @@ if ($LoginInfo) {
 
     function sfilltosymmetry() {
 
-        var displayorder=$('#s_fltfromsymmetryid :selected').data('displayorder');
+        var displayorder = $('#s_fltfromsymmetryid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -2240,7 +2250,7 @@ if ($LoginInfo) {
 
     function filldiamondtreat() {
 
-        var displayorder=$('#fltfrompolishid :selected').data('displayorder');
+        var displayorder = $('#fltfrompolishid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -2276,13 +2286,13 @@ if ($LoginInfo) {
 
             var resultdata = jQuery.parseJSON(JsonData);
 
-            var htmldata='';
+            var htmldata = '';
 
-            var selhtmldata='';
+            var selhtmldata = '';
 
-            
 
-            for(var i in resultdata.data)
+
+            for (var i in resultdata.data)
 
             {
 
@@ -2290,17 +2300,17 @@ if ($LoginInfo) {
 
                 htmldata += '<div class="form-check">';
 
-                htmldata += '<input class="form-check-input" type="checkbox" data-name="'+resultdata.data[i].name+'" name="flttreatment[]" value="'+resultdata.data[i].id+'" id="flttreatment'+resultdata.data[i].id+'">';
+                htmldata += '<input class="form-check-input" type="checkbox" data-name="' + resultdata.data[i].name + '" name="flttreatment[]" value="' + resultdata.data[i].id + '" id="flttreatment' + resultdata.data[i].id + '">';
 
-                htmldata += '<label class="form-check-label ml-4" for="flttreatment'+resultdata.data[i].id+'"> '+resultdata.data[i].name+'</label>';
-
-                htmldata += '</div>';
+                htmldata += '<label class="form-check-label ml-4" for="flttreatment' + resultdata.data[i].id + '"> ' + resultdata.data[i].name + '</label>';
 
                 htmldata += '</div>';
 
+                htmldata += '</div>';
 
 
-                selhtmldata+='<option value="'+resultdata.data[i].id+'">'+resultdata.data[i].name+'</option>';
+
+                selhtmldata += '<option value="' + resultdata.data[i].id + '">' + resultdata.data[i].name + '</option>';
 
             }
 
@@ -2326,7 +2336,7 @@ if ($LoginInfo) {
 
     function filltretment() {
 
-        var displayorder=$('#fltfrompolishid :selected').data('displayorder');
+        var displayorder = $('#fltfrompolishid :selected').data('displayorder');
 
         var pagename = getpagename();
 
@@ -2362,13 +2372,13 @@ if ($LoginInfo) {
 
             var resultdata = jQuery.parseJSON(JsonData);
 
-            var htmldata='';
+            var htmldata = '';
 
-            var selhtmldata='';
+            var selhtmldata = '';
 
-            
 
-            for(var i in resultdata.data)
+
+            for (var i in resultdata.data)
 
             {
 
@@ -2376,17 +2386,17 @@ if ($LoginInfo) {
 
                 htmldata += '<div class="form-check">';
 
-                htmldata += '<input class="form-check-input" type="checkbox" data-name="'+resultdata.data[i].name+'" name="flttreatment[]" value="'+resultdata.data[i].id+'" id="flttreatment'+resultdata.data[i].id+'">';
+                htmldata += '<input class="form-check-input" type="checkbox" data-name="' + resultdata.data[i].name + '" name="flttreatment[]" value="' + resultdata.data[i].id + '" id="flttreatment' + resultdata.data[i].id + '">';
 
-                htmldata += '<label class="form-check-label ml-4" for="flttreatment'+resultdata.data[i].id+'"> '+resultdata.data[i].name+'</label>';
-
-                htmldata += '</div>';
+                htmldata += '<label class="form-check-label ml-4" for="flttreatment' + resultdata.data[i].id + '"> ' + resultdata.data[i].name + '</label>';
 
                 htmldata += '</div>';
 
+                htmldata += '</div>';
 
 
-                selhtmldata+='<option value="'+resultdata.data[i].id+'">'+resultdata.data[i].name+'</option>';
+
+                selhtmldata += '<option value="' + resultdata.data[i].id + '">' + resultdata.data[i].name + '</option>';
 
             }
 
@@ -2410,13 +2420,13 @@ if ($LoginInfo) {
 
 
 
-    $('body').on('click','#nobgm',function(){
+    $('body').on('click', '#nobgm', function() {
 
         $('#fltshadeid').val('');
 
         $('#fltshadeid').select2();
 
-        if($(this).prop('checked')==true)
+        if ($(this).prop('checked') == true)
 
         {
 
@@ -2424,7 +2434,7 @@ if ($LoginInfo) {
 
             $("#fltshadeid > option").each(function() {
 
-                if($(this).data("isnobgm")==1)
+                if ($(this).data("isnobgm") == 1)
 
                 {
 
@@ -2498,13 +2508,13 @@ if ($LoginInfo) {
 
 
 
-    $('body').on('click','.clscolortag',function(){
+    $('body').on('click', '.clscolortag', function() {
 
         $('.clscolortag').removeClass('active');
 
         $(this).addClass('active');
 
-        var type=$(this).data('id');
+        var type = $(this).data('id');
 
         $('.clsfancycolor').addClass('d-none');
 
@@ -2522,23 +2532,23 @@ if ($LoginInfo) {
 
         $('#fltcolor').select2();
 
-        $('#flteyecleanid').prop('disabled',false);
+        $('#flteyecleanid').prop('disabled', false);
 
         // $('#fltmilkyid').prop('disabled',false);
 
-        $('#fltfrommilkyid').prop('disabled',false);
+        $('#fltfrommilkyid').prop('disabled', false);
 
-        $('#flttomilkyid').prop('disabled',false);
+        $('#flttomilkyid').prop('disabled', false);
 
-        $('#fltopeninclusionid').prop('disabled',false);
+        $('#fltopeninclusionid').prop('disabled', false);
 
-        $('#fltwhiteinclusionid').prop('disabled',false);
+        $('#fltwhiteinclusionid').prop('disabled', false);
 
-        $('#fltblackinclusionid').prop('disabled',false);
+        $('#fltblackinclusionid').prop('disabled', false);
 
-        $('#fltshadeid').prop('disabled',false);
+        $('#fltshadeid').prop('disabled', false);
 
-        if(type==1)
+        if (type == 1)
 
         {
 
@@ -2546,7 +2556,7 @@ if ($LoginInfo) {
 
             $('.clswhitecolor').addClass('d-none');
 
-            $('.clscolordetail').prop('checked',false);
+            $('.clscolordetail').prop('checked', false);
 
             $('#flteyecleanid').val('');
 
@@ -2590,23 +2600,23 @@ if ($LoginInfo) {
 
 
 
-            $('#flteyecleanid').prop('disabled',true);
+            $('#flteyecleanid').prop('disabled', true);
 
             // $('#fltmilkyid').prop('disabled',true);
 
-            $('#fltfrommilkyid').prop('disabled',true);
+            $('#fltfrommilkyid').prop('disabled', true);
 
-            $('#flttomilkyid').prop('disabled',true);
+            $('#flttomilkyid').prop('disabled', true);
 
-            $('#fltopeninclusionid').prop('disabled',true);
+            $('#fltopeninclusionid').prop('disabled', true);
 
-            $('#fltwhiteinclusionid').prop('disabled',true);
+            $('#fltwhiteinclusionid').prop('disabled', true);
 
-            $('#fltblackinclusionid').prop('disabled',true);
+            $('#fltblackinclusionid').prop('disabled', true);
 
-            $('#fltshadeid').prop('disabled',true);
+            $('#fltshadeid').prop('disabled', true);
 
-           
+
 
 
 
@@ -2618,9 +2628,9 @@ if ($LoginInfo) {
 
 
 
-    $('body').on('click','.clsadvancemeasuretag',function(){
+    $('body').on('click', '.clsadvancemeasuretag', function() {
 
-        if($(this).hasClass('active')==true)
+        if ($(this).hasClass('active') == true)
 
         {
 
@@ -2644,7 +2654,7 @@ if ($LoginInfo) {
 
 
 
-        }else{
+        } else {
 
             $('.clsadvancemeasuretag').addClass('active');
 
@@ -2702,13 +2712,13 @@ if ($LoginInfo) {
 
             $('.chart-loading').hide();
 
-            var winwidth = $(window).width(); 
+            var winwidth = $(window).width();
 
-            var shapeshow=$('#shapeparcelDivData  .filter-parcelshape .filter input').length;
+            var shapeshow = $('#shapeparcelDivData  .filter-parcelshape .filter input').length;
 
-            var colorshow=$('#colorparcelDivData .filter input').length;
+            var colorshow = $('#colorparcelDivData .filter input').length;
 
-            var clarityshow=$('#clarityparcelDivData .filter input').length;
+            var clarityshow = $('#clarityparcelDivData .filter input').length;
 
             $('#form-diamond-parcel-search .btnparcelshapshowmore').addClass('d-none');
 
@@ -2716,9 +2726,9 @@ if ($LoginInfo) {
 
             $('#form-diamond-parcel-search .btnparcelclarityshowmore').addClass('d-none');
 
-            if(winwidth>991 && winwidth<=1500){
+            if (winwidth > 991 && winwidth <= 1500) {
 
-                if(shapeshow>9)
+                if (shapeshow > 9)
 
                 {
 
@@ -2726,7 +2736,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(colorshow>9)
+                if (colorshow > 9)
 
                 {
 
@@ -2734,7 +2744,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(clarityshow>13)
+                if (clarityshow > 13)
 
                 {
 
@@ -2742,13 +2752,11 @@ if ($LoginInfo) {
 
                 }
 
-            }
-
-            else if(winwidth <= 991)  //Mobile View
+            } else if (winwidth <= 991) //Mobile View
 
             {
 
-                if(shapeshow>6)
+                if (shapeshow > 6)
 
                 {
 
@@ -2756,7 +2764,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(colorshow>6)
+                if (colorshow > 6)
 
                 {
 
@@ -2764,7 +2772,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(clarityshow>6)
+                if (clarityshow > 6)
 
                 {
 
@@ -2772,11 +2780,11 @@ if ($LoginInfo) {
 
                 }
 
-                
 
-            }else{
 
-                if(shapeshow>12)
+            } else {
+
+                if (shapeshow > 12)
 
                 {
 
@@ -2784,7 +2792,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(colorshow>12)
+                if (colorshow > 12)
 
                 {
 
@@ -2792,7 +2800,7 @@ if ($LoginInfo) {
 
                 }
 
-                if(clarityshow>13)
+                if (clarityshow > 13)
 
                 {
 
@@ -2804,27 +2812,27 @@ if ($LoginInfo) {
 
 
 
-            $('#DiamondParcelSearchData .show-more-filters').on('click',function() {
+            $('#DiamondParcelSearchData .show-more-filters').on('click', function() {
 
-            //   
+                //   
 
                 $(this).parent().parent().find(".filter-container").toggleClass("show-more-container");
 
                 $(this).toggleClass("show-more-open");
 
-                if($(this).hasClass('show-more-open')==true)
+                if ($(this).hasClass('show-more-open') == true)
 
                 {
 
                     $(this).children("span").text("- Less");
 
-                }else{
+                } else {
 
                     $(this).children("span").text("+ More");
 
                 }
 
-             
+
 
             });
 
@@ -2998,7 +3006,7 @@ if ($LoginInfo) {
 
             $('#nav-tabContent-DiamondUploadFormDiv .select2').select2();
 
-            var formevent=$('#form-diamond-upload #formevent').val();
+            var formevent = $('#form-diamond-upload #formevent').val();
 
             $('#btngeneralinfo').removeClass('d-none');
 
@@ -3006,13 +3014,11 @@ if ($LoginInfo) {
 
             <?php
 
-            if($CanMembernolimitdiamond!=1 && $totaldiamondupload>$CanMemberlimitdiamond)
+            if ($CanMembernolimitdiamond != 1 && $totaldiamondupload > $CanMemberlimitdiamond) {
 
-            {
+            ?>
 
-                ?>
-
-                if(formevent=='submit')
+                if (formevent == 'submit')
 
                 {
 
@@ -3022,7 +3028,7 @@ if ($LoginInfo) {
 
                 }
 
-                <?php
+            <?php
 
             }
 
@@ -3056,37 +3062,38 @@ if ($LoginInfo) {
 
 
 
-            $('#savanipercentage').on('input',function(){
+            $('#savanipercentage').on('input', function() {
 
-                var savanipercentage=parseFloat($(this).val())|0;
+                var savanipercentage = parseFloat($(this).val()) | 0;
 
-                if(savanipercentage>100)
+                if (savanipercentage > 100)
 
                 {
 
                     $('#savanipercentage').val('100');
 
-                }/* else if(savanipercentage <-99)
+                }
+                /* else if(savanipercentage <-99)
 
-                {
+                                {
 
-                    $('#savanipercentage').val('-0');
+                                    $('#savanipercentage').val('-0');
 
-                }else if(savanipercentage==0){
+                                }else if(savanipercentage==0){
 
-                    $('#savanipercentage').val('-'+parseFloat(savanipercentage));
+                                    $('#savanipercentage').val('-'+parseFloat(savanipercentage));
 
-                }else{
+                                }else{
 
-                    if(savanipercentage!='NaN')
+                                    if(savanipercentage!='NaN')
 
-                    {
+                                    {
 
-                        $('#savanipercentage').val(parseFloat(savanipercentage));
+                                        $('#savanipercentage').val(parseFloat(savanipercentage));
 
-                    }
+                                    }
 
-                } */
+                                } */
 
             })
 
@@ -3228,7 +3235,7 @@ if ($LoginInfo) {
 
             var resultdata = jQuery.parseJSON(JsonData);
 
-            if(flg==1)
+            if (flg == 1)
 
             {
 
@@ -3236,7 +3243,7 @@ if ($LoginInfo) {
 
                 $('#form-diamond-upload #sieveid').select2();
 
-            }else if(flg==2)
+            } else if (flg == 2)
 
             {
 
@@ -3244,7 +3251,7 @@ if ($LoginInfo) {
 
                 $('#form-diamond-upload #tosieveid').select2();
 
-            }else{
+            } else {
 
                 $('#form-diamond-upload #sieveid').html(resultdata.data);
 
@@ -3256,7 +3263,7 @@ if ($LoginInfo) {
 
             }
 
-            
+
 
         }
 
@@ -3268,11 +3275,11 @@ if ($LoginInfo) {
 
         }
 
-    } 
+    }
 
 
 
-    function addsievedata(flg){
+    function addsievedata(flg) {
 
         $('#addSieveModal').modal('show');
 
@@ -3280,55 +3287,62 @@ if ($LoginInfo) {
 
         $('#addSieveModal #form-add-sieve #displayorder').val('');
 
-        if($('#form-add-sieve').length){		
+        if ($('#form-add-sieve').length) {
 
             $('#form-add-sieve').validate({
 
-                rules:{
+                rules: {
 
-                    name:{
-
-                        required: true,
-
-                    },
-
-                    displayorder:{
+                    name: {
 
                         required: true,
 
                     },
 
-                },messages:{
+                    displayorder: {
 
-                    name:{
-
-                        required:"Name is required",
+                        required: true,
 
                     },
 
-                    displayorder:{
+                },
+                messages: {
 
-                        required:"Display Order is required",
+                    name: {
+
+                        required: "Name is required",
+
+                    },
+
+                    displayorder: {
+
+                        required: "Display Order is required",
 
                     },
 
                 },
 
-                submitHandler: function(form){
+                submitHandler: function(form) {
 
 
 
                     $('#loaderprogress').show();
 
-                    var pagename=getpagename();
+                    var pagename = getpagename();
 
-                    var useraction=$('#formevent').val();
+                    var useraction = $('#formevent').val();
 
                     formdata = new FormData(form);
 
                     formdata.append("action", "insertseievemaster");
 
-                    var headersdata= {'Accept': 'application/json',platform: 4,userpagename:pagename,useraction:useraction,masterlisting:false};
+                    var headersdata = {
+                        'Accept': 'application/json',
+                        platform: 4,
+                        userpagename: pagename,
+                        useraction: useraction,
+                        masterlisting: false
+                    };
 
                     ajaxrequest("POST", '<?php echo $config->getEndpointurl(); ?>master', formdata, headersdata, Onsuccessfilltosieve, OnErrorfilltosieve);
 
@@ -3340,15 +3354,15 @@ if ($LoginInfo) {
 
                         var resultdata = jQuery.parseJSON(JsonData);
 
-                        
 
-                        if(resultdata.status==0)
+
+                        if (resultdata.status == 0)
 
                         {
 
                             Notiflix.Notify.Failure(resultdata.message);
 
-                        }else{
+                        } else {
 
                             Notiflix.Notify.Success(resultdata.message);
 
@@ -3362,7 +3376,7 @@ if ($LoginInfo) {
 
                         }
 
-                        
+
 
                     }
 
@@ -3374,7 +3388,7 @@ if ($LoginInfo) {
 
                     }
 
-			    },
+                },
 
             });
 
@@ -3461,7 +3475,6 @@ if ($LoginInfo) {
         }
 
     }
-
 </script>
 
 <?php include('diamondsearch.php'); ?>
