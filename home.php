@@ -438,7 +438,7 @@ require_once 'config/apiconfig.php';
                                 src="<?php echo $config->getimageurl() ?>images/homepage/diamond-serch.svg" alt=""
                                 title="">Quick Diamond Search</h2> -->
                         <h3 class="QuickSearchDiv">
-                            Search Over <span>1,000,000</span> Diamonds from Thousands of Verified Suppliers Worldwide!
+                            Search Over <span>1,000,000</span> Labgrown Diamonds from Thousands of Verified Suppliers Worldwide!
                         </h3>
                     </div>
                 </div>
@@ -465,7 +465,7 @@ require_once 'config/apiconfig.php';
                         <form action="" id="form-diamond-search">
                             <div id="home-shape" class="form-group shape-group fillshapdetail">
                                 <div class="name-filter">Shape <span class="red">*</span></div>
-                                <div class="d-flex align-items-start">
+                                <div class="d-flex align-items-start w-100 justify-content-between">
                                     <div class="row-filter">
                                         <div class="filter-container" id="fillshapdetail">
                                             <!-- <div class="filter custom-checkbox">
@@ -714,7 +714,7 @@ require_once 'config/apiconfig.php';
                                                 </div> -->
                                         </div>
                                     </div>
-                                    <button type="button" id="btnshapdownarrow" class="btn show-more-filters">
+                                    <button type="button" id="btnshapdownarrow" class="btn show-more-filters ml-2">
                                         <span class="text">+ 30 More</span>
                                         <span class="text opened">- 30 Less</span>
                                         <span class="arrow-btn">
@@ -743,10 +743,10 @@ require_once 'config/apiconfig.php';
                             </div>
                             <div id="home-color" class="form-group color-group fillcolordetail">
                                 <div class="name-filter">Color <span class="red">*</span></div>
-                                 <div class="d-flex align-items-start">
-                                     <div class="row-filter">
-                                         <div class="filter-container" id="fillcolordetail">
-                                             <!-- <div class="filter custom-checkbox">
+                                <div class="d-flex align-items-start w-100 justify-content-end">
+                                    <div class="row-filter">
+                                        <div class="filter-container" id="fillcolordetail">
+                                            <!-- <div class="filter custom-checkbox">
                                                      <input type="checkbox" id="c0" class="custom-control-input">
                                                      <label for="c0" class="custom-control-label">
                                                          D
@@ -884,24 +884,24 @@ require_once 'config/apiconfig.php';
                                                          Z
                                                      </label>
                                                  </div> -->
-                                         </div>
-                                     </div>
-                                     <button type="button" id="btncolordownarrow" class="btn show-more-filters">
-                                         <span class="text">+ 18 More</span>
-                                         <span class="text opened">- 18 Less</span>
-                                         <span class="arrow-btn">
-                                             <img src="<?php echo $config->getimageurl() ?>images/homepage/down-arrow.svg"
-                                                 alt="" class="img-responsive">
-                                         </span>
-                                     </button>
-                                 </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="btncolordownarrow" class="btn show-more-filters ml-2">
+                                        <span class="text">+ 18 More</span>
+                                        <span class="text opened">- 18 Less</span>
+                                        <span class="arrow-btn">
+                                            <img src="<?php echo $config->getimageurl() ?>images/homepage/down-arrow.svg"
+                                                alt="" class="img-responsive">
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                             <div id="home-clarity" class="form-group clarity-group fillclaritydetail">
                                 <div class="name-filter">Clarity </div>
-                                 <div class="d-flex align-items-start">
-                                     <div class="row-filter">
-                                         <div class="filter-container" id="fillclaritydetail">
-                                             <!-- <div class="filter custom-checkbox">
+                                <div class="d-flex align-items-start w-100 justify-content-between">
+                                    <div class="row-filter">
+                                        <div class="filter-container" id="fillclaritydetail">
+                                            <!-- <div class="filter custom-checkbox">
                                                      <input type="checkbox" id="cl0" class="custom-control-input">
                                                      <label for="cl0" class="custom-control-label">
                                                          FL
@@ -979,17 +979,17 @@ require_once 'config/apiconfig.php';
                                                          I3
                                                      </label>
                                                  </div> -->
-                                         </div>
-                                     </div>
-                                     <button type="button" id="btncolordownarrow" class="btn show-more-filters">
-                                         <span class="text">+ 18 More</span>
-                                         <span class="text opened">- 18 Less</span>
-                                         <span class="arrow-btn">
-                                             <img src="<?php echo $config->getimageurl() ?>images/homepage/down-arrow.svg"
-                                                 alt="" class="img-responsive">
-                                         </span>
-                                     </button>
-                                 </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="btncolordownarrow" class="btn show-more-filters ml-2">
+                                        <span class="text">+ 18 More</span>
+                                        <span class="text opened">- 18 Less</span>
+                                        <span class="arrow-btn">
+                                            <img src="<?php echo $config->getimageurl() ?>images/homepage/down-arrow.svg"
+                                                alt="" class="img-responsive">
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                             <div class="collapse" id="free-search">
                                 <!-- <div class="form-group multiply-group-filter">
@@ -1076,10 +1076,10 @@ require_once 'config/apiconfig.php';
                                     </div> -->
                                 <div class="form-group size-group dash-size-group">
                                     <div class="name-filter">Finish</div>
-                                    <div class="row-filter dash-row">
+                                    <div class="row-filter dash-row w-100">
                                         <div class="col-12 col-md-12">
                                             <div class="row">
-                                                <div class="col col-12 col-md-12 col-lg-4">
+                                                <div class="col-12 col-md-6">
                                                     <div class="row set-border">
                                                         <div
                                                             class="col-6 col-md-6 col-lg-6 col-xl-6  sizesetall  cut-group">
@@ -1100,7 +1100,7 @@ require_once 'config/apiconfig.php';
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col col-12 col-md-12 col-lg-4">
+                                                <div class="col-12 col-md-6 mt-3 mt-md-0">
                                                     <div class="row set-border">
                                                         <div
                                                             class="col-6 col-md-6 col-lg-6 col-xl-6  sizesetall  cut-group">
@@ -1121,7 +1121,7 @@ require_once 'config/apiconfig.php';
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col col-12 col-md-12 col-lg-4">
+                                                <div class="col-12 col-md-6 mt-3">
                                                     <div class="row">
                                                         <div
                                                             class="col-6 col-md-6 col-lg-6 col-xl-6  sizesetall  cut-group">
@@ -2934,11 +2934,220 @@ require_once 'config/apiconfig.php';
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="diamond-card">
+                        <div class="diamond-card__image-wrap">
+                            <img class="diamond-card__image"
+                                src="assets/uploads/2022/09/diamondimg/diamondimgBB7EA170-0CD7-400E-8BCC-120698B5C6DD1663070107.jpg"
+                                alt="Loose round-cut diamond">
+                            <div class="diamond-card__dots" aria-hidden="true">
+                                <span class="diamond-card__dot is-active"></span>
+                                <span class="diamond-card__dot"></span>
+                            </div>
+                        </div>
+
+                        <h3 class="diamond-card__title">Lozenge, 0.7 ct, K, SI1</h3>
+                        <p class="diamond-card__quality">Very Good, Very Good, Very Good</p>
+
+                        <div class="diamond-card__meta">
+                            <span class="diamond-card__country"><img class="diamond-card__flag"
+                                    src="assets/images/india-flag.svg" alt="" aria-hidden="true">
+                                India</span>
+                            <div class="diamond-card__measurements"> <span>Measurement :</span> 10.49×5.92×2.00</div>
+                        </div>
+                        <div class="diamond-card__specs" aria-label="Diamond details">
+                            <div class="diamond-card__spec">
+                                <span class="diamond-card__icon" aria-hidden="true">◇</span>
+                                <div><span class="diamond-card__label">Shape</span><strong
+                                        class="diamond-card__value">Lozenge</strong></div>
+                            </div>
+                            <div class="diamond-card__spec">
+                                <span class="diamond-card__icon" aria-hidden="true">♙</span>
+                                <div><span class="diamond-card__label">Carat</span><strong
+                                        class="diamond-card__value">0.7
+                                        ct</strong></div>
+                            </div>
+                            <div class="diamond-card__spec">
+                                <span class="diamond-card__icon" aria-hidden="true">♢</span>
+                                <div><span class="diamond-card__label">Color</span><strong
+                                        class="diamond-card__value">K</strong></div>
+                            </div>
+                            <div class="diamond-card__spec">
+                                <span class="diamond-card__icon" aria-hidden="true">◎</span>
+                                <div><span class="diamond-card__label">Clarity</span><strong
+                                        class="diamond-card__value">SI1</strong></div>
+                            </div>
+                            <div class="diamond-card__spec">
+                                <span class="diamond-card__icon" aria-hidden="true">♢</span>
+                                <div><span class="diamond-card__label">Certification</span><strong
+                                        class="diamond-card__value">GIA</strong></div>
+                            </div>
+                            <div class="diamond-card__spec">
+                                <span class="diamond-card__icon" aria-hidden="true">⌖</span>
+                                <div><span class="diamond-card__label">Country</span><strong
+                                        class="diamond-card__value">IN
+                                        India</strong></div>
+                            </div>
+                        </div>
+
+                        <div class="diamond-card__prices">
+                            <table aria-label="Diamond pricing">
+                                <thead>
+                                    <tr>
+                                        <th>RAP%</th>
+                                        <th>$/Ct</th>
+                                        <th>$Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="price-value">-63.1</td>
+                                        <td class="price-value">3,063</td>
+                                        <td class="price-value">5,543</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button class="diamond-card__button btn-gradient-green" type="button">
+                            Access Prices <span class="diamond-card__button-arrow" aria-hidden="true">›</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </div>
     </div>
 </section>
+
+<!-- book demo section start -->
+  <section class="demo-section">
+
+    <!-- Left Form Panel -->
+     <div class="image-panel" aria-label="Diamond and jewelry showcase">
+      <img
+        src="<?php echo $config->getimageurl() ?>images/homepage/book-demo-image.png"
+        alt="Premium loose diamonds and fine jewelry">
+      <div class="image-overlay"></div>
+    </div>
+   
+
+    <!-- Right Image Panel -->
+     <div class="form-panel">
+      <div class="form-content">
+
+        <div class="welcome-tag">
+          <i class="fa-regular fa-gem"></i>
+          Welcome to TradeCVD
+        </div>
+
+        <h1>Book a <span>Demo</span></h1>
+
+        <p class="subtitle">
+          Connect with buyers, sellers, manufacturers, wholesalers
+          and retailers in the lab-grown diamond and jewelry industry.
+        </p>
+
+        <form action="#" method="post">
+
+          <div class="name-row">
+            <label class="input-box">
+              <i class="fa-regular fa-user fa"></i>
+              <input type="text" name="first_name"
+                placeholder="First Name*" required>
+            </label>
+
+            <label class="input-box">
+              <i class="fa-regular fa-user fa"></i>
+              <input type="text" name="last_name"
+                placeholder="Last Name*" required>
+            </label>
+          </div>
+
+          <label class="input-box">
+            <i class="fa-regular fa-envelope fa"></i>
+            <input type="email" name="email"
+              placeholder="Business Email*" required>
+          </label>
+
+          <div class="phone-row">
+            <span class="phone-icon">
+              <i class="fa-solid fa-phone fa"></i>
+            </span>
+
+            <select name="country_code" aria-label="Country calling code">
+              <option value="+91">🇮🇳</option>
+              <option value="+1">🇺🇸</option>
+              <option value="+44">🇬🇧</option>
+              <option value="+971">🇦🇪</option>
+              <option value="+852">🇭🇰</option>
+            </select>
+
+            <span class="dial-code">+91</span>
+
+            <input type="tel" name="phone"
+              placeholder="Phone Number*" required>
+          </div>
+
+          <label class="input-box">
+            <i class="fa-regular fa-building fa"></i>
+            <input type="text" name="company"
+              placeholder="Company Name*" required>
+          </label>
+
+          <label class="input-box">
+            <i class="fa-regular fa-briefcase fa"></i>
+            <select name="business_type" required>
+              <option value="" selected disabled>Business Type*</option>
+              <option>Buyer</option>
+              <option>Seller</option>
+              <option>Manufacturer</option>
+              <option>Wholesaler</option>
+              <option>Retailer</option>
+              <option>Jewelry Designer</option>
+              <option>Other</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow"></i>
+          </label>
+
+          <label class="input-box">
+            <i class="fa-solid fa-globe fa"></i>
+            <select name="country" required>
+              <option value="" selected disabled>Country*</option>
+              <option>India</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>United Arab Emirates</option>
+              <option>Hong Kong</option>
+              <option>Belgium</option>
+              <option>Other</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow"></i>
+          </label>
+
+          <p class="privacy-text">
+            By submitting your contact information, you authorize us
+            to contact and promote our services to you across different
+            services, websites and apps in accordance with our
+            <a href="#">privacy policy</a>.
+          </p>
+
+          <button type="submit" class="submit-btn">
+            <i class="fa-regular fa-paper-plane fa"></i>
+            <span>Book a Demo</span>
+            <i class="fa-solid fa-chevron-right arrow-right fa"></i>
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+  </section> 
+
+
+
 <!-- Quick diamond Search End-->
 <div class="hr-line">
     <div class="container-xl">
@@ -3736,12 +3945,12 @@ require_once 'config/apiconfig.php';
                     htmldata += '</div>';
                     htmldata += '<div class="col-md-6 px-0">';
                     htmldata += '<div class="top-right-images-banner">';
-htmldata += '<picture>';
-htmldata += '<source media="(max-width: 991px)" srcset="' + (banner.tabletimage || banner.toprightimg) + '">';
-htmldata += '<img src="' + banner.toprightimg + '" alt="Trade CVD diamonds and jewellery">';
-htmldata += '</picture>';
-htmldata += '</div>';
-			htmldata += '<div class="d-flex justify-content-center align-items-center find-explore-connect">';
+                    htmldata += '<picture>';
+                    htmldata += '<source media="(max-width: 991px)" srcset="' + (banner.tabletimage || banner.toprightimg) + '">';
+                    htmldata += '<img src="' + banner.toprightimg + '" alt="Trade CVD diamonds and jewellery">';
+                    htmldata += '</picture>';
+                    htmldata += '</div>';
+                    htmldata += '<div class="d-flex justify-content-center align-items-center find-explore-connect">';
 
                     // Find Diamonds
                     htmldata += '<div class="d-flex align-items-center">';
@@ -3787,7 +3996,7 @@ htmldata += '</div>';
                     htmldata += '</div>';
 
 
-                    
+
 
                     htmldata += '</div>';
                     htmldata += '</div>';

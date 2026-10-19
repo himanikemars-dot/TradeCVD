@@ -33793,7 +33793,7 @@ pre {
 .nav-material>li>a:hover {
     border: none;
      background: var(--green);
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 .nav-material>li:hover>a::after {
@@ -36491,8 +36491,14 @@ html[dir=rtl] .form-group.has-icon input {
   margin: 0 auto;
 }
 
-.tab-box-shadow{
+.tab-box-shadow {
 box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+}
+
+@media(max-width:767px) {
+    .has-sidebar-left .tab-box-shadow {
+        box-shadow : none;
+    }
 }
 
 h4.mb-0.sec-title {
