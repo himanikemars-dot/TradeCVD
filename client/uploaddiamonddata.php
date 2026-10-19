@@ -73,6 +73,7 @@
                     var useraction = $('#formevent').val();
                     formdata = new FormData(form);
                     formdata.append("action", "uploaddiamondcsv");
+                    formdata.append("isfancy", $('#fancy-diamond').is(':checked') ? 1 : 0);
                     var headersdata = {
                         'Accept': 'application/json',
                         platform: 4,
@@ -287,6 +288,7 @@
                 var useraction = $('#formevent').val();
                 formdata = new FormData(form);
                 formdata.append("action", "uploaddiamond");
+                formdata.append("isfancy", $('#fancy-diamond').is(':checked') ? 1 : 0);
                 var headersdata = {
                     'Accept': 'application/json',
                     platform: 4,
