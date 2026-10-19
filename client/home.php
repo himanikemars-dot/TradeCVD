@@ -108,67 +108,79 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
         </div>
 
         <div class="tc-topbar-right">
-            <button class="tc-notification-btn add-screen" type="button" aria-label="Notifications">
-                <img src="<?php echo $config->getimageurl(); ?>images/notification.svg" alt="Notification">
-                <span class="tc-notification-dot"></span>
-            </button>
-
-            <div class="tc-user">
-                <!-- <div class="position-relative">
-                    <img class="tc-user-avatar" src="<?php echo $LoginInfo->getProfilepic(); ?>"
-                        alt="<?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?>">
-
-                    <div class="tc-user-copy">
-                        <strong>Welcome, <?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?></strong>
-                        <span>Trust&nbsp;&nbsp;•&nbsp;&nbsp;Quality&nbsp;&nbsp;•&nbsp;&nbsp;Growth</span>
-                    </div>
-
-                    <i class="fas fa-chevron-down" style="font-size:9px;color:#89949b;"></i>
-                </div> -->
-                <div class="tc-user-dropdown">
-                    <button class="tc-user" id="tcUserToggle" type="button" aria-haspopup="true" aria-expanded="false"
-                        aria-controls="tcUserMenu">
-
+            <div class="mobile-logo">
+                 <img class="user_avatar"
+                                    src="<?php echo $config->getimageurl() ?>images/defaultjewellery.png"
+                                    alt="<?php echo $LoginInfo->getFullname(); ?>">
+            </div>
+            <div class="d-flex align-items-center">
+                <button class="tc-notification-btn add-screen mr-3" type="button" aria-label="Notifications">
+                    <img src="<?php echo $config->getimageurl(); ?>images/notification.svg" alt="Notification">
+                    <span class="tc-notification-dot"></span>
+                </button>
+    
+                <div class="tc-user">
+                    <!-- <div class="position-relative">
                         <img class="tc-user-avatar" src="<?php echo $LoginInfo->getProfilepic(); ?>"
                             alt="<?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?>">
-
+    
                         <div class="tc-user-copy">
-                            <strong>
-                                Welcome, <?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?>
-                            </strong>
+                            <strong>Welcome, <?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?></strong>
                             <span>Trust&nbsp;&nbsp;•&nbsp;&nbsp;Quality&nbsp;&nbsp;•&nbsp;&nbsp;Growth</span>
                         </div>
-
-                        <i class="fas fa-chevron-down tc-user-arrow"></i>
-                    </button>
-
-                    <!-- Replace these URLs with your existing page URLs -->
-                    <div class="tc-user-menu" id="tcUserMenu" hidden>
-                        <a href="<?php echo $config->getportalbaseurl(); ?>profile">
-                            <i class="fas fa-user"></i>
-                            <span>My Profile</span>
-                        </a>
-
-
-
-                        <a pagename="membershipplan" href="<?php echo $config->getWeburl(); ?>membershipplan">
-                            <i class="fas fa-gem"></i>
-                            <span>Membership Plan</span>
-                        </a>
-
-
-                        <!-- <a href="changepassword.php">
-                            <i class="fas fa-lock"></i>
-                            <span>Change Password</span>
-                        </a> -->
-
-                        <div class="tc-user-menu-divider"></div>
-
-                        <a href="javascript:void(0)"  onclick="logout();" class="tc-user-logout">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span>Logout</span>
-                        </a>
+    
+                        <i class="fas fa-chevron-down" style="font-size:9px;color:#89949b;"></i>
+                    </div> -->
+                    <div class="tc-user-dropdown">
+                        <button class="tc-user" id="tcUserToggle" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="tcUserMenu">
+    
+                            <img class="tc-user-avatar" src="<?php echo $LoginInfo->getProfilepic(); ?>"
+                                alt="<?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?>">
+    
+                            <div class="tc-user-copy">
+                                <strong>
+                                    Welcome, <?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?>
+                                </strong>
+                                <span>Trust&nbsp;&nbsp;•&nbsp;&nbsp;Quality&nbsp;&nbsp;•&nbsp;&nbsp;Growth</span>
+                            </div>
+    
+                            <i class="fas fa-chevron-down tc-user-arrow"></i>
+                        </button>
+    
+                        <!-- Replace these URLs with your existing page URLs -->
+                        <div class="tc-user-menu" id="tcUserMenu" hidden>
+                            <a href="<?php echo $config->getportalbaseurl(); ?>profile">
+                                <i class="fas fa-user"></i>
+                                <span>My Profile</span>
+                            </a>
+    
+    
+    
+                            <a pagename="membershipplan" href="<?php echo $config->getWeburl(); ?>membershipplan">
+                                <i class="fas fa-gem"></i>
+                                <span>Membership Plan</span>
+                            </a>
+    
+    
+                            <!-- <a href="changepassword.php">
+                                <i class="fas fa-lock"></i>
+                                <span>Change Password</span>
+                            </a> -->
+    
+                            <div class="tc-user-menu-divider"></div>
+    
+                            <a href="javascript:void(0)" id="btnlogout" class="tc-user-logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
                     </div>
+                </div>
+                <div class="set-btn-rs d-none pl-2">
+                    <button class="res-btn-set p-0 border-0 bg-transparent">
+                        <i class="fa-solid fa-bars fa"></i>
+                    </button>
                 </div>
             </div>
         </div>

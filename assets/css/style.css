@@ -19575,11 +19575,12 @@ a.ht-btn.bg-primary {
 } */
 
 .filter {
-    width: 100%;
+    /* width: 100%; */
     /* max-width: 104px; */
     max-width: 100%;
-    flex: 10%;
+    flex: none;
 }
+
 
 .custom-checkbox {
     position: relative;
@@ -19632,7 +19633,7 @@ input[type="radio"] {
     color: #35393D;
     /* height: 75px; */
     border: 1px solid #e4e4e4;
-    margin: 0 5px;
+    /* margin: 0 5px; */
     border-radius: 5px;
     line-height: 45px;
     font-weight: 500;
@@ -19714,7 +19715,9 @@ input[type="radio"] {
 }
 
 .shape-group .filter .img-wrap img {
-    transform: scale(1);
+   transform: scale(.7);
+    width: 28px;
+    margin: auto;
 }
 
 .free-search-widget h3 {

@@ -242,7 +242,7 @@
         </div>
 
         <!-- keyword + shape strip -->
-        <div class="row shapefilterDiv dmShapeStripDiv">
+        <div class="row shapefilterDiv dmShapeStripDiv mx-0">
            
             <div class="filter-box setfilterbox bg-transparent">
                 <div class="form-group shape-group dash-shape setresjw pt-0">
@@ -397,6 +397,39 @@ function dm_loadshape() {
         }
         $('#dmShapeStrip').html(strip);
         $('#dmShapeSideData').html(side);
+            $('#dmShapeStrip').removeClass('is-expanded');
+            $('#dmShapeToggle').attr({
+                'aria-expanded': 'false',
+                'aria-label': 'Show more shapes'
+            });
+            dm_update_shape_toggle();
+        }
+    }
+
+    function dm_update_shape_toggle() {
+        var strip = $('#dmShapeStrip');
+        var items = strip.children('.filter');
+        var button = $('#dmShapeToggle');
+
+        if (!items.length) {
+            button.hide();
+            return;
+        }
+
+        strip[0].style.setProperty('--dm-shape-row-height', items.first().outerHeight() + 'px');
+        
+
+        var firstRowTop = items.first()[0].getBoundingClientRect().top;
+        var hasMoreRows = items.toArray().some(function (item) {
+            return item.getBoundingClientRect().top > firstRowTop + 1;
+        });
+
+        if (!hasMoreRows) {
+            strip.removeClass('is-expanded');
+            button.attr({
+                'aria-expanded': 'false',
+                'aria-label': 'Show more shapes'
+            }).hide();
     }
 }
 

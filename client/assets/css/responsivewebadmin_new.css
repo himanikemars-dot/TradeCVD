@@ -1809,19 +1809,25 @@
 
 @media (max-width: 991px) {
 
-     .set-btn-rs {
-
-        display: flex !important;
-
-        justify-content: end;
-
-        align-items: center;
-
-        margin-right: 23px !important;
-
-        /* position: relative; */
-
+     
+    .tc-topbar-right {
+        width :100%;
+        justify-content : end;
     }
+  
+
+    .set-btn-rs {
+        display : block !important;
+    }
+    
+    .set-btn-rs .res-btn-set i {
+        color : var(--green);
+    }
+    
+    .tc-user-dropdown .tc-user {
+        gap : 0;
+    }
+   
     
       .has-sidebar-left {
 
@@ -3059,6 +3065,10 @@
         display: none;
 
     }
+    
+     .tc-topbar-right {
+        justify-content : space-between;
+    }
 
     .filter-container.filtercontain {
 
@@ -3265,6 +3275,18 @@
         margin-left: 0;
 
         padding-left: 13px;
+
+    }
+     .moredetail ul {
+        display : flex !important;
+
+        display: -webkit-box;
+
+        -webkit-line-clamp: 2;
+
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
 
     }
 
@@ -4116,17 +4138,7 @@
 
     }
 
-    .moredetail ul {
-
-        display: -webkit-box;
-
-        -webkit-line-clamp: 2;
-
-        -webkit-box-orient: vertical;
-
-        overflow: hidden;
-
-    }
+   
 
     .moredetail li {
 
@@ -4673,19 +4685,7 @@
 
     }
 
-    .setresfilterbar {
 
-        position: absolute;
-
-        top: 44px;
-
-        left: auto;
-
-        right: 54px;
-
-        z-index: 1;
-
-    }
 
     .setresfilterbar .setfilter {
 
@@ -5228,123 +5228,10 @@
     }
    
 
-    .res-btn-set {
+    .
 
-        border: none;
+   
 
-        margin: 10px 0;
-
-        padding: 5px 15px;
-
-    }
-
-    .res-btn-set i:before {
-
-        position: absolute;
-
-        bottom: 8px;
-
-        left: 0;
-
-        width: 100%;
-
-        height: 2px;
-
-        content: "";
-
-        background-color: #3dacd9;
-
-    }
-
-    .res-btn-set i:after {
-
-        position: absolute;
-
-        bottom: -8px;
-
-        left: 0;
-
-        width: 100%;
-
-        height: 2px;
-
-        content: "";
-
-        background-color: #3dacd9;
-
-    }
-
-    .res-btn-set i {
-
-        position: absolute;
-
-        top: 50%;
-
-        width: 25px;
-
-        height: 2px;
-
-        -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-        -o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-        -webkit-transform: translateY(-50%);
-
-        -ms-transform: translateY(-50%);
-
-        transform: translateY(-50%);
-
-        background-color: #3dacd9;
-
-    }
-
-    .res-btn-set {
-
-        text-decoration: none;
-
-        font-size: 24px !important;
-
-        line-height: 1;
-
-        font-weight: normal;
-
-        position: relative;
-
-        display: block;
-
-        padding: 8px 0px;
-
-        min-width: 0px;
-
-        border: none;
-
-        cursor: pointer;
-
-        margin-right: 25px;
-
-        /* position: absolute;
-
-        top: -62px; */
-
-    }
-
-    .res-btn-set:hover i:before,
-
-    .res-btn-set.active i:before {
-
-        width: 80%;
-
-    }
-
-    .res-btn-set:hover i:after,
-
-    .res-btn-set.active i:after {
-
-        width: 60%;
-
-    }
 
     .widthset .main-sidebar {
 

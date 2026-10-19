@@ -133,363 +133,367 @@ $id = $_REQUEST['id'];
                         ?>
                             <div class="tab-pane fade show active" id="Jwelery-1" role="tabpanel" aria-labelledby="Jwelery-1-tab">
                                 <div class="setpagejw">
-                                    <div class="setfiljw">
-                                        <div id="mySidenav" class="sidenav mySidenav">
-                                            <div class="setnavfilter">
-                                                <h4>Filters</h4>
-                                            </div>
-                                            <div class="searchje">
-                                                <input type="text" class="search-bar" name="fltsearch" id="fltsearch" placeholder="Enter Keyword">
-                                                <a href="javascript:void(0);" id="btnfltsearch" name="btnfltsearch" class="search-icon"> <i class="fa fa-search"></i></a>
-                                            </div>
-                                            <div class="allfilterse">
-                                                <ul>
-                                                    <li class="setshowje jewellerytypefilterDiv">
-                                                        <div class="col-12 p-0 cut-group setmedfli setimgje">
-                                                            <div class="form-check">
-                                                                <h5>Jewellery Type</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewellerytypefilterData">
-
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewellerymetaltypefilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Metal Type</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewellerymetaltypefilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewellerygemstonetypefilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Gemstone Type</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewellerygemstonetypefilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Price</h5>
-                                                                <div class="col-12 col-md-12">
-                                                                    <div class="row">
-                                                                        <div class="col-12 col-md-12 cut-group">
-                                                                            <div class="widget_content jewellerypriceDiv" id="widgetcollapse1">
-                                                                                <form action="" class="widget_block">
-                                                                                    <div id="slider-range"></div>
-                                                                                    <!-- <button type="button" id="btnfilter">Filter</button> -->
-                                                                                    <input type="text" name="text" id="amount" readonly />
-                                                                                    <input type="hidden" name="minprice" id="minprice" />
-                                                                                    <input type="hidden" name="maxprice" id="maxprice" />
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewelleryconditionfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Condition</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewelleryconditionfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewellerymetalktfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Metal KT</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewellerymetalktfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewelleryqualityfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Jewellery Quality</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewelleryqualityfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewellerycategoryfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Category</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewellerycategoryfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <!-- <li class="setshowje jewellerygemstoneshapefilterDiv">
-                                                        <div class="col-12 p-0 cut-group setmedfli setimgje">
-                                                            <div class="form-check">
-                                                                <h5>Gemstone Shape</h5>
-                                                                <div class="col-12 col-md-12">
-                                                                    <div class="row" id="jewellerygemstoneshapefilterData">
-
-                                                                        
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li> -->
-                                                    <!-- <li class="setshowje">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Gemstone Size</h5>
-                                                                <div class="col-12 col-md-12">
-                                                                    <div class="row">
-                                                                        <div class="col-12 col-md-12 cut-group">
-                                                                            <div class="form-check">
-                                                                                <div class="row fliterset setcutgrje">
-                                                                                    <div class="col-md-6 cut-group">
-                                                                                        <input type="text" id="fromsize" class="fromusd" onkeypress="numbonly(event);" onpaste="numbonly(event);" name="fromsize" placeholder="From">
-                                                                                        <label class="inputset" type="number">$</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-6 mt-auto cut-group">
-                                                                                        <input type="text" id="tosize" class="fromusd" onkeypress="numbonly(event);" onpaste="numbonly(event);" name="tosize" placeholder="To">
-                                                                                        <label class="inputset" type="number">$</label>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li> -->
-                                                    <li class="setshowje jewellerygemstonetreatmentfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Gemstone Treatment</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewellerygemstonetreatmentfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewellerylabreportfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Lab Report</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row" id="jewellerylabreportfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewellerybrandfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Brand</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewellerybrandfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Avalibility</h5>
-                                                                <div class="col-12 col-md-12">
-                                                                    <div class="row">
-                                                                        <div class="col-12 col-md-12 cut-group">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" value="1" name="fltavailable" id="fltavailable">
-                                                                                <label class="form-check-label ml-4" for="fltavailable">
-                                                                                    Available
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-12 col-md-12 cut-group">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" value="1" name="fltavailableformemo" id="fltavailableformemo">
-                                                                                <label class="form-check-label ml-4" for="fltavailableformemo">
-                                                                                    Available For Memo
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="setshowje jewelleryshippingfromfilterDiv">
-                                                        <div class="col-12 cut-group setmedfli">
-                                                            <div class="form-check">
-                                                                <h5>Shipping From</h5>
-                                                                <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                    <div class="row  " id="jewelleryshippingfromfilterData">
-
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                     <div class="col-xl-2 col-lg-3 col-md-4">
+                                         <div class="setfiljw">
+                                             <div id="mySidenav" class="sidenav mySidenav">
+                                                 <div class="setnavfilter">
+                                                     <h4>Filters</h4>
+                                                 </div>
+                                                 <div class="searchje">
+                                                     <input type="text" class="search-bar" name="fltsearch" id="fltsearch" placeholder="Enter Keyword">
+                                                     <a href="javascript:void(0);" id="btnfltsearch" name="btnfltsearch" class="search-icon"> <i class="fa fa-search"></i></a>
+                                                 </div>
+                                                 <div class="allfilterse">
+                                                     <ul>
+                                                         <li class="setshowje jewellerytypefilterDiv">
+                                                             <div class="col-12 p-0 cut-group setmedfli setimgje">
+                                                                 <div class="form-check">
+                                                                     <h5>Jewellery Type</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewellerytypefilterData">
+     
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewellerymetaltypefilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Metal Type</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewellerymetaltypefilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewellerygemstonetypefilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Gemstone Type</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewellerygemstonetypefilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Price</h5>
+                                                                     <div class="col-12 col-md-12">
+                                                                         <div class="row">
+                                                                             <div class="col-12 col-md-12 cut-group">
+                                                                                 <div class="widget_content jewellerypriceDiv" id="widgetcollapse1">
+                                                                                     <form action="" class="widget_block">
+                                                                                         <div id="slider-range"></div>
+                                                                                         <!-- <button type="button" id="btnfilter">Filter</button> -->
+                                                                                         <input type="text" name="text" id="amount" readonly />
+                                                                                         <input type="hidden" name="minprice" id="minprice" />
+                                                                                         <input type="hidden" name="maxprice" id="maxprice" />
+                                                                                     </form>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewelleryconditionfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Condition</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewelleryconditionfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewellerymetalktfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Metal KT</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewellerymetalktfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewelleryqualityfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Jewellery Quality</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewelleryqualityfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewellerycategoryfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Category</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewellerycategoryfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <!-- <li class="setshowje jewellerygemstoneshapefilterDiv">
+                                                             <div class="col-12 p-0 cut-group setmedfli setimgje">
+                                                                 <div class="form-check">
+                                                                     <h5>Gemstone Shape</h5>
+                                                                     <div class="col-12 col-md-12">
+                                                                         <div class="row" id="jewellerygemstoneshapefilterData">
+     
+                                                                             
+                                                                             
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li> -->
+                                                         <!-- <li class="setshowje">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Gemstone Size</h5>
+                                                                     <div class="col-12 col-md-12">
+                                                                         <div class="row">
+                                                                             <div class="col-12 col-md-12 cut-group">
+                                                                                 <div class="form-check">
+                                                                                     <div class="row fliterset setcutgrje">
+                                                                                         <div class="col-md-6 cut-group">
+                                                                                             <input type="text" id="fromsize" class="fromusd" onkeypress="numbonly(event);" onpaste="numbonly(event);" name="fromsize" placeholder="From">
+                                                                                             <label class="inputset" type="number">$</label>
+                                                                                         </div>
+                                                                                         <div class="col-md-6 mt-auto cut-group">
+                                                                                             <input type="text" id="tosize" class="fromusd" onkeypress="numbonly(event);" onpaste="numbonly(event);" name="tosize" placeholder="To">
+                                                                                             <label class="inputset" type="number">$</label>
+                                                                                         </div>
+                                                                                     </div>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li> -->
+                                                         <li class="setshowje jewellerygemstonetreatmentfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Gemstone Treatment</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewellerygemstonetreatmentfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewellerylabreportfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Lab Report</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row" id="jewellerylabreportfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewellerybrandfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Brand</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewellerybrandfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Avalibility</h5>
+                                                                     <div class="col-12 col-md-12">
+                                                                         <div class="row">
+                                                                             <div class="col-12 col-md-12 cut-group">
+                                                                                 <div class="form-check">
+                                                                                     <input class="form-check-input" type="checkbox" value="1" name="fltavailable" id="fltavailable">
+                                                                                     <label class="form-check-label ml-4" for="fltavailable">
+                                                                                         Available
+                                                                                     </label>
+                                                                                 </div>
+                                                                             </div>
+                                                                             <div class="col-12 col-md-12 cut-group">
+                                                                                 <div class="form-check">
+                                                                                     <input class="form-check-input" type="checkbox" value="1" name="fltavailableformemo" id="fltavailableformemo">
+                                                                                     <label class="form-check-label ml-4" for="fltavailableformemo">
+                                                                                         Available For Memo
+                                                                                     </label>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                         <li class="setshowje jewelleryshippingfromfilterDiv">
+                                                             <div class="col-12 cut-group setmedfli">
+                                                                 <div class="form-check">
+                                                                     <h5>Shipping From</h5>
+                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                         <div class="row  " id="jewelleryshippingfromfilterData">
+     
+     
+     
+                                                                         </div>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </li>
+                                                     </ul>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
 
                                     <!-- right bar -->
-                                    <div class="rightbarjew">
-                                        <div class="loder-div">
-                                            <div class="chart-loading" style="">
-                                                <img alt="loading-img" src="assets/img/loading.gif">
-                                            </div>
-                                        </div>
-                                        <div class="row shapefilterDiv">
-                                            <div class="filter-box setfilterbox">
-                                                <div class="form-group shape-group dash-shape setresjw">
-                                                    <!-- <div class="name-filter">Shape</div> -->
-                                                    <div class="row dash-row row-space">
-                                                        <div class="filter-container-set" id="shapefilterData">
-
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="productJwelery">
-                                            <div class="card">
-                                                <div class="card-body px-3 py-1">
-                                                    <div class="row jewset">
-                                                        <div class="col-md-9 col-lg-7 col-xs-12 col-sm-8 moredetail">
-                                                            <ul>
-                                                                <li><b class="totaljewellerys"> 0 Items</b></li>
-                                                                <!-- <li class="checjew">
-                                                                    <div class="col-12">
-                                                                        <div class="form-check">
-                                                                            <input class="form-check-input" type="checkbox" value="1" id="canselectall">
-                                                                            <label class="form-check-label ml-4" for="canselectall"> Select All
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li class="checjew addtomyfavoriteDiv d-none">
-                                                                    <div class="col-12">
-                                                                    <button type="button" id="btnaddtomyfavorite" class="btn btn-primary">Add to My Favorite</button>
-                                                                    </div>
-                                                                </li> -->
-
-                                                                <li>
-                                                                    <div class="col-12 ">
-                                                                        <div class="form-check">
-                                                                            <!-- <span class="fa fa-star"></span> -->
-                                                                            <input class="form-check-input " type="checkbox" value="1" name="showmyfavorite" id="canshowmyfavorite">
-                                                                            <label class="form-check-label" for="canshowmyfavorite">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show My Favorite</label>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="setresfilterbar">
-                                                            <button class="setfilter d-sm-block d-md-none d-xl-none d-lg-none">
-                                                                <img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg" alt="diamonds" title="diamonds">
-                                                            </button>
-                                                        </div>
-
-                                                        <div class="col-md-3 col-lg-5 col-xs-12 col-sm-2 btsesearch  ">
-                                                            <div class="text-right searchhead">
-                                                                <div class="searchgreade searchcom setsho">
-                                                                    <select class="form-control w-auto shortbydianmondse ml-auto" id="sortbyid" name="sortbyid">
-
-                                                                    </select>
-                                                                </div>
-                                                                <div class="searchgreade searchcom">
-                                                                    <button type="button" class="btn searchbtnset"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="diamonds" title="diamonds"></button>
-                                                                </div>
-                                                                <!-- <div class="searchgreade searchcom">
-                                                                    <button type="button" class="btn searchbtnset jwesetbtn"><i class="fa fa-angle-down" aria-hidden="true"></i> More</button>
-                                                                </div> -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="shapesearch searchjewellerylistDiv">
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-products grid--view-items prd-grid productsetje listjewelleryDataDiv" id="listjewelleryData" data-show="0" data-nextpage="0">
-
-                                              <div class="all-product-item"></div>
-                                        </div>
-                                        <div class="sticky-sec-sec">
-                                            <div class="container-fluid">
-                                               
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- right bar end -->
-                                    </div>
+                                         <div class="col-xl-10 col-lg-9 col-md-8">
+                                             <div class="rightbarjew">
+                                                 <div class="loder-div">
+                                                     <div class="chart-loading" style="">
+                                                         <img alt="loading-img" src="assets/img/loading.gif">
+                                                     </div>
+                                                 </div>
+                                                 <div class="row shapefilterDiv">
+                                                     <div class="filter-box setfilterbox">
+                                                         <div class="form-group shape-group dash-shape setresjw">
+                                                             <!-- <div class="name-filter">Shape</div> -->
+                                                             <div class="row dash-row row-space">
+                                                                 <div class="filter-container-set" id="shapefilterData">
+         
+         
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 <div class="productJwelery">
+                                                     <div class="card">
+                                                         <div class="card-body px-3 py-1">
+                                                             <div class="row jewset">
+                                                                 <div class="col-md-9 col-lg-7 col-xs-12 col-sm-8 moredetail">
+                                                                     <ul>
+                                                                         <li><b class="totaljewellerys"> 0 Items</b></li>
+                                                                         <!-- <li class="checjew">
+                                                                             <div class="col-12">
+                                                                                 <div class="form-check">
+                                                                                     <input class="form-check-input" type="checkbox" value="1" id="canselectall">
+                                                                                     <label class="form-check-label ml-4" for="canselectall"> Select All
+                                                                                     </label>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </li>
+                                                                         <li class="checjew addtomyfavoriteDiv d-none">
+                                                                             <div class="col-12">
+                                                                             <button type="button" id="btnaddtomyfavorite" class="btn btn-primary">Add to My Favorite</button>
+                                                                             </div>
+                                                                         </li> -->
+         
+                                                                         <li>
+                                                                             <div class="col-12 ">
+                                                                                 <div class="form-check">
+                                                                                     <!-- <span class="fa fa-star"></span> -->
+                                                                                     <input class="form-check-input " type="checkbox" value="1" name="showmyfavorite" id="canshowmyfavorite">
+                                                                                     <label class="form-check-label" for="canshowmyfavorite">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show My Favorite</label>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </li>
+                                                                     </ul>
+                                                                 </div>
+         
+                                                                 <div class="setresfilterbar">
+                                                                     <button class="setfilter d-sm-block d-md-none d-xl-none d-lg-none">
+                                                                         <img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg" alt="diamonds" title="diamonds">
+                                                                     </button>
+                                                                 </div>
+         
+                                                                 <div class="col-md-3 col-lg-5 col-xs-12 col-sm-2 btsesearch  ">
+                                                                     <div class="text-right searchhead">
+                                                                         <div class="searchgreade searchcom setsho">
+                                                                             <select class="form-control w-auto shortbydianmondse ml-auto" id="sortbyid" name="sortbyid">
+         
+                                                                             </select>
+                                                                         </div>
+                                                                         <div class="searchgreade searchcom">
+                                                                             <button type="button" class="btn searchbtnset"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="diamonds" title="diamonds"></button>
+                                                                         </div>
+                                                                         <!-- <div class="searchgreade searchcom">
+                                                                             <button type="button" class="btn searchbtnset jwesetbtn"><i class="fa fa-angle-down" aria-hidden="true"></i> More</button>
+                                                                         </div> -->
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                             <div class="row">
+                                                                 <div class="col-12">
+                                                                     <div class="shapesearch searchjewellerylistDiv">
+         
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 <div class="grid-products grid--view-items prd-grid productsetje listjewelleryDataDiv" id="listjewelleryData" data-show="0" data-nextpage="0">
+         
+                                                       <div class="all-product-item"></div>
+                                                 </div>
+                                                 <div class="sticky-sec-sec">
+                                                     <div class="container-fluid">
+                                                        
+                                                     </div>
+                                                 </div>
+                                                 
+                                                 <!-- right bar end -->
+                                             </div>
+                                         </div>
                                 </div>
 
                             </div>
