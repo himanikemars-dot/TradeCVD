@@ -175,6 +175,36 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
                                 <span>Logout</span>
                             </a>
                         </div>
+
+                        <i class="fas fa-chevron-down tc-user-arrow"></i>
+                    </button>
+
+                    <!-- Replace these URLs with your existing page URLs -->
+                    <div class="tc-user-menu" id="tcUserMenu" hidden>
+                        <a href="<?php echo $config->getportalbaseurl(); ?>profile">
+                            <i class="fas fa-user"></i>
+                            <span>My Profile</span>
+                        </a>
+
+
+
+                        <a pagename="membershipplan" href="<?php echo $config->getWeburl(); ?>membershipplan">
+                            <i class="fas fa-gem"></i>
+                            <span>Membership Plan</span>
+                        </a>
+
+
+                        <!-- <a href="changepassword.php">
+                            <i class="fas fa-lock"></i>
+                            <span>Change Password</span>
+                        </a> -->
+
+                        <div class="tc-user-menu-divider"></div>
+
+                        <a href="javascript:void(0)" id="btnlogout" class="tc-user-logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
                     </div>
                 </div>
                 <div class="set-btn-rs d-none pl-2">

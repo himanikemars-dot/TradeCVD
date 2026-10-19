@@ -4,17 +4,13 @@
  * Existing DB.php ને અડ્યા વગર strict-write + notification + email.
  */
 
-/** F1 fix: દરેક write પહેલા EXCEPTION mode, જેથી transaction ખરેખર rollback થાય */
 function prexec($DB, $operation, $tblname, $data, $extra = array())
 {
     $DB->getDBConn()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $DB->executedata($operation, $tblname, $data, $extra);
 }
 
-/**
- * Conditional status change (race-safe). Rows affected return કરે.
- * 0 મળે તો કોઈ બીજાએ પહેલા જ status બદલી નાખ્યું છે (double click / 2 tabs).
- */
+
 function prclaim($DB, $requestid, $fromstatus, $upd)
 {
     $set = array();
@@ -34,15 +30,15 @@ function prclaim($DB, $requestid, $fromstatus, $upd)
 }
 
 /** Chat deep-link (relative, portalbaseurl પાછળ લાગશે) */
-function prchatlink($groupid, $personid, $chattype, $productid)
+function prchatlink($groupid, $personid, $chattype, $productid, $producttype = 2)
 {
     return 'chat?groupid=' . urlencode($groupid)
         . '&personid=' . urlencode($personid)
         . '&chattype=' . (int)$chattype
-        . '&productid=' . urlencode($productid);
+        . '&productid=' . urlencode($productid)
+        . '&producttype=' . (int)$producttype;
 }
 
-/** Existing email template જેવી જ markup (jewellery.php:4177-4204 pattern) */
 function prsendmail($DB, $config, $emailto, $subject, $hello, $heading, $lines, $linkurl, $linktext)
 {
     if (!$emailto) {
@@ -63,7 +59,6 @@ function prsendmail($DB, $config, $emailto, $subject, $hello, $heading, $lines, 
     try {
         $DB->getemailbody($emailto, $subject, $emailtxt, '', '', '', '', '');
     } catch (Exception $e) {
-        // email fail થાય તો પણ request/notification commit થઈ ગયું છે, એટલે API success જ રહે
     }
 }
 ?>

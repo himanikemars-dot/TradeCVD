@@ -88,7 +88,6 @@
     </div>
 </div>
 
-
 <div class="modal fade contectsearch" id="contactjewelleryseller" tabindex="-1" role="dialog"
     aria-labelledby="contactjewellerysellerLabel" aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
@@ -146,7 +145,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- buy request btn modal -->
 <div class="modal fade contectsearch" id="buyrequestrespondModal" tabindex="-1" role="dialog"
@@ -279,7 +277,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- jewlery page modal image model -->
 <div class="modal fade diamondpg bd-example-modal-xll " id="jewellerydetailmodal" tabindex="-1" role="dialog"
@@ -1093,9 +1090,6 @@
     </div>
 </div>
 <!-- buyrequest page modal end -->
-
-
-
 
 <!-- allrequest page modal -->
 <div class="modal fade diamondpg allpagemodset bd-example-modal-lg " id="BuyRequestDetailsModal" tabindex="-1"
