@@ -243,11 +243,14 @@
 
         <!-- keyword + shape strip -->
         <div class="row shapefilterDiv dmShapeStripDiv mx-0">
-           
+
             <div class="filter-box setfilterbox bg-transparent">
                 <div class="form-group shape-group dash-shape setresjw pt-0">
-                    <div class="row dash-row row-space">
-                        <div class="filter-container-set" id="dmShapeStrip"></div>
+                    <div class="dm-shape-strip-layout">
+                        <div class="filter-container-set dm-shape-strip__items" id="dmShapeStrip"></div>
+                        <button type="button" class="dm-shape-toggle" id="dmShapeToggle"
+                            aria-controls="dmShapeStrip" aria-expanded="false"
+                            aria-label="Show more shapes"></button>
                     </div>
                 </div>
             </div>
@@ -256,9 +259,9 @@
         <!-- count + sort -->
         <div class="productJwelery">
             <div class="card bg-transparent">
-                <div class="card-body px-4 pt-0 pb-3">
-                    <div class="row jewset">
-                        <div class="col-md-9 col-lg-4 col-xs-12 col-sm-8 moredetail">
+                <div class="card-body px-0 pt-0 pb-3">
+                    <div class="row jewset mx-0 align-items-center">
+                        <div class="col-md-9 col-lg-4 col-xs-12 col-sm-8 moredetail px-0">
                             <ul>
                                 <li><b class="dmTotalItems">0 Diamonds</b>&nbsp;|</li>
                                 <li>&nbsp;<b class="dmTotalPrice">Total Price : $0</b></li>
@@ -283,24 +286,20 @@
 
                         <div class="col-md-3 col-lg-4 col-xs-12 col-sm-2 px-0 px-md-3">
                             <div class="setresfilterbar">
-                                <button type="button"
-                                    class="setfilter dmSetFilter d-sm-block d-md-none d-xl-none d-lg-none">
-                                    <img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg"
-                                        alt="filter" title="filter">
+                                <button type="button" class="setfilter dmSetFilter d-sm-block d-md-none d-xl-none d-lg-none">
+                                    <img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg" alt="filter" title="filter">
                                 </button>
                             </div>
                             <div class="btsesearch">
                                 <div class="text-right searchhead">
                                     <div class="searchgreade searchcom setsho">
-                                        <select class="form-control w-auto shortbydianmondse ml-auto"
-                                            id="dm_sortbyid"></select>
+                                        <select class="form-control w-auto shortbydianmondse ml-auto" id="dm_sortbyid"></select>
                                     </div>
-                                    <div class="searchgreade searchcom">
-                                        <button type="button" class="btn searchbtnset" id="dm_btnreset"
-                                            title="Reset all filters">
-                                            <img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="reset" title="reset">
-                                        </button>
-                                    </div>
+                                    <!--<div class="searchgreade searchcom">-->
+                                    <!--    <button type="button" class="btn searchbtnset" id="dm_btnreset" title="Reset all filters">-->
+                                    <!--        <img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="reset" title="reset">-->
+                                    <!--    </button>-->
+                                    <!--</div>-->
                                 </div>
 
                             </div>
@@ -317,6 +316,16 @@
         </div>
 
         <!-- product grid -->
+        <div class="dm-view-switch" role="group" aria-label="Product view">
+            <button type="button" class="dm-view-switch__button is-active" data-view="grid"
+                aria-label="Grid view" aria-pressed="true" title="Grid view">
+                <i class="fa fa-th-large" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="dm-view-switch__button" data-view="list"
+                aria-label="List view" aria-pressed="false" title="List view">
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </button>
+        </div>
         <div class="grid-products grid--view-items prd-grid productsetje" id="dmGridData" data-nextpage="0"></div>
 
         <!-- pagination -->
@@ -420,9 +429,6 @@
             }
             $('#dmShapeStrip').html(strip);
             $('#dmShapeSideData').html(side);
-        }
-        $('#dmShapeStrip').html(strip);
-        $('#dmShapeSideData').html(side);
             $('#dmShapeStrip').removeClass('is-expanded');
             $('#dmShapeToggle').attr({
                 'aria-expanded': 'false',
@@ -443,10 +449,10 @@
         }
 
         strip[0].style.setProperty('--dm-shape-row-height', items.first().outerHeight() + 'px');
-        
+
 
         var firstRowTop = items.first()[0].getBoundingClientRect().top;
-        var hasMoreRows = items.toArray().some(function (item) {
+        var hasMoreRows = items.toArray().some(function(item) {
             return item.getBoundingClientRect().top > firstRowTop + 1;
         });
 
@@ -456,6 +462,7 @@
                 'aria-expanded': 'false',
                 'aria-label': 'Show more shapes'
             }).hide();
+        }
     }
 
     /* ---------- sort by ---------- */
@@ -682,8 +689,15 @@
             $('#dmPaginationDiv').html(pg);
         }
 
-        function dm_err() {
+        // function dm_err() {
+        //     $('.dm-loading').hide();
+        // }
+        function dm_err(xhr) {
             $('.dm-loading').hide();
+            var message = xhr && xhr.responseJSON && xhr.responseJSON.message ?
+                xhr.responseJSON.message :
+                'Could not load diamond listings. Please try again.';
+            $('#dmGridData').html('<div class="dm-empty-state" role="alert">' + dm_escape(message) + '</div>');
         }
     }
 
@@ -744,6 +758,16 @@
         dm_listdata(1);
     });
 
+    $('body').on('click', '.dm-view-switch__button', function() {
+        var view = $(this).attr('data-view');
+        var isList = view === 'list';
+
+        $('#dmGridData').toggleClass('dm-view-list', isList);
+        $('.dm-view-switch__button').removeClass('is-active').attr('aria-pressed', 'false');
+        $(this).addClass('is-active').attr('aria-pressed', 'true');
+    });
+
+
     /* mobile filter toggle */
     $('body').on('click', '.dmSetFilter', function() {
         $('.setfiljw').toggle(300);
@@ -772,6 +796,209 @@
     });
 </script>
 <style>
+    .dm-view-switch {
+        display: flex;
+        justify-content: flex-end;
+        gap: 4px;
+        margin: 0 0 10px;
+    }
+
+    .dm-view-switch__button {
+        display: inline-flex;
+        width: 36px;
+        height: 34px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d6dce1;
+        border-radius: 4px;
+        background: #fff;
+        color: #536579;
+        cursor: pointer;
+    }
+
+    .dm-view-switch__button.is-active {
+        border-color: #669934;
+        background: #669934;
+        color: #fff;
+    }
+
+    .dm-shape-strip-layout {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    #dmShapeStrip {
+        max-height: var(--dm-shape-row-height, 75px);
+        overflow: hidden;
+    }
+
+
+    #dmShapeStrip.is-expanded {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .dm-shape-toggle {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: 1px solid #80ad45;
+        border-radius: 5px;
+        background: #fff;
+        color: #669934;
+        cursor: pointer;
+        line-height: 1.4;
+    }
+
+    .dm-shape-toggle::after {
+        width: 7px;
+        height: 7px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        content: "";
+        transform: rotate(45deg) translateY(-2px);
+        transition: transform 0.2s ease;
+    }
+
+    .dm-shape-toggle[aria-expanded="true"]::after {
+        transform: rotate(225deg) translateY(-2px);
+    }
+
+
+    #dmGridData.dm-view-list .all-product-item {
+        display: grid;
+        grid-template-columns: repeat(3, 12fr);
+        gap: 10px;
+    }
+
+    #dmGridData.dm-view-list .dm-diamond-card {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    #dmGridData .dm-diamond-card__image-wrap {
+        height: 205px;
+        overflow: hidden;
+        background: #f1f2f4;
+    }
+
+    #dmGridData.dm-view-list .dm-diamond-card__image-wrap {
+        flex: 0 0 180px;
+        height: 135px;
+    }
+
+    #dmGridData .dm-diamond-card__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #dmGridData .dm-diamond-card__image-placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #f1f2f4, #e4e8ec);
+    }
+
+    #dmGridData .dm-diamond-card__body {
+        padding: 10px 8px 8px;
+    }
+
+    #dmGridData.dm-view-list .dm-diamond-card__body {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        justify-content: center;
+        padding: 12px 16px;
+    }
+
+    #dmGridData .dm-diamond-card__stock {
+        display: block;
+        margin-bottom: 4px;
+        color: #5a5a5a;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    #dmGridData .dm-diamond-card__title {
+        overflow: hidden;
+        margin: 0;
+        color: #000;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 21px;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+        white-space: nowrap;
+    }
+
+    #dmGridData .dm-diamond-card__footer {
+        display: flex;
+        min-height: 25px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    #dmGridData .dm-diamond-card__price {
+        color: #669934;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    #dmGridData .dm-diamond-card__lab {
+        padding: 3px 8px;
+        border-radius: 6px;
+        background: #66993421;
+        color: #669934;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    #dmGridData .dm-empty-state {
+        grid-column: 1 / -1;
+        padding: 24px;
+        color: #536579;
+        text-align: center;
+    }
+
+
+    @media (max-width: 900px) {
+        #dmGridData .dm-diamond-card__image-wrap {
+            height: 180px;
+        }
+
+        #dmGridData.dm-view-list .dm-diamond-card__image-wrap {
+            height: 125px;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        #dmGridData .dm-diamond-card__image-wrap {
+            height: 150px;
+        }
+
+        #dmGridData.dm-view-list .dm-diamond-card__image-wrap {
+            flex-basis: 105px;
+            height: 110px;
+        }
+
+        #dmGridData.dm-view-list .dm-diamond-card__body {
+            padding: 8px 10px;
+        }
+    }
+
+
+
     ul.dm-pagination {
         display: flex;
     }
