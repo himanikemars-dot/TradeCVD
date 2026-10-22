@@ -8,11 +8,11 @@ if ($LoginInfo) {
     if ($LoginInfo->getAdlogin() != '' && $LoginInfo->getIsguestuser() == 0) {
         // Allowed
     } else {
-        ?>
+?>
         <script>
             window.location = '<?php echo $config->getWeburl(); ?>home';
         </script>
-        <?php
+    <?php
         exit;
     }
 } else {
@@ -20,20 +20,20 @@ if ($LoginInfo) {
     <script>
         window.location = '<?php echo $config->getWeburl(); ?>home';
     </script>
-    <?php
+<?php
     exit;
 }
 
 $CheckUserRights = $DB->checkpackagewiseuserright($LoginInfo->getUid());
 
 if ($CheckUserRights['IsPackageExpire'] == 1) {
-    ?>
+?>
     <script>
         Notiflix.Report.Warning(
             '<?php echo $config->getPackageExpiredTitle(); ?>',
             '<?php echo $config->getPackageExpiredMessage(); ?>',
             false,
-            function () {
+            function() {
                 window.location = '<?php echo $config->getPackageExpiredURL(); ?>';
             }
         );
@@ -41,7 +41,7 @@ if ($CheckUserRights['IsPackageExpire'] == 1) {
         $('#preloader').addClass('d-none');
         $('#ctn-preloader').addClass('loaded');
     </script>
-    <?php
+<?php
     exit;
 }
 
@@ -63,11 +63,11 @@ $canChat =
     $DB->getpackagewiseuserright($LoginInfo->getUid(), 4)['attributeval'] == 1;
 
 if (!$canDiamond && !$canJewellery && !$canRequest && !$canChat) {
-    ?>
+?>
     <script>
         window.location = '<?php echo $config->getWeburl(); ?>home';
     </script>
-    <?php
+<?php
     exit;
 }
 
@@ -109,16 +109,16 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
 
         <div class="tc-topbar-right">
             <div class="mobile-logo">
-                 <img class="user_avatar"
-                                    src="<?php echo $config->getimageurl() ?>images/defaultjewellery.png"
-                                    alt="<?php echo $LoginInfo->getFullname(); ?>">
+                <img class="user_avatar"
+                    src="<?php echo $config->getimageurl() ?>images/defaultjewellery.png"
+                    alt="<?php echo $LoginInfo->getFullname(); ?>">
             </div>
             <div class="d-flex align-items-center">
                 <button class="tc-notification-btn add-screen mr-3" type="button" aria-label="Notifications">
                     <img src="<?php echo $config->getimageurl(); ?>images/notification.svg" alt="Notification">
                     <span class="tc-notification-dot"></span>
                 </button>
-    
+
                 <div class="tc-user">
                     <!-- <div class="position-relative">
                         <img class="tc-user-avatar" src="<?php echo $LoginInfo->getProfilepic(); ?>"
@@ -134,77 +134,47 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
                     <div class="tc-user-dropdown">
                         <button class="tc-user" id="tcUserToggle" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="tcUserMenu">
-    
+
                             <img class="tc-user-avatar" src="<?php echo $LoginInfo->getProfilepic(); ?>"
                                 alt="<?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?>">
-    
+
                             <div class="tc-user-copy">
                                 <strong>
                                     Welcome, <?php echo htmlspecialchars($LoginInfo->getFullname(), ENT_QUOTES); ?>
                                 </strong>
                                 <span>Trust&nbsp;&nbsp;•&nbsp;&nbsp;Quality&nbsp;&nbsp;•&nbsp;&nbsp;Growth</span>
                             </div>
-    
+
                             <i class="fas fa-chevron-down tc-user-arrow"></i>
                         </button>
-    
+
                         <!-- Replace these URLs with your existing page URLs -->
                         <div class="tc-user-menu" id="tcUserMenu" hidden>
                             <a href="<?php echo $config->getportalbaseurl(); ?>profile">
                                 <i class="fas fa-user"></i>
                                 <span>My Profile</span>
                             </a>
-    
-    
-    
+
+
+
                             <a pagename="membershipplan" href="<?php echo $config->getWeburl(); ?>membershipplan">
                                 <i class="fas fa-gem"></i>
                                 <span>Membership Plan</span>
                             </a>
-    
-    
+
+
                             <!-- <a href="changepassword.php">
                                 <i class="fas fa-lock"></i>
                                 <span>Change Password</span>
                             </a> -->
-    
+
                             <div class="tc-user-menu-divider"></div>
-    
+
                             <a href="javascript:void(0)" id="btnlogout" class="tc-user-logout">
                                 <i class="fas fa-sign-out-alt"></i>
                                 <span>Logout</span>
                             </a>
                         </div>
-
-                        <i class="fas fa-chevron-down tc-user-arrow"></i>
-                    </button>
-
-                    <!-- Replace these URLs with your existing page URLs -->
-                    <div class="tc-user-menu" id="tcUserMenu" hidden>
-                        <a href="<?php echo $config->getportalbaseurl(); ?>profile">
-                            <i class="fas fa-user"></i>
-                            <span>My Profile</span>
-                        </a>
-
-
-
-                        <a pagename="membershipplan" href="<?php echo $config->getWeburl(); ?>membershipplan">
-                            <i class="fas fa-gem"></i>
-                            <span>Membership Plan</span>
-                        </a>
-
-
-                        <!-- <a href="changepassword.php">
-                            <i class="fas fa-lock"></i>
-                            <span>Change Password</span>
-                        </a> -->
-
-                        <div class="tc-user-menu-divider"></div>
-
-                        <a href="javascript:void(0)" id="btnlogout" class="tc-user-logout">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span>Logout</span>
-                        </a>
                     </div>
                 </div>
                 <div class="set-btn-rs d-none pl-2">
@@ -423,7 +393,7 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
             <section class="tc-panel">
                 <div class="tc-panel-head mb-2">
                     <h3>Recent Listings</h3><?php if ($canDiamond || $canJewellery) { ?><a href="<?php echo $config->getportalbaseurl();
-                         echo $canDiamond ? 'diamond?mmd=1' : 'jewellery?mmj=1'; ?>">View
+                                                                                                    echo $canDiamond ? 'diamond?mmd=1' : 'jewellery?mmj=1'; ?>">View
                             All Listings <i class="fas fa-arrow-right"></i></a><?php } ?>
                 </div>
                 <p>Your latest diamonds and jewellery listings.</p>
@@ -487,18 +457,18 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
     </main>
 </div>
 <script>
-    setTimeout(function () {
-        $('#preloader').delay(1000).queue(function () {
+    setTimeout(function() {
+        $('#preloader').delay(1000).queue(function() {
             $('#preloader').addClass('d-none');
         });
 
         $('#ctn-preloader').addClass('loaded');
     }, 500);
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         listdashboardcountdata();
 
-        $('.tc-request-tab').on('click', function () {
+        $('.tc-request-tab').on('click', function() {
             $('.tc-request-tab').removeClass('active').attr('aria-selected', 'false');
             $(this).addClass('active').attr('aria-selected', 'true');
             var selling = $(this).data('request-type') === 'selling';
@@ -506,7 +476,7 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
             $('#tc-request-description').text(selling ? 'Enquiries from buyers about your listings can be reviewed in Requests.' : 'Post a buying requirement or respond to enquiries from your listings.');
             $('#tc-request-action').text(selling ? 'View Requests' : 'Create Buy Request');
         });
-        $('.tc-search input').on('keydown', function (event) {
+        $('.tc-search input').on('keydown', function(event) {
             if (event.key === 'Enter' && this.value.trim()) {
                 event.preventDefault();
                 window.location = '<?php echo $config->getportalbaseurl(); ?>diamond?mmd=1&search=' + encodeURIComponent(this.value.trim());
@@ -514,12 +484,12 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
         });
     });
 
-    $(document).on('click', '.add-screen', function (e) {
+    $(document).on('click', '.add-screen', function(e) {
         e.stopPropagation();
         $('.set-notification').toggleClass('add-screen-popup');
     });
 
-    $(document).on('click', function (e) {
+    $(document).on('click', function(e) {
         if (!$(e.target).closest('.set-notification, .add-screen').length) {
             $('.set-notification').removeClass('add-screen-popup');
         }
@@ -560,7 +530,7 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
                     resultdata.ExpiryTitle,
                     resultdata.message,
                     false,
-                    function () {
+                    function() {
                         window.location = resultdata.ExpiryURL;
                     }
                 );
@@ -591,7 +561,7 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
     }
 
 
-    (function () {
+    (function() {
         const wrapper = document.querySelector('.tc-user-dropdown');
         if (!wrapper) return;
 
@@ -603,28 +573,27 @@ $rowchat = !empty($bannerres) ? $bannerres[0] : array(
             menu.hidden = !open;
         }
 
-        toggle.addEventListener('click', function () {
+        toggle.addEventListener('click', function() {
             setOpen(toggle.getAttribute('aria-expanded') !== 'true');
         });
 
-        document.addEventListener('click', function (event) {
+        document.addEventListener('click', function(event) {
             if (!wrapper.contains(event.target)) {
                 setOpen(false);
             }
         });
 
-        document.addEventListener('keydown', function (event) {
+        document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && !menu.hidden) {
                 setOpen(false);
                 toggle.focus();
             }
         });
 
-        wrapper.addEventListener('focusout', function (event) {
+        wrapper.addEventListener('focusout', function(event) {
             if (!wrapper.contains(event.relatedTarget)) {
                 setOpen(false);
             }
         });
     })();
-
 </script>

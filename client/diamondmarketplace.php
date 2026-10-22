@@ -234,7 +234,6 @@
 
     <!-- ================= RIGHT : RESULTS ================= -->
     <div class="col-xl-10 col-lg-9 col-md-8 rightbarjew">
-
         <div class="loder-div">
             <div class="chart-loading dm-loading" style="display:none;">
                 <img alt="loading-img" src="assets/img/loading.gif">
@@ -243,7 +242,6 @@
 
         <!-- keyword + shape strip -->
         <div class="row shapefilterDiv dmShapeStripDiv mx-0">
-
             <div class="filter-box setfilterbox bg-transparent">
                 <div class="form-group shape-group dash-shape setresjw pt-0">
                     <div class="dm-shape-strip-layout">
@@ -301,7 +299,6 @@
                                     <!--    </button>-->
                                     <!--</div>-->
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -333,11 +330,9 @@
             <div class="container-fluid">
                 <div class="row sticky-sec">
                     <div class="text-left col-7 col-md-4 m-auto" id="dmPaginationDiv"></div>
-
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -607,8 +602,6 @@
         fd.append('fltfromprice', $('#dm_fromprice').val());
         fd.append('flttoprice', $('#dm_toprice').val());
 
-        /* keyword — Step 3 (optional) karo pachhi aa line ne 'fltsearch' ma badlo */
-        // fd.append('fltstocknumbers', $('#dm_fltsearch').val());
         fd.append('fltsearch', $('#dm_fltsearch').val());
 
         ajaxrequest('POST', DM_DIAMOND_URL, fd, {
@@ -702,6 +695,8 @@
     }
 
     /* ---------- events ---------- */
+    var dmSearchTimer;
+
     $('body').on('change', '#dmSidenav .form-check-input', function() {
         $('#dmGridData').attr('data-nextpage', 0);
         dm_listdata(1);
@@ -713,13 +708,23 @@
     });
 
     $('body').on('click', '#dm_btnfltsearch', function() {
+        clearTimeout(dmSearchTimer);
         $('#dmGridData').attr('data-nextpage', 0);
         dm_listdata(1);
+    });
+
+    $('body').on('input', '#dm_fltsearch', function() {
+        clearTimeout(dmSearchTimer);
+        dmSearchTimer = setTimeout(function() {
+            $('#dmGridData').attr('data-nextpage', 0);
+            dm_listdata(1);
+        }, 300);
     });
 
     $('body').on('keypress', '#dm_fltsearch', function(e) {
         if (e.which == 13) {
             e.preventDefault();
+            clearTimeout(dmSearchTimer);
             $('#dmGridData').attr('data-nextpage', 0);
             dm_listdata(1);
         }

@@ -199,21 +199,15 @@ class IISMethods
 
 
 	//Upload All Files
-	function uploadallfiles($type, $foldername, $filename, $tmpfilename, $unqid) //$type = 1 for images and 2 for other files
+	function uploadallfiles($type, $foldername, $filename, $tmpfilename, $unqid, &$uploadError = null) //$type = 1 for images and 2 for other files
 	{
 
+		$uploadError = '';
 		$year = date('Y');
 		$month = date('m');
 		$time = time();
 
-		$config = new config();
-
-		$imgbaseurl = $config->getImageurl() . 'uploads/';
-
-		$extradepth = '';
-		if ($type == 1) {
-			$extradepth = '../';
-		}
+		$uploadDirectory = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'uploads';
 		$allowedMimeTypes = array(
 			"image/jpeg",
 			"image/png",
@@ -222,12 +216,26 @@ class IISMethods
 			"application/pdf",
 			"application/vnd.ms-excel",
 			"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+			"image/svg",
 			"image/svg+xml",
 		);
 
+		if (!is_file($tmpfilename) || !is_readable($tmpfilename)) {
+			$uploadError = 'PHP temporary upload file is missing or unreadable.';
+			return '';
+		}
+
 		$finfo = finfo_open(FILEINFO_MIME_TYPE);
+		if ($finfo === false) {
+			$uploadError = 'PHP fileinfo extension could not be initialized.';
+			return '';
+		}
 		$mime = finfo_file($finfo, $tmpfilename);
 		finfo_close($finfo);
+		if ($mime === false) {
+			$uploadError = 'Could not determine the uploaded file MIME type.';
+			return '';
+		}
 
 		$checkfileextary = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'pdf', 'xls', 'xlsx','svg');
 		$ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -237,20 +245,10 @@ class IISMethods
 			// Check if MIME type is valid for the allowed file types
 			if (in_array($mime, $allowedMimeTypes)) {
 
-				if (!file_exists($imgbaseurl . $year)) {
-					mkdir($extradepth . '../../assets/uploads/' . $year, 0777, true);
-				}
-
-				$imgyearurl = $config->getImageurl() . 'uploads/' . $year . '/';
-
-				if (!file_exists($imgyearurl . $month)) {
-					mkdir($extradepth . '../../assets/uploads/' . $year . '/' . $month, 0777, true);
-				}
-
-				$imgmonthurl = $config->getImageurl() . 'uploads/' . $year . '/' . $month . '/';
-
-				if (!file_exists($imgmonthurl . $foldername)) {
-					mkdir($extradepth . '../../assets/uploads/' . $year . '/' . $month . '/' . $foldername, 0777, true);
+				$uploadDirectory .= DIRECTORY_SEPARATOR . $year . DIRECTORY_SEPARATOR . $month . DIRECTORY_SEPARATOR . $foldername;
+				if (!is_dir($uploadDirectory) && !mkdir($uploadDirectory, 0777, true) && !is_dir($uploadDirectory)) {
+					$uploadError = 'Could not create upload directory. Check PHP write permissions for assets/uploads.';
+					return '';
 				}
 
 				$imgFileType = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
@@ -260,21 +258,27 @@ class IISMethods
 				$baseimgpath = 'uploads/' . $year . '/' . $month . '/' . $foldername;
 				//$targetPath = '';
 				$targetPath = 'uploads/' . $year . '/' . $month . '/' . $foldername . '/' . $foldername . $unqid . $time . '.' . $imgFileType;
-				// echo $extradepth.'../../assets/'.$targetPath;
+				$targetFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $targetPath);
 				$iscopyimg = 0;
 				if ($iscopyimg == 1) {
-					copy($tmpfilename, $extradepth . '../../assets/' . $targetPath);
+					$uploadSuccess = copy($tmpfilename, $targetFile);
 				} else {
-					move_uploaded_file($tmpfilename, $extradepth . '../../assets/' . $targetPath);
+					$uploadSuccess = move_uploaded_file($tmpfilename, $targetFile);
 				}
+
+				if (!$uploadSuccess) {
+					$uploadError = 'Could not save the uploaded file. Check PHP write permissions for assets/uploads.';
+					return '';
+				}
+
 				return $targetPath;
 			} else {
-				$targetPath = '';
-				return $targetPath;
+				$uploadError = 'Unsupported uploaded MIME type: ' . $mime;
+				return '';
 			}
 		} else {
-			$targetPath = '';
-			return $targetPath;
+			$uploadError = 'Unsupported file extension: ' . $lowext;
+			return '';
 		}
 	}
 

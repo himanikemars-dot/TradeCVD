@@ -62,8 +62,7 @@
 
         var url = window.location.href;
         var homeurl = '<?php echo $config->getCdnurl(); ?>';
-        if(homeurl==url)
-        {
+        if (homeurl == url) {
             window.location = '<?php echo $config->getWeburl(); ?>home';
         }
 
@@ -134,18 +133,18 @@
             $('html,body').animate({
                 scrollTop: $("#free-search-result").offset().top - 150
             }, 400);
-           /*  $(".back-link").click(function() {
-                event.preventDefault();
-                $("#free-search-container, .free-search-page h1.animated-title, .free-search-page h3.animated-title, .free-search-page .title-section .container").css("display", "block");
-                $("#free-search-container").data("pageNumber", 1);
-                $(".title-section").removeClass("free-search-section");
-                $("#free-search-result").remove();
-                $('html,body').animate({
-                    scrollTop: $("#free-search-container").offset().top - 100
-                }, 400);
-                $(window).off('scroll');
-                $("body").removeClass("show-results");
-            }); */
+            /*  $(".back-link").click(function() {
+                 event.preventDefault();
+                 $("#free-search-container, .free-search-page h1.animated-title, .free-search-page h3.animated-title, .free-search-page .title-section .container").css("display", "block");
+                 $("#free-search-container").data("pageNumber", 1);
+                 $(".title-section").removeClass("free-search-section");
+                 $("#free-search-result").remove();
+                 $('html,body').animate({
+                     scrollTop: $("#free-search-container").offset().top - 100
+                 }, 400);
+                 $(window).off('scroll');
+                 $("body").removeClass("show-results");
+             }); */
             $('#free-search-result table tbody').on('scroll', function() {
                 if ($(this).scrollTop() + $(this).innerHeight() + 50 >= $(this)[0].scrollHeight && !processing) {
                     processing = true;
@@ -207,20 +206,20 @@
     $("#backbtn-close").on('click', function() {
         $('.auth').removeClass('auth-btn');
     });
-    
-    $('#auth-secondary-button').on('click',function(){
+
+    $('#auth-secondary-button').on('click', function() {
         $('.auth').addClass('auth-active');
     });
 
-    $('#auth-secondary-button-secure').on('click',function(){
+    $('#auth-secondary-button-secure').on('click', function() {
         $('.auth').addClass('auth-active-secure');
     });
 
-    $("#main-button-secure").on('click',function(){
+    $("#main-button-secure").on('click', function() {
         $('.auth').removeClass('auth-active-secure');
     });
 
-   
+
 
     $("#forgot-close").on('click', function() {
         $('.auth').removeClass('auth-forgot');
@@ -237,7 +236,7 @@
     $(".lidiamond").on('click', function() {
         $('.mobilesubmenulist').toggleClass('dropdownshow');
     });
-    
+
     $(".lijewelry").on('click', function() {
         $('.mobilesubmenulist2').toggleClass('dropdownshow');
     });
@@ -259,21 +258,21 @@
     }); */
 
     $('.related-blog-slider').owlCarousel({
-    loop:true,
-    margin:5,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:3
+        loop: true,
+        margin: 5,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
         }
-    }
-})
+    })
 
     $('.jewelrysuits-info-slider').owlCarousel({
         loop: true,
@@ -367,33 +366,32 @@
     }); */
 
     new WOW().init();
-    $(document).ready(function(){
+    $(document).ready(function() {
         // if ($(window).width() < 992) {
         // $(document).on('click', function(event){ 
-            // $(".mobile-menu-overlay").addClass("active");
-            // $(".setmenu").addClass("active");
-            // $("body").removeClass("no-overflow");
+        // $(".mobile-menu-overlay").addClass("active");
+        // $(".setmenu").addClass("active");
+        // $("body").removeClass("no-overflow");
         // })
         // $(".mobile-menu-overlay, .mobile-navigation-icon").on('click', function(event) {
         //     event.stopPropagation();
         // });
-  
+
         $('.mobile-navigation-icon').click(function() {
-            if($('.mobile-menu-overlay').hasClass('inactive')) {  
+            if ($('.mobile-menu-overlay').hasClass('inactive')) {
                 $('.mobile-menu-overlay').removeClass('inactive').addClass('active');
                 $("body").removeClass("no-overflow").addClass('no-overflow');
-                console.log("true"); 
-            }
-            else{
+                console.log("true");
+            } else {
                 $('.mobile-menu-overlay').addClass('inactive').removeClass('active');
                 $("body").removeClass("no-overflow").addClass('no-overflow');
-                console.log("false"); 
+                console.log("false");
             }
         });
         $('.mobile-navigation-close-icon').click(function() {
             $('.mobile-menu-overlay').removeClass('active').addClass('inactive');
         });
-    // }
+        // }
     });
     //  setTimeout(function() {
     //     $('#cookiepolicypopup').addClass("show");
@@ -408,7 +406,7 @@
     } else {
         var pagename = urlpath.split("/");
         pagename = pagename[pagename.length - 1];
-    }   
+    }
 
     if (pagename == 'home') {
         $('body').addClass('home-page');
@@ -507,11 +505,11 @@
     function minusnumbonly(e) {
         var k = e.which;
         var ok = k >= 48 && k <= 57 || // 0-9
-            k ==8 || //backspace
-            k==0 || //arrow key
-            k==45 || // Minus Sign
-            k==46; //. sign
-        if (!ok){
+            k == 8 || //backspace
+            k == 0 || //arrow key
+            k == 45 || // Minus Sign
+            k == 46; //. sign
+        if (!ok) {
             e.preventDefault();
         }
     }
@@ -713,13 +711,13 @@
         }
     }
 
-    $('#filterrightSidebar #btnCloseRightSidebar').click(function(){
+    $('#filterrightSidebar #btnCloseRightSidebar').click(function() {
         $("#filterrightSidebar").removeClass("active-right-sidebar");
         $('.overlay').removeClass('show');
         $("body").removeClass("overflow-hidden");
     });
-    
-    function checkuserlogin(typeid, packageid){
+
+    function checkuserlogin(typeid, packageid) {
         if (packageid && typeid) {
             var pagename = getpagename();
             var headersdata = {
@@ -760,7 +758,7 @@
     }
 
     // Package Assign
-    function packageassign(typeid, packageid,totalmonths=0,btntype=0) {
+    function packageassign(typeid, packageid, totalmonths = 0, btntype = 0) {
         if (packageid && typeid) {
             var pagename = getpagename();
             var headersdata = {
@@ -792,7 +790,7 @@
                     // alert(resultdata.checkout_sessionurl);
                     if (resultdata.loginsuccess == 1) {
                         // Payment Gateway Integration
-                        
+
                         window.location = resultdata.checkout_sessionurl;
 
                         /* Notiflix.Confirm.Show(false,'Payment Gateway Integration!!', false, false, function() {
@@ -828,10 +826,10 @@
 
                         }, function() {
            
-                        }); */  
+                        }); */
 
                         // if (confirm('Payment Gateway Integration') == true) {
-                           
+
                         // } else {
                         //     window.location = resultdata.redirecturl;
                         // }
@@ -849,51 +847,50 @@
     }
 
     //Fill Banner
-    function fillbannerdetail(bannertypeid)
-    {
-        
-        var pagename=getpagename();
-        var headersdata= {Accept: 'application/json',platform: 4,userpagename:pagename,useraction:'',masterlisting:false,responsetype: 'JSON'};
+    function fillbannerdetail(bannertypeid) {
+
+        var pagename = getpagename();
+        var headersdata = {
+            Accept: 'application/json',
+            platform: 4,
+            userpagename: pagename,
+            useraction: '',
+            masterlisting: false,
+            responsetype: 'JSON'
+        };
 
         formdata = new FormData();
         formdata.append("action", "listbannerdetail");
         formdata.append("bannertypeid", bannertypeid);
-        ajaxrequest("POST",'<?php echo $config->getEndpointurl(); ?>home',formdata,headersdata,Onsuccessfillbannerdetail,OnErrorfillbannerdetail);
-        function Onsuccessfillbannerdetail(content)
-        {
+        ajaxrequest("POST", '<?php echo $config->getEndpointurl(); ?>home', formdata, headersdata, Onsuccessfillbannerdetail, OnErrorfillbannerdetail);
+
+        function Onsuccessfillbannerdetail(content) {
             var JsonData = JSON.stringify(content);
             var resultdata = jQuery.parseJSON(JsonData);
-            if(resultdata.status==1)
-            {   
-                
-                $('.commonbannerimg').css('background-image','url('+resultdata.banner[0].image+')');
-               
-                if(resultdata.banner[0].title)
-                {
+            if (resultdata.status == 1) {
+
+                $('.commonbannerimg').css('background-image', 'url(' + resultdata.banner[0].image + ')');
+
+                if (resultdata.banner[0].title) {
                     $('.commonbannertitle').html(resultdata.banner[0].title);
                 }
-                if(resultdata.banner[0].description)
-                {
+                if (resultdata.banner[0].description) {
                     $('.commonbannerdescr').html(resultdata.banner[0].description);
                 }
             }
-        
+
         }
-        function OnErrorfillbannerdetail(content)
-        { 
-            ajaxrequest("POST",'<?php echo $config->getPage404url(); ?>','','',OnsuccessRender,OnErrorRender);
+
+        function OnErrorfillbannerdetail(content) {
+            ajaxrequest("POST", '<?php echo $config->getPage404url(); ?>', '', '', OnsuccessRender, OnErrorRender);
         }
     }
-    $('.res-btn-set').click(function(){
-      if($(".widthset").hasClass("width-mobile-set"))
-      {
-          $('.widthset').removeClass('width-mobile-set'); 
-      }
-      else{
-          $('.widthset').addClass('width-mobile-set'); 
-      }
-      
-  });
+    $('.res-btn-set').click(function() {
+        if ($(".widthset").hasClass("width-mobile-set")) {
+            $('.widthset').removeClass('width-mobile-set');
+        } else {
+            $('.widthset').addClass('width-mobile-set');
+        }
 
-   
+    });
 </script>

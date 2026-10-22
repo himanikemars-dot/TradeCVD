@@ -133,140 +133,140 @@ $id = $_REQUEST['id'];
                         ?>
                             <div class="tab-pane fade show active" id="Jwelery-1" role="tabpanel" aria-labelledby="Jwelery-1-tab">
                                 <div class="setpagejw">
-                                     <div class="col-xl-2 col-lg-3 col-md-4">
-                                         <div class="setfiljw">
-                                             <div id="mySidenav" class="sidenav mySidenav">
-                                                 <div class="setnavfilter">
-                                                     <h4>Filters</h4>
-                                                 </div>
-                                                 <div class="searchje">
-                                                     <input type="text" class="search-bar" name="fltsearch" id="fltsearch" placeholder="Enter Keyword">
-                                                     <a href="javascript:void(0);" id="btnfltsearch" name="btnfltsearch" class="search-icon"> <i class="fa fa-search"></i></a>
-                                                 </div>
-                                                 <div class="allfilterse">
-                                                     <ul>
-                                                         <li class="setshowje jewellerytypefilterDiv">
-                                                             <div class="col-12 p-0 cut-group setmedfli setimgje">
-                                                                 <div class="form-check">
-                                                                     <h5>Jewellery Type</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewellerytypefilterData">
-     
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewellerymetaltypefilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Metal Type</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewellerymetaltypefilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewellerygemstonetypefilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Gemstone Type</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewellerygemstonetypefilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Price</h5>
-                                                                     <div class="col-12 col-md-12">
-                                                                         <div class="row">
-                                                                             <div class="col-12 col-md-12 cut-group">
-                                                                                 <div class="widget_content jewellerypriceDiv" id="widgetcollapse1">
-                                                                                     <form action="" class="widget_block">
-                                                                                         <div id="slider-range"></div>
-                                                                                         <!-- <button type="button" id="btnfilter">Filter</button> -->
-                                                                                         <input type="text" name="text" id="amount" readonly />
-                                                                                         <input type="hidden" name="minprice" id="minprice" />
-                                                                                         <input type="hidden" name="maxprice" id="maxprice" />
-                                                                                     </form>
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewelleryconditionfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Condition</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewelleryconditionfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewellerymetalktfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Metal KT</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewellerymetalktfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewelleryqualityfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Jewellery Quality</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewelleryqualityfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewellerycategoryfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Category</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewellerycategoryfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <!-- <li class="setshowje jewellerygemstoneshapefilterDiv">
+                                    <div class="col-xl-2 col-lg-3 col-md-4">
+                                        <div class="setfiljw">
+                                            <div id="mySidenav" class="sidenav mySidenav">
+                                                <div class="setnavfilter">
+                                                    <h4>Filters</h4>
+                                                </div>
+                                                <div class="searchje">
+                                                    <input type="text" class="search-bar" name="fltsearch" id="fltsearch" placeholder="Enter Keyword">
+                                                    <a href="javascript:void(0);" id="btnfltsearch" name="btnfltsearch" class="search-icon"> <i class="fa fa-search"></i></a>
+                                                </div>
+                                                <div class="allfilterse">
+                                                    <ul>
+                                                        <li class="setshowje jewellerytypefilterDiv">
+                                                            <div class="col-12 p-0 cut-group setmedfli setimgje">
+                                                                <div class="form-check">
+                                                                    <h5>Jewellery Type</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewellerytypefilterData">
+
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewellerymetaltypefilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Metal Type</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewellerymetaltypefilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewellerygemstonetypefilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Gemstone Type</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewellerygemstonetypefilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Price</h5>
+                                                                    <div class="col-12 col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-12 col-md-12 cut-group">
+                                                                                <div class="widget_content jewellerypriceDiv" id="widgetcollapse1">
+                                                                                    <form action="" class="widget_block">
+                                                                                        <div id="slider-range"></div>
+                                                                                        <!-- <button type="button" id="btnfilter">Filter</button> -->
+                                                                                        <input type="text" name="text" id="amount" readonly />
+                                                                                        <input type="hidden" name="minprice" id="minprice" />
+                                                                                        <input type="hidden" name="maxprice" id="maxprice" />
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewelleryconditionfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Condition</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewelleryconditionfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewellerymetalktfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Metal KT</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewellerymetalktfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewelleryqualityfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Jewellery Quality</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewelleryqualityfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewellerycategoryfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Category</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewellerycategoryfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <!-- <li class="setshowje jewellerygemstoneshapefilterDiv">
                                                              <div class="col-12 p-0 cut-group setmedfli setimgje">
                                                                  <div class="form-check">
                                                                      <h5>Gemstone Shape</h5>
@@ -280,7 +280,7 @@ $id = $_REQUEST['id'];
                                                                  </div>
                                                              </div>
                                                          </li> -->
-                                                         <!-- <li class="setshowje">
+                                                        <!-- <li class="setshowje">
                                                              <div class="col-12 cut-group setmedfli">
                                                                  <div class="form-check">
                                                                      <h5>Gemstone Size</h5>
@@ -305,124 +305,124 @@ $id = $_REQUEST['id'];
                                                                  </div>
                                                              </div>
                                                          </li> -->
-                                                         <li class="setshowje jewellerygemstonetreatmentfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Gemstone Treatment</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewellerygemstonetreatmentfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewellerylabreportfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Lab Report</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row" id="jewellerylabreportfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewellerybrandfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Brand</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewellerybrandfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Avalibility</h5>
-                                                                     <div class="col-12 col-md-12">
-                                                                         <div class="row">
-                                                                             <div class="col-12 col-md-12 cut-group">
-                                                                                 <div class="form-check">
-                                                                                     <input class="form-check-input" type="checkbox" value="1" name="fltavailable" id="fltavailable">
-                                                                                     <label class="form-check-label ml-4" for="fltavailable">
-                                                                                         Available
-                                                                                     </label>
-                                                                                 </div>
-                                                                             </div>
-                                                                             <div class="col-12 col-md-12 cut-group">
-                                                                                 <div class="form-check">
-                                                                                     <input class="form-check-input" type="checkbox" value="1" name="fltavailableformemo" id="fltavailableformemo">
-                                                                                     <label class="form-check-label ml-4" for="fltavailableformemo">
-                                                                                         Available For Memo
-                                                                                     </label>
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                         <li class="setshowje jewelleryshippingfromfilterDiv">
-                                                             <div class="col-12 cut-group setmedfli">
-                                                                 <div class="form-check">
-                                                                     <h5>Shipping From</h5>
-                                                                     <div class="col-12 col-md-12 scroll-sidebar-main">
-                                                                         <div class="row  " id="jewelleryshippingfromfilterData">
-     
-     
-     
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </li>
-                                                     </ul>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
+                                                        <li class="setshowje jewellerygemstonetreatmentfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Gemstone Treatment</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewellerygemstonetreatmentfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewellerylabreportfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Lab Report</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row" id="jewellerylabreportfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewellerybrandfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Brand</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewellerybrandfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Avalibility</h5>
+                                                                    <div class="col-12 col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-12 col-md-12 cut-group">
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="checkbox" value="1" name="fltavailable" id="fltavailable">
+                                                                                    <label class="form-check-label ml-4" for="fltavailable">
+                                                                                        Available
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-12 col-md-12 cut-group">
+                                                                                <div class="form-check">
+                                                                                    <input class="form-check-input" type="checkbox" value="1" name="fltavailableformemo" id="fltavailableformemo">
+                                                                                    <label class="form-check-label ml-4" for="fltavailableformemo">
+                                                                                        Available For Memo
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="setshowje jewelleryshippingfromfilterDiv">
+                                                            <div class="col-12 cut-group setmedfli">
+                                                                <div class="form-check">
+                                                                    <h5>Shipping From</h5>
+                                                                    <div class="col-12 col-md-12 scroll-sidebar-main">
+                                                                        <div class="row  " id="jewelleryshippingfromfilterData">
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!-- right bar -->
-                                         <div class="col-xl-10 col-lg-9 col-md-8">
-                                             <div class="rightbarjew">
-                                                 <div class="loder-div">
-                                                     <div class="chart-loading" style="">
-                                                         <img alt="loading-img" src="assets/img/loading.gif">
-                                                     </div>
-                                                 </div>
-                                                 <div class="row shapefilterDiv">
-                                                     <div class="filter-box setfilterbox">
-                                                         <div class="form-group shape-group dash-shape setresjw">
-                                                             <!-- <div class="name-filter">Shape</div> -->
-                                                             <div class="row dash-row row-space">
-                                                                 <div class="filter-container-set" id="shapefilterData">
-         
-         
-                                                                 </div>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                                 <div class="productJwelery">
-                                                     <div class="card">
-                                                         <div class="card-body px-3 py-1">
-                                                             <div class="row jewset">
-                                                                 <div class="col-md-9 col-lg-7 col-xs-12 col-sm-8 moredetail">
-                                                                     <ul>
-                                                                         <li><b class="totaljewellerys"> 0 Items</b></li>
-                                                                         <!-- <li class="checjew">
+                                    <div class="col-xl-10 col-lg-9 col-md-8">
+                                        <div class="rightbarjew">
+                                            <div class="loder-div">
+                                                <div class="chart-loading" style="">
+                                                    <img alt="loading-img" src="assets/img/loading.gif">
+                                                </div>
+                                            </div>
+                                            <div class="row shapefilterDiv">
+                                                <div class="filter-box setfilterbox">
+                                                    <div class="form-group shape-group dash-shape setresjw">
+                                                        <!-- <div class="name-filter">Shape</div> -->
+                                                        <div class="row dash-row row-space">
+                                                            <div class="filter-container-set" id="shapefilterData">
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="productJwelery">
+                                                <div class="card">
+                                                    <div class="card-body px-3 py-1">
+                                                        <div class="row jewset">
+                                                            <div class="col-md-9 col-lg-7 col-xs-12 col-sm-8 moredetail">
+                                                                <ul>
+                                                                    <li><b class="totaljewellerys"> 0 Items</b></li>
+                                                                    <!-- <li class="checjew">
                                                                              <div class="col-12">
                                                                                  <div class="form-check">
                                                                                      <input class="form-check-input" type="checkbox" value="1" id="canselectall">
@@ -436,64 +436,64 @@ $id = $_REQUEST['id'];
                                                                              <button type="button" id="btnaddtomyfavorite" class="btn btn-primary">Add to My Favorite</button>
                                                                              </div>
                                                                          </li> -->
-         
-                                                                         <li>
-                                                                             <div class="col-12 ">
-                                                                                 <div class="form-check">
-                                                                                     <!-- <span class="fa fa-star"></span> -->
-                                                                                     <input class="form-check-input " type="checkbox" value="1" name="showmyfavorite" id="canshowmyfavorite">
-                                                                                     <label class="form-check-label" for="canshowmyfavorite">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show My Favorite</label>
-                                                                                 </div>
-                                                                             </div>
-                                                                         </li>
-                                                                     </ul>
-                                                                 </div>
-         
-                                                                 <div class="setresfilterbar">
-                                                                     <button class="setfilter d-sm-block d-md-none d-xl-none d-lg-none">
-                                                                         <img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg" alt="diamonds" title="diamonds">
-                                                                     </button>
-                                                                 </div>
-         
-                                                                 <div class="col-md-3 col-lg-5 col-xs-12 col-sm-2 btsesearch  ">
-                                                                     <div class="text-right searchhead">
-                                                                         <div class="searchgreade searchcom setsho">
-                                                                             <select class="form-control w-auto shortbydianmondse ml-auto" id="sortbyid" name="sortbyid">
-         
-                                                                             </select>
-                                                                         </div>
-                                                                         <div class="searchgreade searchcom">
-                                                                             <button type="button" class="btn searchbtnset"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="diamonds" title="diamonds"></button>
-                                                                         </div>
-                                                                         <!-- <div class="searchgreade searchcom">
+
+                                                                    <li>
+                                                                        <div class="col-12 ">
+                                                                            <div class="form-check">
+                                                                                <!-- <span class="fa fa-star"></span> -->
+                                                                                <input class="form-check-input " type="checkbox" value="1" name="showmyfavorite" id="canshowmyfavorite">
+                                                                                <label class="form-check-label" for="canshowmyfavorite">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show My Favorite</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="setresfilterbar">
+                                                                <button class="setfilter d-sm-block d-md-none d-xl-none d-lg-none">
+                                                                    <img src="<?php echo $config->getImageurl(); ?>images/searchpage/fliter.svg" alt="diamonds" title="diamonds">
+                                                                </button>
+                                                            </div>
+
+                                                            <div class="col-md-3 col-lg-5 col-xs-12 col-sm-2 btsesearch  ">
+                                                                <div class="text-right searchhead">
+                                                                    <div class="searchgreade searchcom setsho">
+                                                                        <select class="form-control w-auto shortbydianmondse ml-auto" id="sortbyid" name="sortbyid">
+
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="searchgreade searchcom">
+                                                                        <button type="button" class="btn searchbtnset"><img src="<?php echo $config->getImageurl(); ?>images/searchpage/3.svg" alt="diamonds" title="diamonds"></button>
+                                                                    </div>
+                                                                    <!-- <div class="searchgreade searchcom">
                                                                              <button type="button" class="btn searchbtnset jwesetbtn"><i class="fa fa-angle-down" aria-hidden="true"></i> More</button>
                                                                          </div> -->
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="row">
-                                                                 <div class="col-12">
-                                                                     <div class="shapesearch searchjewellerylistDiv">
-         
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                                 <div class="grid-products grid--view-items prd-grid productsetje listjewelleryDataDiv" id="listjewelleryData" data-show="0" data-nextpage="0">
-         
-                                                       <div class="all-product-item"></div>
-                                                 </div>
-                                                 <div class="sticky-sec-sec">
-                                                     <div class="container-fluid">
-                                                        
-                                                     </div>
-                                                 </div>
-                                                 
-                                                 <!-- right bar end -->
-                                             </div>
-                                         </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="shapesearch searchjewellerylistDiv">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-products grid--view-items prd-grid productsetje listjewelleryDataDiv" id="listjewelleryData" data-show="0" data-nextpage="0">
+
+                                                <div class="all-product-item"></div>
+                                            </div>
+                                            <div class="sticky-sec-sec">
+                                                <div class="container-fluid">
+
+                                                </div>
+                                            </div>
+
+                                            <!-- right bar end -->
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -950,8 +950,8 @@ $id = $_REQUEST['id'];
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        </div>
-                                                        <div class="mt-5">
+                                                    </div>
+                                                    <div class="mt-5">
                                                         <div class="col-12 offset-2 col-lg-8 col-md-12 uploadset repose pset">
                                                             <div class="card">
                                                                 <div class="card-body">
@@ -971,7 +971,7 @@ $id = $_REQUEST['id'];
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            
+
                                                                             <div class="col-md-4 col-sm-4">
                                                                                 <div class="row">
                                                                                     <div class="col-12 ctupsearch uploadmaset">
@@ -989,19 +989,19 @@ $id = $_REQUEST['id'];
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <br><br><br><br><br><br>
+                                                    <?php
+                                                    if ($CanListJewelleryForList == 1) {
+                                                    ?>
+                                                        <div class="row text-center nextuplo">
+                                                            <button type="submit" class="btn upnext " id="btnsavejewellery">Save</button>
+                                                            <button type="reset" data-next-tab="generalinfoDiv" id="btnresetjewelleryupload" class="btn npback ">Reset</button>&nbsp;&nbsp;
+                                                            <button type="button" data-prev-tab="generalinfoDiv" class="btn btnprevjewelleryuploadform npback ">Back</button>
                                                         </div>
-                                                        <br><br><br><br><br><br>
-                                                        <?php
-                                                        if ($CanListJewelleryForList == 1) {
-                                                        ?>
-                                                            <div class="row text-center nextuplo">
-                                                                <button type="submit" class="btn upnext " id="btnsavejewellery">Save</button>
-                                                                <button type="reset" data-next-tab="generalinfoDiv" id="btnresetjewelleryupload" class="btn npback ">Reset</button>&nbsp;&nbsp;
-                                                                <button type="button" data-prev-tab="generalinfoDiv" class="btn btnprevjewelleryuploadform npback ">Back</button>
-                                                            </div>
-                                                        <?php
-                                                        } ?>
-                                                    
+                                                    <?php
+                                                    } ?>
+
                                                 </div>
                                             </div>
 
@@ -1074,7 +1074,7 @@ $id = $_REQUEST['id'];
                                         <div class="col-md-6 moredetail">
                                             <ul>
                                                 <li><b class="totalmyjewellery"> 0 Items </b></li>
-                                                <li>&nbsp;<b class="lastupdateddt">  </b></li>
+                                                <li>&nbsp;<b class="lastupdateddt"> </b></li>
                                                 <!-- <li>&nbsp;<b class="totalmyjewelleryprice"> Total Price : $0 </b></li> -->
                                                 <!-- <li>&nbsp; Total Carats 98,176,8 |</li>
                                                 <li>&nbsp; Average $/ct 1,299 |</li>
@@ -2830,7 +2830,7 @@ $id = $_REQUEST['id'];
             submitHandler: function(form) {
 
                 // showloader();
-                $('#btnsavejewellery').attr('disabled',true);
+                $('#btnsavejewellery').attr('disabled', true);
                 var pagename = getpagename();
                 var useraction = $('#formevent').val();
                 formdata = new FormData(form);
@@ -2849,7 +2849,7 @@ $id = $_REQUEST['id'];
                     $('.chart-loading').hide();
                     var JsonData = JSON.stringify(data);
                     var resultdata = jQuery.parseJSON(JsonData);
-                    $('#btnsavejewellery').attr('disabled',false);
+                    $('#btnsavejewellery').attr('disabled', false);
                     if (resultdata.IsPackageExpire == 1) {
                         Notiflix.Report.Warning(resultdata.ExpiryTitle, resultdata.message, false, function() {
                             window.location = resultdata.ExpiryURL;
@@ -2981,10 +2981,6 @@ $id = $_REQUEST['id'];
             var JsonData = JSON.stringify(data);
             var resultdata = jQuery.parseJSON(JsonData);
 
-
-
-
-
             var htmldata = '';
             if (resultdata.IsPackageExpire == 1) {
                 Notiflix.Report.Warning(resultdata.ExpiryTitle, resultdata.message, false, function() {
@@ -3026,7 +3022,7 @@ $id = $_REQUEST['id'];
                             htmldata += '<a href="javascript:void(0);" data-jewellerytitle="' + jewellerydata.itemtitle + '" data-jewelleryid="' + jewellerydata.id + '" data-ismyfavoriteitem="' + jewellerydata.ismyfavoriteitem + '" class="pull-right addtomyfavorite myfavoriteitem' + jewellerydata.id + '"><i class="far fa-heart clsaddtomyfavorite"></i></a>';
                         }
 
-                        htmldata += '<a href="javascript:void(0);" ' +'data-jewellerytitle="' + jewellerydata.itemtitle + '" ' +'data-jewelleryid="' + jewellerydata.id + '" ' +'class="showjewellerydetails">' +'<i class="far fa-eye"></i>' +'</a>';
+                        htmldata += '<a href="javascript:void(0);" ' + 'data-jewellerytitle="' + jewellerydata.itemtitle + '" ' + 'data-jewelleryid="' + jewellerydata.id + '" ' + 'class="showjewellerydetails">' + '<i class="far fa-eye"></i>' + '</a>';
 
                         htmldata += '        </div>';
                         htmldata += '        <a href="javascript:void(0);" data-jewelleryid="' + jewellerydata.id + '" class="product-img showjewellerydetails">';
@@ -3068,7 +3064,7 @@ $id = $_REQUEST['id'];
 
                         htmldata += '       <span class="jewellery-location">';
                         htmldata += '         <img src="https://tradecvd.com/assets/uploads/2026/09/jewelleryimg/location.svg" alt="Location"> ';
-                        htmldata +=           jewellerydata.cityname + ', ' + jewellerydata.statename + ', ' + jewellerydata.countryname;
+                        htmldata += jewellerydata.cityname + ', ' + jewellerydata.statename + ', ' + jewellerydata.countryname;
                         htmldata += '       </span>';
 
                         htmldata += '            <h4>' + jewellerydata.personname + '</h4>';
@@ -4047,9 +4043,8 @@ $id = $_REQUEST['id'];
                         // //console.log('totalprice'+resultdata.totalprice);
                         $('.totalmyjewellery').html(resultdata.totaljewellery + ' Items');
                     }
-                    if(resultdata.lastupdateddate!='')
-                    {
-                        $('.listmyjewelleryDataDiv .lastupdateddt').html('| Last Updated Date : ' + resultdata.lastupdateddate+' &nbsp;&nbsp;<a href="javascript:void(0)" onclick="refreshlastupdateddate(\''+resultdata.lastupdateddateid+'\')"><i class="fas fa-sync"></i></a>');
+                    if (resultdata.lastupdateddate != '') {
+                        $('.listmyjewelleryDataDiv .lastupdateddt').html('| Last Updated Date : ' + resultdata.lastupdateddate + ' &nbsp;&nbsp;<a href="javascript:void(0)" onclick="refreshlastupdateddate(\'' + resultdata.lastupdateddateid + '\')"><i class="fas fa-sync"></i></a>');
                     }
                     for (var i in resultdata.data) {
                         var jewellerydata = resultdata.data[i];
@@ -4068,18 +4063,16 @@ $id = $_REQUEST['id'];
 
                         htmldata += '<td class=" showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.stock + '</td>';
                         // htmldata += '<td class=""><a href="javascript:void(0);" class="showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.itemtitle + '</a></td>';
-                        if(jewellerydata.itemtitle.length>7)
-                        {
-                            htmldata += '<td class=" showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.itemtitle.substring(0,12)+'... </td>';
-                        }else{
+                        if (jewellerydata.itemtitle.length > 7) {
+                            htmldata += '<td class=" showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.itemtitle.substring(0, 12) + '... </td>';
+                        } else {
 
                             htmldata += '<td class=" showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.itemtitle + '</td>';
                         }
                         htmldata += '<td class=" showmyjewellerydetails"  data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.jewellerytype + '</td>';
-                        if(jewellerydata.brand.length>7)
-                        {
-                            htmldata += '<td class=" showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.brand.substring(0,12)+'... </td>';
-                        }else{
+                        if (jewellerydata.brand.length > 7) {
+                            htmldata += '<td class=" showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.brand.substring(0, 12) + '... </td>';
+                        } else {
 
                             htmldata += '<td class=" showmyjewellerydetails" data-jewelleryid="' + jewellerydata.id + '">' + jewellerydata.brand + '</td>';
                         }
@@ -4113,8 +4106,8 @@ $id = $_REQUEST['id'];
                     }
                     $('#showmyjewelleryentries').html(resultdata.showentries);
 
-                    var tbody_height = $(document).height()-$('header').height()-$('.myjewellery-footer-page').height()-$('#listmyjewelleryDatatbl thead').height()-$('.myjewellery-header-page').height();
-                    $('#listmyjewelleryDatatbl tbody').css('max-height',tbody_height);
+                    var tbody_height = $(document).height() - $('header').height() - $('.myjewellery-footer-page').height() - $('#listmyjewelleryDatatbl thead').height() - $('.myjewellery-header-page').height();
+                    $('#listmyjewelleryDatatbl tbody').css('max-height', tbody_height);
 
                     $('#listmyjewelleryDatatbl').attr('data-nextpage', resultdata.nextpage);
                     if (resultdata.loadmore == 1) {
@@ -4285,7 +4278,7 @@ $id = $_REQUEST['id'];
                                     var videodata = '';
                                     if ((editdata.jewelleryvideosdetail).length > 0) {
                                         for (var i in editdata.jewelleryvideosdetail) {
-                                           
+
                                             videodata += '<div class="col-md-1 col-sm-1  mt-2 ">';
                                             videodata += '<a href="' + editdata.jewelleryvideosdetail[i].video + '" target="_blank"><i class="fas fa-play"></i>';
                                             // videodata += '<img src="' + editdata.jewelleryvideosdetail[i].video + '" >';
@@ -4294,7 +4287,7 @@ $id = $_REQUEST['id'];
                                             videodata += '</div>';
                                         }
                                     }
-                                    
+
                                     $('.myjewellerymediafilevideoDiv').html(videodata);
                                     $('#form-jewellery-upload #jewelleryimglink').val(editdata.jewelleryimglink);
                                     $('#form-jewellery-upload #jewelleryvideolink').val(editdata.jewelleryvideolink);
@@ -4543,8 +4536,8 @@ $id = $_REQUEST['id'];
         }
 
     }
-    function refreshlastupdateddate(id)
-    {
+
+    function refreshlastupdateddate(id) {
         Notiflix.Confirm.Show(false, 'Are you want to update date?', false, false, function() {
             var pagename = getpagename();
             var useraction = '';
@@ -4565,7 +4558,7 @@ $id = $_REQUEST['id'];
                 var JsonData = JSON.stringify(data);
                 var resultdata = jQuery.parseJSON(JsonData);
                 // $('.preloader').hide();
-                
+
                 if (resultdata.status == 0) {
                     Notiflix.Notify.Failure(resultdata.message);
                 } else if (resultdata.status == 1) {
@@ -4573,11 +4566,10 @@ $id = $_REQUEST['id'];
                     $('#listmyjewelleryDatatbl').attr('data-nextpage', 0);
                     listmyjewellerydata(1);
 
-                }else if(resultdata.status == -1)
-                {
+                } else if (resultdata.status == -1) {
                     $('#btnlogout').trigger('click');
                 }
-                  
+
 
             }
 
@@ -4633,17 +4625,14 @@ $id = $_REQUEST['id'];
 
                             for (var h in resultdata.result) {
 
-                                if(resultdata.result[h].type == 1)
-                                {
+                                if (resultdata.result[h].type == 1) {
                                     mediadata += '<div class="col-md-1  col-sm-1 mt-2">';
                                     mediadata += '<a href="<?php echo $config->getImageurl(); ?>' + resultdata.result[h].image + '" target="_blank">';
                                     mediadata += '<img src="<?php echo $config->getImageurl(); ?>' + resultdata.result[h].image + '" alt="Jewellery Media Image" title="Jewellery Media Image">';
                                     mediadata += '</a>';
                                     mediadata += '<p><a href="javascript:void(0);" data-jewelleryid="' + resultdata.result[h].jewelleryid + '" data-id="' + resultdata.result[h].id + '" data-type="' + resultdata.result[h].type + '" title="Remove Jewellery Media " class="btn btn-danger mt-1 ml-1 removemyjewellerymediaimage"><i class="fas fa-trash-alt"></i></a></p>';
                                     mediadata += '</div>';
-                                }
-                                else if(resultdata.result[h].type == 2)
-                                {
+                                } else if (resultdata.result[h].type == 2) {
                                     videodata += '<div class="col-md-1  col-sm-1 mt-2">';
                                     videodata += '<a href="<?php echo $config->getImageurl(); ?>' + resultdata.result[h].video + '" target="_blank">';
                                     videodata += '<img src="<?php echo $config->getImageurl(); ?>' + resultdata.result[h].video + '" alt="Jewellery Media Image" title="Jewellery Media Image">';
@@ -4651,10 +4640,10 @@ $id = $_REQUEST['id'];
                                     videodata += '<p><a href="javascript:void(0);" data-jewelleryid="' + resultdata.result[h].jewelleryid + '" data-id="' + resultdata.result[h].id + '" data-type="' + resultdata.result[h].type + '" title="Remove Jewellery Media " class="btn btn-danger mt-1 ml-1 removemyjewellerymediaimage"><i class="fas fa-trash-alt"></i></a></p>';
                                     videodata += '</div>';
                                 }
-                             
+
                             }
 
-                           
+
                         }
                         $('.myjewellerymediafileDiv').html(mediadata);
                         $('.myjewellerymediafileDiv').html(videodata);
@@ -4762,317 +4751,307 @@ $id = $_REQUEST['id'];
 
                         //////////////New design code////////////
 
-                htmldata += '<body class="bg-white home-page">';
-                    htmldata += '<div class="container">';
+                        htmldata += '<body class="bg-white home-page">';
+                        htmldata += '<div class="container">';
                         htmldata += '<div class="col-12">';
-                            htmldata += '<div class="row">';
-                                htmldata += '<div class="col-md-6">';
-                                        // htmldata += '<div class="simple-gallery imagevideoDiv">';
-                                        
+                        htmldata += '<div class="row">';
+                        htmldata += '<div class="col-md-6">';
+                        // htmldata += '<div class="simple-gallery imagevideoDiv">';
 
-                                        if (jewellerydata.hasjewelleryimages == 1 || jewellerydata.hasjewelleryvideos == 1) {
-                                            htmldata += '<div class="simple-gallery imagevideoDiv owl-carousel our-jewellery-slider" >';
-                                            
-                                        
-                                        
-                                                for (var k in jewellerydata.jewelleryimagesdetail) {
 
-                                                
-                                                        // var imgclass = '';
-                                                        // if (k == 0) {
-                                                        //     imgclass = 'active';
-                                                        // }
-                                                    htmldata += '<img class="maxi1 primary blur-up lazyloaded" src="' + jewellerydata.jewelleryimagesdetail[k].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+                        if (jewellerydata.hasjewelleryimages == 1 || jewellerydata.hasjewelleryvideos == 1) {
+                            htmldata += '<div class="simple-gallery imagevideoDiv owl-carousel our-jewellery-slider" >';
 
-                                                    
-                                                }
-                                            
-                                            
-                                                for (var h in jewellerydata.jewelleryvideosdetail) 
-                                                {
-                                                
 
-                                                    htmldata += '<video class="maxi1 primary blur-up lazyloaded " autoplay="" muted="" loop="">';
-                                                    htmldata += '<source class="videomaxi" src="' + jewellerydata.jewelleryvideosdetail[h].video + '">';
-                                                    htmldata += '</video>';
-                                                    
-                                                }
-                                            
 
-                                            htmldata += '</div>';
-                                        }
-                                           
-                                        //     if (jewellerydata.hasjewelleryimages == 1 ) 
-                                        //     {
-                                                
-                                        //         htmldata += '<img class="maxi primary blur-up lazyloaded" src="' + jewellerydata.imgurl + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+                            for (var k in jewellerydata.jewelleryimagesdetail) {
 
-                                        //     }
-                                        //    else
-                                        //     {
-                                        //         if (jewellerydata.jewelleryimglink != '') {
-                                        //             htmldata += '<img class="primary blur-up  mt-5 lazyloaded" src="' + jewellerydata.jewelleryimglink + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
-                                        //         }  
-                                        //         else{
-                                                
-                                        //             htmldata += '<img class="maxi primary blur-up lazyloaded" src="' + jewellerydata.imgurl + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
 
-                                        //         }  
-                                        //     }
+                                // var imgclass = '';
+                                // if (k == 0) {
+                                //     imgclass = 'active';
+                                // }
+                                htmldata += '<img class="maxi1 primary blur-up lazyloaded" src="' + jewellerydata.jewelleryimagesdetail[k].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
 
-                                         
-                                             // if(jewellerydata.hasjewelleryvideos == 1)
-                                            // {
-                                            //     alert(jewellerydata.videourl);
-                                            //     htmldata += '<video class="maxi primary blur-up lazyloaded " autoplay="" muted="" loop="">';
-                                            //     htmldata += '<source class="videomaxi" src="' + jewellerydata.videourl + '">';
-                                            //     htmldata += '</video>';
-                                            // }
-                                            
-                                        // htmldata += '</div>';
 
-                                    htmldata += '<div class="col-12 searmedia">';
-                                        htmldata += '<div class="row">';
-                                        htmldata += '<div class="col-md-8 mediasearch">';
-                                            htmldata += '<h5>Media</h5>';
-                                            htmldata += '<div class="media row">';
-                                                    
-                                                    if (jewellerydata.jewelleryimagesdetail.length > 0 || jewellerydata.jewelleryvideosdetail.length > 0) 
-                                                    {
-                                                        
-                                                        htmldata += '<div class="mini">';
-                                                        for (var ji in jewellerydata.jewelleryimagesdetail) {
-                                                            // alert(1);
-                                                            var imgclass = '';
-                                                            if (ji == 0) {
-                                                                imgclass = 'active';
-                                                            }
-                                                            htmldata += '<img class="primary ' + imgclass + ' blur-up lazyloaded imgcls" src="' + jewellerydata.jewelleryimagesdetail[ji].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
-                                                        }
-                                                        for (var jj in jewellerydata.jewelleryvideosdetail) {
-                                                            // alert(2);
-                                                            // alert(jewellerydata.jewelleryvideosdetail[jj].video);
-                                                            var imgclass = '';
-                                                            if (jj == 0) {
-                                                                imgclass = 'active';
-                                                            }
-                                                            
-                                                            htmldata += '<img class="primary ' + imgclass + ' blur-up lazyloaded videocls" data-video="'+jewellerydata.jewelleryvideosdetail[jj].video+'" src="<?php echo $config->getImageurl(); ?>play-button.jpg" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
-                                                        }
-                                                        htmldata += '</div>';
-                                                    }
-                                                    else {
+                            }
 
-                                                        htmldata += ' <b<span>No Media</span></b>';
-                                                    }
-                                                
-                                            htmldata += '</div>';
 
-                                            if (jewellerydata.jewelleryimglink != '' && jewellerydata.jewelleryimglink != null)
-                                            {
-                                            htmldata += '<h5>Image URL</h5>';
-                                            htmldata += '<div class="media">';
-                                                htmldata += '<div class="mediaurl mr-2"><a href="' + jewellerydata.jewelleryimglink + '" target="_blank"><i class="fas fa-image"></i></a></div>';
-                                            htmldata += '</div>';
-                                            }
-                                            if (jewellerydata.jewelleryvideolink != '' && jewellerydata.jewelleryvideolink != null) 
-                                            {
-                                            htmldata += '<h5>Media URL</h5>';
-                                            htmldata += '<div class="media">';
-                                                htmldata += '<div class="mediaurl"><a href="' + jewellerydata.jewelleryvideolink + '" target="_blank"><i class="fas fa-play"></i></a></div>';
-                                            htmldata += '</div>';
-                                            }
-                                        htmldata += '</div>';
-                                        htmldata += '</div>';
-                                    htmldata += '</div>';
-                                    htmldata += '<a href="" target="_blank"> </a>';
-                                htmldata += '</div>';
-                                htmldata += '<a href="" target="_blank"> </a>';
-                                
-                                htmldata += '<div class="col-md-6">';
-                                    htmldata += '<div class="row">';
-                                        htmldata += '<a href="javascript:void(0);">';
-                                            htmldata += '<div class="col-md-12">';
-                                                htmldata += '<div class="titjw">';
-                                                    htmldata += '<h4>' + jewellerydata.itemtitle + '</h4>';
-                                                   
-                                                    htmldata += '<p>' + jewellerydata.description + '</p>';
-                                                    htmldata += '<h5>' + jewellerydata.stock + '</h5>';
-                                                    htmldata += '<div class="contectse text-center"></div>';
-                                                    htmldata += '<div class="btn setbtntit">' + jewellerydata.jewellerytype + '</div>';
-                                                htmldata += '</div>';
+                            for (var h in jewellerydata.jewelleryvideosdetail) {
 
-                                                htmldata += '<div class="pricejw">';
-                                                    htmldata += '<div class="newprice">$' + jewellerydata.minprice + '</div>';
-                                                    if (jewellerydata.hasjewellerypricelocation == 1) {
 
-                                                    htmldata += '<h3>Price &amp; Location</h3>';
-                                                    htmldata += '<div class="card">';
-                                                    for (var pl in jewellerydata.jewellerypricelocationdetail) 
-                                                    {
-                                                        var pricelocationdata = jewellerydata.jewellerypricelocationdetail[pl];                 
-                                                        htmldata += '<div class="card-body">';
-                                                            htmldata += '<ul>';
-                                                                htmldata += '<li><b>Shipping From</b>: <span class="metalpurity1">&nbsp; ' + pricelocationdata.shippingfrom + '</span></li>';
-                                                                htmldata += '<li><b>Price Per Piece</b>: <span class="metalpurity1">&nbsp;$' + pricelocationdata.price + '</span></li>';
-                                                                htmldata += '<li><b>Terms</b>: <span class="metalpurity1">&nbsp;' + pricelocationdata.terms + '</span></li>';
-                                                                htmldata += '<li><b>Msrp</b>: <span class="metalpurity1">&nbsp; $' + pricelocationdata.msrp + '</span></li>';
-                                                                htmldata += '<li><b>Delivery Time</b>: <span class="metalpurity1">&nbsp; ' + pricelocationdata.deliverytimeindays + ' Days</span></li>';
-                                                            htmldata += '</ul>';
-                                                        htmldata += '</div>';
-                                                    }
-                                                    htmldata += '</div>';
-                                                    
-                                                    }
+                                htmldata += '<video class="maxi1 primary blur-up lazyloaded " autoplay="" muted="" loop="">';
+                                htmldata += '<source class="videomaxi" src="' + jewellerydata.jewelleryvideosdetail[h].video + '">';
+                                htmldata += '</video>';
 
-                                                    htmldata += '<h3>Product Information</h3>';
-                                                    htmldata += '<div class="card">';
-                                                        htmldata += '<div class="card-body">';
-                                                            htmldata += '<ul>';
-                                                                htmldata += '<li><b>Jewellery Type</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewellerytype + '</span></li>';
-                                                                htmldata += '<li><b>Type Style</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.typestyle + '</span></li>';
-                                                                htmldata += '<li><b>Jewellery Category</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewellerycategory + '</span></li>';
-                                                                htmldata += '<li><b>Condition</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.conditionname + '</span></li>';
-                                                                htmldata += '<li><b>Brand</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.brand + ' &amp;s</span></li>';
-                                                                htmldata += '<li><b>Jewellery Quality</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewelleryquality + '</span></li>';
-                                                                htmldata += '<li><b>Designer Maker</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.designername + '</span></li>';
-                                                            htmldata += '</ul>';
-                                                        htmldata += '</div>';
-                                                    htmldata += '</div>';
-                                                    htmldata += '<h3>Metal</h3>';
-                                                    htmldata += '<div class="card">';
-                                                        htmldata += '<div class="card-body">';
-                                                            htmldata += '<ul>';
-                                                                htmldata += '<li><b>Metal Type</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.metaltype + '</span></li>';
-                                                                htmldata += '<li><b>Metal Karat</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.metalkarat + '</span></li>';
-                                                                htmldata += '<li><b>Jewellery Total Weight</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewellerytotalweight + 'gr</span></li>';
-                                                            htmldata += '</ul>';
-                                                        htmldata += '</div>';
-                                                    htmldata += '</div>';
-                                                    htmldata += '<h3>Gemstone</h3>';
-                                                    htmldata += '<div class="card">';
-                                                    if (jewellerydata.hasjewellerygemstones == 1) 
-                                                    {
-                                                        for (var gs in jewellerydata.jewellerygemstonesdetail) 
-                                                        {
-                                                            var gemstonedata = jewellerydata.jewellerygemstonesdetail[gs];
+                            }
 
-                                                            htmldata += '<div class="card-body">';
-                                                                htmldata += '<ul>';
-                                                                    htmldata += '<li><b>Gemstone Type</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.gemstonetype + '</span></li>';
-                                                                    htmldata += '<li><b>Shape</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.shape + '</span></li>';
-                                                                    htmldata += '<li><b>Carat Weight</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.caratweight + '</span></li>';
-                                                                    htmldata += '<li><b>Lab</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.lab + '</span></li>';
-                                                                    htmldata += '<li><b>Lab#</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.labtext + '</span></li>';
-                                                                    htmldata += '<li><b>Treatment</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.treatment + '</span></li>';
-                                                                    htmldata += '<li><b>#Stone</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.stones + '</span></li>';
-                                                                htmldata += '</ul>';
-                                                            htmldata += '</div>';
-                                                        }
-                                                    }
-                                                    htmldata += '</div>';
-                                                htmldata += '</div>';
 
-                                            htmldata += '</div>';
-                                        htmldata += '</a>';
-                                    htmldata += '</div>';
-                                    // htmldata += '<a href="https://www.vecteezy.com/video/1624505-rotating-diamond-gem" target="_blank"> </a>';
-                                    // htmldata += '<a href="https://www.vecteezy.com/video/1624505-rotating-diamond-gem" target="_blank">';
-                                    var sellerdetails = jewellerydata.persondetail[0];
-                                    htmldata += '<div class="col-md-12 profilediamnd-set">';
-                                        var isavailabletext = 'No';
-                                        if (jewellerydata.isavailable == 1) {
-                                            isavailabletext = 'Yes';
-                                        }
-                                        var isavailableformemotext = 'No';
-                                        if (jewellerydata.isavailableformemo == 1) {
-                                            isavailableformemotext = 'Yes';
-                                        }
-                                        htmldata += '<div class="availsetjw">';
-                                            htmldata += '<div class="card">';
-                                                htmldata += '<div class="card-body">';
-                                                    htmldata += '<div class="Notessearchd">';
-                                                        htmldata += '<h5 calss="avilabtnsetjw">Availability</h5>';
-                                                        htmldata += '<ul>';
-                                                            htmldata += '<li><b>Available</b>: <span class="metalpurity1">&nbsp;' + isavailabletext + '</span></li>';
-                                                            htmldata += '<li><b>Memo</b>: <span class="metalpurity1">&nbsp;' + isavailableformemotext + '</span></li>';
-                                                            htmldata += '<li><b>Stock#</b>: <span class="metalpurity1 phonesearch">&nbsp;' + jewellerydata.stock + '</span></li>';
-                                                            htmldata += '<li><b>In Stock</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.iteminstock + '</span></li>';
-                                                            htmldata += '<li><b>Min Order</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.minimumorder + '</span></li>';
-                                                        htmldata += '</ul>';
-                                                    htmldata += '</div>';
-                                                htmldata += '</div>';
-                                            htmldata += '</div>';
-                                            htmldata += '<div class="card mt-4">';
-                                                htmldata += '<div class="card-body">';
-                                                    htmldata += '<div class="Notessearchd">';
-                                                        htmldata += '<h5 calss="avilabtnsetjw">Measurements</h5>';
-                                                        htmldata += '<ul>';
-                                                            htmldata += '<li><b>Size</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.size + '</span></li>';
-                                                            htmldata += '<li><b>Ring Size</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.ringsize + '</span></li>';
-                                                        htmldata += '</ul>';
-                                                    htmldata += '</div>';
-                                                htmldata += '</div>';
-                                            htmldata += '</div>';
-                                            var unpublishedtext = 'No';
-                                            if (jewellerydata.unpublished == 1) {
-                                                unpublishedtext = 'Yes';
-                                            }
-
-                                            var sharabletext = 'No';
-                                            if (jewellerydata.sharable == 1) {
-                                                sharabletext = 'Yes';
-                                            }
-
-                                            var ownstockinventorytext = 'No';
-                                            if (jewellerydata.ownstockinventory == 1) {
-                                                ownstockinventorytext = 'Yes';
-                                            }
-                                            htmldata += '<div class="card mt-4">';
-                                                htmldata += '<div class="card-body">';
-                                                    htmldata += '<div class="Notessearchd">';
-                                                        htmldata += '<h5 calss="avilabtnsetjw">Visibility</h5>';
-                                                        htmldata += '<ul>';
-                                                            htmldata += '<li><b>Published</b>: <span class="metalpurity1">&nbsp;' + unpublishedtext + '</span></li>';
-                                                        htmldata += '</ul>';
-                                                    htmldata += '</div>';
-                                                htmldata += '</div>';
-                                            htmldata += '</div>';
-
-                                            if (jewellerydata.keyworddescription != '') 
-                                            {
-                                            htmldata += '<div class="card mt-4">';
-                                                htmldata += '<div class="card-body">';
-                                                    htmldata += '<h5 calss="avilabtnsetjw">Keyword Description</h5>';
-                                                    htmldata += '<div class="Notessearchd Notessearchd-space">';
-                                                        htmldata += '<ul>';
-                                                            htmldata += '<li><p>' + jewellerydata.keyworddescription + '</p></li>';
-                                                        htmldata += '</ul>';
-                                                    htmldata += '</div>';
-                                                htmldata += '</div>';
-                                            htmldata += '</div>';
-                                            }
-                                            if (jewellerydata.suppliercomment != '') 
-                                            {
-                                            htmldata += '<div class="card mt-4">';
-                                                htmldata += '<div class="card-body">';
-                                                    htmldata += '<h5 calss="avilabtnsetjw">Suppliers Comment</h5>';
-                                                    htmldata += '<div class="Notessearchd Notessearchd-space">';
-                                                        htmldata += '<ul>';
-                                                            htmldata += '<li><p>' + jewellerydata.suppliercomment + '</p></li>';
-                                                        htmldata += '</ul>';
-                                                    htmldata += '</div>';
-                                                htmldata += '</div>';
-                                            htmldata += '</div>';
-                                            }
-                                        htmldata += '</div>';
-                                    htmldata += '</div>';
-                                htmldata += '</a>';
-                                htmldata += '</div>';
                             htmldata += '</div>';
+                        }
+
+                        //     if (jewellerydata.hasjewelleryimages == 1 ) 
+                        //     {
+
+                        //         htmldata += '<img class="maxi primary blur-up lazyloaded" src="' + jewellerydata.imgurl + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+
+                        //     }
+                        //    else
+                        //     {
+                        //         if (jewellerydata.jewelleryimglink != '') {
+                        //             htmldata += '<img class="primary blur-up  mt-5 lazyloaded" src="' + jewellerydata.jewelleryimglink + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+                        //         }  
+                        //         else{
+
+                        //             htmldata += '<img class="maxi primary blur-up lazyloaded" src="' + jewellerydata.imgurl + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+
+                        //         }  
+                        //     }
+
+
+                        // if(jewellerydata.hasjewelleryvideos == 1)
+                        // {
+                        //     alert(jewellerydata.videourl);
+                        //     htmldata += '<video class="maxi primary blur-up lazyloaded " autoplay="" muted="" loop="">';
+                        //     htmldata += '<source class="videomaxi" src="' + jewellerydata.videourl + '">';
+                        //     htmldata += '</video>';
+                        // }
+
+                        // htmldata += '</div>';
+
+                        htmldata += '<div class="col-12 searmedia">';
+                        htmldata += '<div class="row">';
+                        htmldata += '<div class="col-md-8 mediasearch">';
+                        htmldata += '<h5>Media</h5>';
+                        htmldata += '<div class="media row">';
+
+                        if (jewellerydata.jewelleryimagesdetail.length > 0 || jewellerydata.jewelleryvideosdetail.length > 0) {
+
+                            htmldata += '<div class="mini">';
+                            for (var ji in jewellerydata.jewelleryimagesdetail) {
+                                // alert(1);
+                                var imgclass = '';
+                                if (ji == 0) {
+                                    imgclass = 'active';
+                                }
+                                htmldata += '<img class="primary ' + imgclass + ' blur-up lazyloaded imgcls" src="' + jewellerydata.jewelleryimagesdetail[ji].image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+                            }
+                            for (var jj in jewellerydata.jewelleryvideosdetail) {
+                                // alert(2);
+                                // alert(jewellerydata.jewelleryvideosdetail[jj].video);
+                                var imgclass = '';
+                                if (jj == 0) {
+                                    imgclass = 'active';
+                                }
+
+                                htmldata += '<img class="primary ' + imgclass + ' blur-up lazyloaded videocls" data-video="' + jewellerydata.jewelleryvideosdetail[jj].video + '" src="<?php echo $config->getImageurl(); ?>play-button.jpg" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
+                            }
+                            htmldata += '</div>';
+                        } else {
+
+                            htmldata += ' <b<span>No Media</span></b>';
+                        }
+
                         htmldata += '</div>';
-                    htmldata += '</div>';
-                    htmldata += '</body>';
+
+                        if (jewellerydata.jewelleryimglink != '' && jewellerydata.jewelleryimglink != null) {
+                            htmldata += '<h5>Image URL</h5>';
+                            htmldata += '<div class="media">';
+                            htmldata += '<div class="mediaurl mr-2"><a href="' + jewellerydata.jewelleryimglink + '" target="_blank"><i class="fas fa-image"></i></a></div>';
+                            htmldata += '</div>';
+                        }
+                        if (jewellerydata.jewelleryvideolink != '' && jewellerydata.jewelleryvideolink != null) {
+                            htmldata += '<h5>Media URL</h5>';
+                            htmldata += '<div class="media">';
+                            htmldata += '<div class="mediaurl"><a href="' + jewellerydata.jewelleryvideolink + '" target="_blank"><i class="fas fa-play"></i></a></div>';
+                            htmldata += '</div>';
+                        }
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '<a href="" target="_blank"> </a>';
+                        htmldata += '</div>';
+                        htmldata += '<a href="" target="_blank"> </a>';
+
+                        htmldata += '<div class="col-md-6">';
+                        htmldata += '<div class="row">';
+                        htmldata += '<a href="javascript:void(0);">';
+                        htmldata += '<div class="col-md-12">';
+                        htmldata += '<div class="titjw">';
+                        htmldata += '<h4>' + jewellerydata.itemtitle + '</h4>';
+
+                        htmldata += '<p>' + jewellerydata.description + '</p>';
+                        htmldata += '<h5>' + jewellerydata.stock + '</h5>';
+                        htmldata += '<div class="contectse text-center"></div>';
+                        htmldata += '<div class="btn setbtntit">' + jewellerydata.jewellerytype + '</div>';
+                        htmldata += '</div>';
+
+                        htmldata += '<div class="pricejw">';
+                        htmldata += '<div class="newprice">$' + jewellerydata.minprice + '</div>';
+                        if (jewellerydata.hasjewellerypricelocation == 1) {
+
+                            htmldata += '<h3>Price &amp; Location</h3>';
+                            htmldata += '<div class="card">';
+                            for (var pl in jewellerydata.jewellerypricelocationdetail) {
+                                var pricelocationdata = jewellerydata.jewellerypricelocationdetail[pl];
+                                htmldata += '<div class="card-body">';
+                                htmldata += '<ul>';
+                                htmldata += '<li><b>Shipping From</b>: <span class="metalpurity1">&nbsp; ' + pricelocationdata.shippingfrom + '</span></li>';
+                                htmldata += '<li><b>Price Per Piece</b>: <span class="metalpurity1">&nbsp;$' + pricelocationdata.price + '</span></li>';
+                                htmldata += '<li><b>Terms</b>: <span class="metalpurity1">&nbsp;' + pricelocationdata.terms + '</span></li>';
+                                htmldata += '<li><b>Msrp</b>: <span class="metalpurity1">&nbsp; $' + pricelocationdata.msrp + '</span></li>';
+                                htmldata += '<li><b>Delivery Time</b>: <span class="metalpurity1">&nbsp; ' + pricelocationdata.deliverytimeindays + ' Days</span></li>';
+                                htmldata += '</ul>';
+                                htmldata += '</div>';
+                            }
+                            htmldata += '</div>';
+
+                        }
+
+                        htmldata += '<h3>Product Information</h3>';
+                        htmldata += '<div class="card">';
+                        htmldata += '<div class="card-body">';
+                        htmldata += '<ul>';
+                        htmldata += '<li><b>Jewellery Type</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewellerytype + '</span></li>';
+                        htmldata += '<li><b>Type Style</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.typestyle + '</span></li>';
+                        htmldata += '<li><b>Jewellery Category</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewellerycategory + '</span></li>';
+                        htmldata += '<li><b>Condition</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.conditionname + '</span></li>';
+                        htmldata += '<li><b>Brand</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.brand + ' &amp;s</span></li>';
+                        htmldata += '<li><b>Jewellery Quality</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewelleryquality + '</span></li>';
+                        htmldata += '<li><b>Designer Maker</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.designername + '</span></li>';
+                        htmldata += '</ul>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '<h3>Metal</h3>';
+                        htmldata += '<div class="card">';
+                        htmldata += '<div class="card-body">';
+                        htmldata += '<ul>';
+                        htmldata += '<li><b>Metal Type</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.metaltype + '</span></li>';
+                        htmldata += '<li><b>Metal Karat</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.metalkarat + '</span></li>';
+                        htmldata += '<li><b>Jewellery Total Weight</b>: <span class="metalpurity1">&nbsp; ' + jewellerydata.jewellerytotalweight + 'gr</span></li>';
+                        htmldata += '</ul>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '<h3>Gemstone</h3>';
+                        htmldata += '<div class="card">';
+                        if (jewellerydata.hasjewellerygemstones == 1) {
+                            for (var gs in jewellerydata.jewellerygemstonesdetail) {
+                                var gemstonedata = jewellerydata.jewellerygemstonesdetail[gs];
+
+                                htmldata += '<div class="card-body">';
+                                htmldata += '<ul>';
+                                htmldata += '<li><b>Gemstone Type</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.gemstonetype + '</span></li>';
+                                htmldata += '<li><b>Shape</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.shape + '</span></li>';
+                                htmldata += '<li><b>Carat Weight</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.caratweight + '</span></li>';
+                                htmldata += '<li><b>Lab</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.lab + '</span></li>';
+                                htmldata += '<li><b>Lab#</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.labtext + '</span></li>';
+                                htmldata += '<li><b>Treatment</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.treatment + '</span></li>';
+                                htmldata += '<li><b>#Stone</b>: <span class="metalpurity1">&nbsp; ' + gemstonedata.stones + '</span></li>';
+                                htmldata += '</ul>';
+                                htmldata += '</div>';
+                            }
+                        }
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+
+                        htmldata += '</div>';
+                        htmldata += '</a>';
+                        htmldata += '</div>';
+                        // htmldata += '<a href="https://www.vecteezy.com/video/1624505-rotating-diamond-gem" target="_blank"> </a>';
+                        // htmldata += '<a href="https://www.vecteezy.com/video/1624505-rotating-diamond-gem" target="_blank">';
+                        var sellerdetails = jewellerydata.persondetail[0];
+                        htmldata += '<div class="col-md-12 profilediamnd-set">';
+                        var isavailabletext = 'No';
+                        if (jewellerydata.isavailable == 1) {
+                            isavailabletext = 'Yes';
+                        }
+                        var isavailableformemotext = 'No';
+                        if (jewellerydata.isavailableformemo == 1) {
+                            isavailableformemotext = 'Yes';
+                        }
+                        htmldata += '<div class="availsetjw">';
+                        htmldata += '<div class="card">';
+                        htmldata += '<div class="card-body">';
+                        htmldata += '<div class="Notessearchd">';
+                        htmldata += '<h5 calss="avilabtnsetjw">Availability</h5>';
+                        htmldata += '<ul>';
+                        htmldata += '<li><b>Available</b>: <span class="metalpurity1">&nbsp;' + isavailabletext + '</span></li>';
+                        htmldata += '<li><b>Memo</b>: <span class="metalpurity1">&nbsp;' + isavailableformemotext + '</span></li>';
+                        htmldata += '<li><b>Stock#</b>: <span class="metalpurity1 phonesearch">&nbsp;' + jewellerydata.stock + '</span></li>';
+                        htmldata += '<li><b>In Stock</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.iteminstock + '</span></li>';
+                        htmldata += '<li><b>Min Order</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.minimumorder + '</span></li>';
+                        htmldata += '</ul>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '<div class="card mt-4">';
+                        htmldata += '<div class="card-body">';
+                        htmldata += '<div class="Notessearchd">';
+                        htmldata += '<h5 calss="avilabtnsetjw">Measurements</h5>';
+                        htmldata += '<ul>';
+                        htmldata += '<li><b>Size</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.size + '</span></li>';
+                        htmldata += '<li><b>Ring Size</b>: <span class="metalpurity1">&nbsp;' + jewellerydata.ringsize + '</span></li>';
+                        htmldata += '</ul>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        var unpublishedtext = 'No';
+                        if (jewellerydata.unpublished == 1) {
+                            unpublishedtext = 'Yes';
+                        }
+
+                        var sharabletext = 'No';
+                        if (jewellerydata.sharable == 1) {
+                            sharabletext = 'Yes';
+                        }
+
+                        var ownstockinventorytext = 'No';
+                        if (jewellerydata.ownstockinventory == 1) {
+                            ownstockinventorytext = 'Yes';
+                        }
+                        htmldata += '<div class="card mt-4">';
+                        htmldata += '<div class="card-body">';
+                        htmldata += '<div class="Notessearchd">';
+                        htmldata += '<h5 calss="avilabtnsetjw">Visibility</h5>';
+                        htmldata += '<ul>';
+                        htmldata += '<li><b>Published</b>: <span class="metalpurity1">&nbsp;' + unpublishedtext + '</span></li>';
+                        htmldata += '</ul>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+
+                        if (jewellerydata.keyworddescription != '') {
+                            htmldata += '<div class="card mt-4">';
+                            htmldata += '<div class="card-body">';
+                            htmldata += '<h5 calss="avilabtnsetjw">Keyword Description</h5>';
+                            htmldata += '<div class="Notessearchd Notessearchd-space">';
+                            htmldata += '<ul>';
+                            htmldata += '<li><p>' + jewellerydata.keyworddescription + '</p></li>';
+                            htmldata += '</ul>';
+                            htmldata += '</div>';
+                            htmldata += '</div>';
+                            htmldata += '</div>';
+                        }
+                        if (jewellerydata.suppliercomment != '') {
+                            htmldata += '<div class="card mt-4">';
+                            htmldata += '<div class="card-body">';
+                            htmldata += '<h5 calss="avilabtnsetjw">Suppliers Comment</h5>';
+                            htmldata += '<div class="Notessearchd Notessearchd-space">';
+                            htmldata += '<ul>';
+                            htmldata += '<li><p>' + jewellerydata.suppliercomment + '</p></li>';
+                            htmldata += '</ul>';
+                            htmldata += '</div>';
+                            htmldata += '</div>';
+                            htmldata += '</div>';
+                        }
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</a>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</div>';
+                        htmldata += '</body>';
 
 
 
@@ -5375,7 +5354,7 @@ $id = $_REQUEST['id'];
                         htmldata += '    </div>';
                         htmldata += '</div>';*/
 
-                       
+
 
 
 
@@ -5386,65 +5365,63 @@ $id = $_REQUEST['id'];
                     }
                     $('#jewellerydetailmodal #ListJewelleryDataDetail').html(htmldata);
                     $('.our-jewellery-slider').owlCarousel({
-                    loop: true,
-                    center: false,
-                    nav: true,
-                    dots: true,
-                    // items: 3,  
-                    margin: 0,
-                    autoplay: true,
-                    autoplayTimeout: 8500,
-                    smartSpeed: 450,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        // 600: {
-                        //     items: 2
-                        // },
-                        // 768: {
-                        //     items: 3
-                        // },                    
-                        // 1170: {
-                        //     items: 4
-                        // }
-                    }
+                        loop: true,
+                        center: false,
+                        nav: true,
+                        dots: true,
+                        // items: 3,  
+                        margin: 0,
+                        autoplay: true,
+                        autoplayTimeout: 8500,
+                        smartSpeed: 450,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            // 600: {
+                            //     items: 2
+                            // },
+                            // 768: {
+                            //     items: 3
+                            // },                    
+                            // 1170: {
+                            //     items: 4
+                            // }
+                        }
 
-                    
-                });
+
+                    });
                     if ($("#jewellerydetailmodal img.active").attr("src")) {
                         $("#jewellerydetailmodal .maxi").attr("src", $("#jewellerydetailmodal img.active").attr("src").replace("100x100", "400x400"));
                     }
 
                     $("#jewellerydetailmodal .mini .imgcls").click(function() {
-                        
+
                         $("#jewellerydetailmodal .maxi").attr("src", $(this).attr("src").replace("100x100", "400x400"));
 
                         var image = $(this).attr("src");
-                        var htmldata ="";
-                        if(image)
-                        {
+                        var htmldata = "";
+                        if (image) {
                             htmldata += '<img class="maxi primary blur-up lazyloaded" src="' + image + '" alt="' + jewellerydata.itemtitle + '" title="' + jewellerydata.itemtitle + '">';
                         }
                         $('.imagevideoDiv').html(htmldata);
 
                     });
                     $("#jewellerydetailmodal .mini .videocls").click(function() {
-                       
-                        
+
+
                         var video = $(this).attr('data-video');
-                       
+
                         // $("#jewellerydetailmodal .videomaxi").attr("src", $(this).attr("src").replace("100x100", "400x400"));
-                        var htmldata ="";
-                        if(video)
-                        {
-                           
+                        var htmldata = "";
+                        if (video) {
+
                             htmldata += '<video class="maxi primary blur-up lazyloaded " autoplay="" muted="" loop="">';
                             htmldata += '<source class="videomaxi" src="' + video + '">';
                             htmldata += '</video>';
                         }
                         $('.imagevideoDiv').html(htmldata);
-                        
+
                     });
                     $('#jewellerydetailmodal').modal('show');
 

@@ -1093,6 +1093,10 @@ if ($isvalidUser['status'] == 1) {
 
                 $fltparcel = (int)$IISMethods->sanitize($_POST['fltparcel']); // 1 - only parcel , 0 - all
 
+                $fltsearch = isset($_POST['fltsearch']) ? trim((string)$IISMethods->sanitize($_POST['fltsearch'])) : '';
+                $fltsearch = preg_replace('/(\d)\s*ct\b/i', '$1', $fltsearch);
+                $fltsearchterms = preg_split('/\s+/', trim($fltsearch), -1, PREG_SPLIT_NO_EMPTY);
+
                 $fltshapeid = $_POST['fltshapeid']; //Multple Shape
                 $fltfromsize = $IISMethods->sanitize($_POST['fltfromsize']); // From Size
                 $flttosize = $IISMethods->sanitize($_POST['flttosize']); // To Size
@@ -1606,6 +1610,18 @@ if ($isvalidUser['status'] == 1) {
                 if (isset($_POST['isfancy']) && in_array($_POST['isfancy'], array('0', '1', 0, 1), true)) {
                     $query_main .= " AND EXISTS (SELECT 1 FROM tbldiamond td WHERE td.id=d.id AND IFNULL(td.isfancy,0)=:isfancy)";
                     $params[':isfancy'] = (int)$_POST['isfancy'];
+                }
+                if ($fltsearchterms) {
+                    foreach ($fltsearchterms as $index => $term) {
+                        $searchfields = array('d.stock', 'd.shape', 'FORMAT(d.size, 2)', 'd.color', 'd.clarity', 'd.lab');
+                        $searchconditions = array();
+                        foreach ($searchfields as $fieldindex => $field) {
+                            $searchparam = ':fltsearch' . $index . '_' . $fieldindex;
+                            $searchconditions[] = "$field LIKE $searchparam";
+                            $params[$searchparam] = '%' . $term . '%';
+                        }
+                        $query_main .= ' AND (' . implode(' OR ', $searchconditions) . ')';
+                    }
                 }
                 // Parcel or not
                 if ($fltparcel)  // parcel
